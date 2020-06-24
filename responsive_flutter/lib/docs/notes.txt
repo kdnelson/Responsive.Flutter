@@ -11,3 +11,7 @@ flutter clean
 flutter pub get                         //Get packages updates
 flutter screenshot                      //Show off your work
 flutter devices                         //What are you connected to
+
+Notes:
+
+Why make a widget class constructor const?

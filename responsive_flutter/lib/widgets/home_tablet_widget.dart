@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'app_drawer_widget.dart';
+import 'base_drawer_widget.dart';
 
 class HomeTabletWidget extends StatelessWidget {
 
@@ -17,7 +17,7 @@ class HomeTabletWidget extends StatelessWidget {
       Expanded(
         child: Container(),
       ),
-      AppDrawerWidget()
+      BaseDrawerWidget()
     ];
     
     return Scaffold(

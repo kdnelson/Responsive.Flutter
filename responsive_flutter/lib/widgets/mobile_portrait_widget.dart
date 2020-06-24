@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'app_drawer_widget.dart';
+import 'base_drawer_widget.dart';
 
 class MobilePortraitWidget extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -10,7 +10,7 @@ class MobilePortraitWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: AppDrawerWidget(),
+      drawer: BaseDrawerWidget(),
       body: Column(
         children: <Widget>[
           Padding(

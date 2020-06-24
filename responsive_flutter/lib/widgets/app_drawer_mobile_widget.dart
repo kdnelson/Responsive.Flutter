@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AppDrawerWidget extends StatelessWidget {
+class AppDrawerMobileWidget extends StatelessWidget {
 
-  const AppDrawerWidget(
+  const AppDrawerMobileWidget(
   {
     Key key
   }) : super(key: key);
