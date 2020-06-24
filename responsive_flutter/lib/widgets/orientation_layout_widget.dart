@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 class OrientationLayoutWidget extends StatelessWidget {
   final Widget landscape;
   final Widget portrait;
+  
   OrientationLayoutWidget({
     Key key,
     this.landscape,

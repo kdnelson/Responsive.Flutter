@@ -2,11 +2,16 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/home_widget.dart';
+
+// void main() => runApp(
+//   DevicePreview(
+//     child: MyApp(),
+//   ),
+// );
+
 void main() => runApp(
-      DevicePreview(
-        child: MyApp(),
-      ),
-    );
+  MyApp(),
+);
 
 class MyApp extends StatelessWidget {
   @override

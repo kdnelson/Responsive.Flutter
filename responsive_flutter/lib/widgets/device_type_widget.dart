@@ -8,8 +8,12 @@ class DeviceTypeWidget extends StatelessWidget {
   final Widget desktop;
 
   const DeviceTypeWidget(
-      {Key key, @required this.mobile, this.tablet, this.desktop})
-      : super(key: key);
+  {
+    Key key, 
+    @required this.mobile, 
+    this.tablet, 
+    this.desktop
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
