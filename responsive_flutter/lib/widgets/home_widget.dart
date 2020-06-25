@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'device_type_widget.dart';
-import 'home_tablet_widget.dart';
 import 'mobile_landscape_widget.dart';
 import 'mobile_portrait_widget.dart';
-import 'orientation_layout_widget.dart';
+import 'orientation_widget.dart';
+import 'tablet_orientation_widget.dart';
 
 class HomeWidget extends StatelessWidget {
 
@@ -17,11 +17,11 @@ class HomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DeviceTypeWidget(
-      mobile: OrientationLayoutWidget(
+      mobile: OrientationWidget(
         portrait: MobilePortraitWidget(),
-        landscape: const MobileLandscapeWidget(),
+        landscape: MobileLandscapeWidget(),
       ),
-      tablet: const HomeTabletWidget(),
+      tablet: TabletOrientationWidget(),
     );
   }
 }

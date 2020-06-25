@@ -4,7 +4,7 @@ import 'app_drawer_mobile_landscape_options.dart';
 import 'app_drawer_mobile_portrait_options.dart';
 import 'app_drawer_tablet_portrait_options.dart';
 import 'device_type_widget.dart';
-import 'orientation_layout_widget.dart';
+import 'orientation_widget.dart';
 
 class BaseDrawerOptionsWidget extends StatelessWidget {
   final String title;
@@ -19,7 +19,7 @@ class BaseDrawerOptionsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DeviceTypeWidget(
-      mobile: OrientationLayoutWidget(
+      mobile: OrientationWidget(
         portrait: AppDrawerMobilePortraitOptions(
           title: title,
           iconData: iconData,
@@ -28,7 +28,7 @@ class BaseDrawerOptionsWidget extends StatelessWidget {
           iconData: iconData,
         ),
       ),
-      tablet: OrientationLayoutWidget(
+      tablet: OrientationWidget(
         portrait: AppDrawerTabletPortraitOptions(
           title: title,
           iconData: iconData,

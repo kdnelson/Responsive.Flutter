@@ -6,7 +6,7 @@ import 'app_drawer_tablet_landscape_widget.dart';
 import 'app_drawer_tablet_portrait_widget.dart';
 import 'base_drawer_options_widget.dart';
 import 'device_type_widget.dart';
-import 'orientation_layout_widget.dart';
+import 'orientation_widget.dart';
 
 class BaseDrawerWidget extends StatelessWidget {
 
@@ -19,7 +19,7 @@ class BaseDrawerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return DeviceTypeWidget(
       mobile: const AppDrawerMobileWidget(),
-      tablet: const OrientationLayoutWidget(
+      tablet: const OrientationWidget(
         portrait: const AppDrawerTabletPortraitWidget(),
         landscape: const AppDrawerTabletLandscapeWidget(),
       ),
