@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
-class AppDrawerMobileLandscapeOptions extends StatelessWidget {
+class MobileDrawerLandscapeOptions extends StatelessWidget {
   final IconData iconData;
 
-  const AppDrawerMobileLandscapeOptions(
+  const MobileDrawerLandscapeOptions(
   {
     Key key, this.iconData
   }) : super(key: key);

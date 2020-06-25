@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
-class AppDrawerMobilePortraitOptions extends StatelessWidget {
+class TabletDrawerLandscapeOptions extends StatelessWidget {
   final String title;
   final IconData iconData;
 
-  const AppDrawerMobilePortraitOptions({
+  const TabletDrawerLandscapeOptions({
     Key key,
     this.title,
     this.iconData,

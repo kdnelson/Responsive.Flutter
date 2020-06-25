@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 
-import 'app_drawer_mobile_landscape_options.dart';
-import 'app_drawer_mobile_portrait_options.dart';
-import 'app_drawer_tablet_portrait_options.dart';
 import 'device_type_widget.dart';
+import 'mobile_drawer_landscape_options.dart';
+import 'mobile_drawer_portrait_options.dart';
 import 'orientation_widget.dart';
+import 'tablet_drawer_landscape_options.dart';
+import 'tablet_drawer_portrait_options.dart';
 
 class BaseDrawerOptionsWidget extends StatelessWidget {
   final String title;
@@ -20,20 +21,20 @@ class BaseDrawerOptionsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return DeviceTypeWidget(
       mobile: OrientationWidget(
-        portrait: AppDrawerMobilePortraitOptions(
+        portrait: MobileDrawerPortraitOptions(
           title: title,
           iconData: iconData,
         ),
-        landscape: AppDrawerMobileLandscapeOptions(
+        landscape: MobileDrawerLandscapeOptions(
           iconData: iconData,
         ),
       ),
       tablet: OrientationWidget(
-        portrait: AppDrawerTabletPortraitOptions(
+        portrait: TabletDrawerPortraitOptions(
           title: title,
           iconData: iconData,
         ),
-        landscape: AppDrawerMobilePortraitOptions(
+        landscape: TabletDrawerLandscapeOptions(
           title: title,
           iconData: iconData,
         ),

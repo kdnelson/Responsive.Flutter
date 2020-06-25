@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/helpers/drawer_options_helper.dart';
 
-import 'base_drawer_widget.dart';
+class TabletDrawerLandscapeWidget extends StatelessWidget {
 
-class AppDrawerTabletLandscapeWidget extends StatelessWidget {
-
-  const AppDrawerTabletLandscapeWidget(
+  const TabletDrawerLandscapeWidget(
   {
     Key key
   }) : super(key: key);
@@ -22,9 +21,7 @@ class AppDrawerTabletLandscapeWidget extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.only(top: 20.0),
-        child: Column(
-          children: BaseDrawerWidget.getDrawerOptions(),
-        ),
+        child: Column(children: DrawerOptionsHelper.getDrawerOptions()),
       ),
     );
   }

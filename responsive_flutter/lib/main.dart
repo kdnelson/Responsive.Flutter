@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       builder: DevicePreview.appBuilder,
-      title: 'Flutter Demo',
+      title: 'Responsive',
       home: HomeWidget(),
     );
   }

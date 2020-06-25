@@ -1,18 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MobileDrawerMobileWidget extends StatelessWidget {
+class MobileDrawerLandscapeWidget extends StatelessWidget {
 
-  const MobileDrawerMobileWidget(
+  const MobileDrawerLandscapeWidget(
   {
     Key key
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return OrientationBuilder(
-      builder: (context, orientation) => Container(
-        width: orientation == Orientation.portrait ? 250 : 100,
+    return Container(
+        width: 100,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -22,7 +21,6 @@ class MobileDrawerMobileWidget extends StatelessWidget {
             )
           ],
         ),
-      ),
-    );
+      );
   }
 }

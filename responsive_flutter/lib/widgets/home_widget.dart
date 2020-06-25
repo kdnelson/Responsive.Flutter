@@ -5,7 +5,8 @@ import 'device_type_widget.dart';
 import 'mobile_landscape_scaffold_widget.dart';
 import 'mobile_portrait_scaffold_widget.dart';
 import 'orientation_widget.dart';
-import 'tablet_dynamic_scaffold_widget.dart';
+import 'tablet_landscape_scaffold_widget.dart';
+import 'tablet_portrait_scaffold_widget.dart';
 
 class HomeWidget extends StatelessWidget {
 
@@ -18,11 +19,13 @@ class HomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return DeviceTypeWidget(
       mobile: OrientationWidget(
-        // OrientationWidget will call the correct Scaffold needed.
         portrait: MobilePortraitScaffoldWidget(),
         landscape: MobileLandscapeScaffoldWidget(),
       ),
-      tablet: TabletDynamicScaffoldWidget(),
+      tablet: OrientationWidget(
+        portrait: TabletPortraitScaffoldWidget(),
+        landscape: TabletLandscapeScaffoldWidget(),
+      ),
     );
   }
 }
