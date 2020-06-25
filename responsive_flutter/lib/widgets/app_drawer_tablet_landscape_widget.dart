@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'base_drawer_widget.dart';
+
 class AppDrawerTabletLandscapeWidget extends StatelessWidget {
 
   const AppDrawerTabletLandscapeWidget(
@@ -17,6 +19,9 @@ class AppDrawerTabletLandscapeWidget extends StatelessWidget {
         boxShadow: [
           BoxShadow(blurRadius: 16, color: Colors.black12),
         ],
+      ),
+      child: Column(
+        children: BaseDrawerWidget.getDrawerOptions(),
       ),
     );
   }

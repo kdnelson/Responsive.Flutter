@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'base_drawer_widget.dart';
+
 class AppDrawerMobileWidget extends StatelessWidget {
 
   const AppDrawerMobileWidget(
@@ -12,7 +14,7 @@ class AppDrawerMobileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var orientation = MediaQuery.of(context).orientation;
     return Container(
-        width: orientation == Orientation.portrait ? 250 : 150,
+        width: orientation == Orientation.portrait ? 250 : 100,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -21,6 +23,12 @@ class AppDrawerMobileWidget extends StatelessWidget {
               color: Colors.black12,
             )
           ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 20.0),
+          child: Column(
+            children: BaseDrawerWidget.getDrawerOptions(),
+      ),
         ),
     );
   }

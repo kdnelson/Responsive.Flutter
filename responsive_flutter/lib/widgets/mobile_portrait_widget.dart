@@ -14,7 +14,7 @@ class MobilePortraitWidget extends StatelessWidget {
       body: Column(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.only(top: 35.0, bottom: 15.0, left: 15.0, right: 15.0),
             child: IconButton(
               icon: Icon(
                 Icons.menu,
