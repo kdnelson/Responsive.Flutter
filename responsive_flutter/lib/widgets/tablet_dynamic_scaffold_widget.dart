@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 import 'base_drawer_widget.dart';
 
-class TabletOrientationWidget extends StatelessWidget {
+class TabletDynamicScaffoldWidget extends StatelessWidget {
 
-  const TabletOrientationWidget({
+  const TabletDynamicScaffoldWidget({
     Key key,
   }) : super(key: key);
 

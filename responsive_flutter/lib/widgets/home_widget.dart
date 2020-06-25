@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'device_type_widget.dart';
-import 'mobile_landscape_widget.dart';
-import 'mobile_portrait_widget.dart';
+import 'mobile_landscape_scaffold_widget.dart';
+import 'mobile_portrait_scaffold_widget.dart';
 import 'orientation_widget.dart';
-import 'tablet_orientation_widget.dart';
+import 'tablet_dynamic_scaffold_widget.dart';
 
 class HomeWidget extends StatelessWidget {
 
@@ -18,10 +18,11 @@ class HomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return DeviceTypeWidget(
       mobile: OrientationWidget(
-        portrait: MobilePortraitWidget(),
-        landscape: MobileLandscapeWidget(),
+        // OrientationWidget will call the correct Scaffold needed.
+        portrait: MobilePortraitScaffoldWidget(),
+        landscape: MobileLandscapeScaffoldWidget(),
       ),
-      tablet: TabletOrientationWidget(),
+      tablet: TabletDynamicScaffoldWidget(),
     );
   }
 }

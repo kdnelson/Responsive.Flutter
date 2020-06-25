@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'base_drawer_widget.dart';
 
-class MobilePortraitWidget extends StatelessWidget {
+class MobilePortraitScaffoldWidget extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
