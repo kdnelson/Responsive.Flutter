@@ -28,8 +28,8 @@ class AppDrawerMobileWidget extends StatelessWidget {
           padding: const EdgeInsets.only(top: 20.0),
           child: Column(
             children: BaseDrawerWidget.getDrawerOptions(),
-      ),
         ),
+      ),
     );
   }
 }

@@ -19,7 +19,7 @@ class HomeWidget extends StatelessWidget {
     return DeviceTypeWidget(
       mobile: OrientationLayoutWidget(
         portrait: MobilePortraitWidget(),
-        landscape: const MobileLandScapeWidget(),
+        landscape: const MobileLandscapeWidget(),
       ),
       tablet: const HomeTabletWidget(),
     );

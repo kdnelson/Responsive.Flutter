@@ -20,8 +20,11 @@ class AppDrawerTabletLandscapeWidget extends StatelessWidget {
           BoxShadow(blurRadius: 16, color: Colors.black12),
         ],
       ),
-      child: Column(
-        children: BaseDrawerWidget.getDrawerOptions(),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 20.0),
+        child: Column(
+          children: BaseDrawerWidget.getDrawerOptions(),
+        ),
       ),
     );
   }

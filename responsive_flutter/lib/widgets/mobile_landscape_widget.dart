@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 import 'base_drawer_widget.dart';
 
-class MobileLandScapeWidget extends StatelessWidget {
+class MobileLandscapeWidget extends StatelessWidget {
 
-  const MobileLandScapeWidget(
+  const MobileLandscapeWidget(
   {
     Key key
   }) : super(key: key);
