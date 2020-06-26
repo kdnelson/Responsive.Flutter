@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/widgets/home/tablet/tablet_home_landscape_widget.dart';
 import 'package:responsive_flutter/widgets/responsive/common/drawer_widget.dart';
 
 class TabletMenuLandscapeWidget extends StatelessWidget {
@@ -16,9 +17,7 @@ class TabletMenuLandscapeWidget extends StatelessWidget {
         children: <Widget>[
           DrawerWidget(),
           Expanded(
-            child: Container(
-              child: Text("Landscape: Widget that all Menu's call"),
-            ),
+            child: TabletHomeLandscapeWidget()
           ),
         ],
       ),

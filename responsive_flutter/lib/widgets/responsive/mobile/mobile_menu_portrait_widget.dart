@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/widgets/home/mobile/mobile_home_portrait_widget.dart';
 import 'package:responsive_flutter/widgets/responsive/common/drawer_widget.dart';
 
 class MobileMenuPortraitWidget extends StatelessWidget {
@@ -25,9 +26,7 @@ class MobileMenuPortraitWidget extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Container(
-              child: Text("Portrait: Widget that all Menu's call"),
-            ),
+              child: MobileHomePortraitWidget()
           ),
         ],
       ),
