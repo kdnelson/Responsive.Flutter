@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/widgets/responsive/common/drawer_widget.dart';
 
-import 'base_drawer_widget.dart';
+class TabletMenuPortraitWidget extends StatelessWidget {
 
-class TabletPortraitScaffoldWidget extends StatelessWidget {
-
-  const TabletPortraitScaffoldWidget(
+  const TabletMenuPortraitWidget(
   {
     Key key
   }) : super(key: key);
@@ -16,7 +15,7 @@ class TabletPortraitScaffoldWidget extends StatelessWidget {
       Expanded(
         child: Container(),
       ),
-      BaseDrawerWidget()
+      DrawerWidget()
     ];
     
     return Scaffold(

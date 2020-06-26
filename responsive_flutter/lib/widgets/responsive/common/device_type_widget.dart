@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:responsive_flutter/enums/device_type_enum.dart';
-import 'package:responsive_flutter/widgets/base_widget.dart';
+
+import 'layout_builder_widget.dart';
 
 class DeviceTypeWidget extends StatelessWidget {
   final Widget mobile;
@@ -17,7 +18,7 @@ class DeviceTypeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseWidget(builder: (context, sizingInformation) {
+    return LayoutBuilderWidget(builder: (context, sizingInformation) {
       // If sizing indicates Tablet and we have a tablet widget then return
       if (sizingInformation.deviceScreenType == DeviceTypeEnum.Tablet) {
         if (tablet != null) {

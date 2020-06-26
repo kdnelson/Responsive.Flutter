@@ -1,20 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/widgets/responsive/common/drawer_widget.dart';
 
-import 'base_drawer_widget.dart';
-
-class MobilePortraitScaffoldWidget extends StatelessWidget {
+class MobileMenuPortraitWidget extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: BaseDrawerWidget(),
+      drawer: DrawerWidget(),
       body: Column(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(top: 35.0, bottom: 15.0, left: 15.0, right: 15.0),
+            padding: const EdgeInsets.only(top: 40.0, bottom: 15.0, left: 15.0, right: 15.0),
             child: IconButton(
               icon: Icon(
                 Icons.menu,

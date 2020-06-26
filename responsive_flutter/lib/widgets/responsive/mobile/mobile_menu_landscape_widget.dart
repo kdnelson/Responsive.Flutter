@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/widgets/responsive/common/drawer_widget.dart';
 
-import 'base_drawer_widget.dart';
+class MobileMenuLandscapeWidget extends StatelessWidget {
 
-class MobileLandscapeScaffoldWidget extends StatelessWidget {
-
-  const MobileLandscapeScaffoldWidget(
+  const MobileMenuLandscapeWidget(
   {
     Key key
   }) : super(key: key);
@@ -14,7 +13,7 @@ class MobileLandscapeScaffoldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Row(
-        children: <Widget>[BaseDrawerWidget()],
+        children: <Widget>[DrawerWidget()],
       ),
     );
   }

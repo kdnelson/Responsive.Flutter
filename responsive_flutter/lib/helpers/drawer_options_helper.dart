@@ -1,23 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_flutter/widgets/base_drawer_options_widget.dart';
+import 'package:responsive_flutter/widgets/responsive/common/drawer_options_widget.dart';
 
 class DrawerOptionsHelper {
   static List<Widget> getDrawerOptions() {
     return [
-      BaseDrawerOptionsWidget(
+      DrawerOptionsWidget(
         title: 'Images',
         iconData: Icons.image,
       ),
-      BaseDrawerOptionsWidget(
+      DrawerOptionsWidget(
         title: 'Reports',
         iconData: Icons.photo_filter,
       ),
-      BaseDrawerOptionsWidget(
+      DrawerOptionsWidget(
         title: 'Incidents',
         iconData: Icons.message,
       ),
-      BaseDrawerOptionsWidget(
+      DrawerOptionsWidget(
         title: 'Settings',
         iconData: Icons.settings,
       ),

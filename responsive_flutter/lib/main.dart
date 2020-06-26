@@ -1,7 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/home_widget.dart';
+import 'widgets/responsive/common/home_widget.dart';
 
 // void main() => runApp(
 //   DevicePreview(

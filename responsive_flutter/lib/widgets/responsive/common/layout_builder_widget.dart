@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:responsive_flutter/helpers/device_screen_type_helper.dart';
 import 'package:responsive_flutter/helpers/sizing_info_helper.dart';
 
-class BaseWidget extends StatelessWidget {
+class LayoutBuilderWidget extends StatelessWidget {
   final Widget Function(
       BuildContext context, SizingInformationHelper sizingInfo) builder;
 
-  const BaseWidget(
+  const LayoutBuilderWidget(
   {
     Key key, 
     this.builder

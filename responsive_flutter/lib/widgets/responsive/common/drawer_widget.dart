@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/widgets/responsive/mobile/mobile_drawer_landscape_widget.dart';
+import 'package:responsive_flutter/widgets/responsive/mobile/mobile_drawer_portrait_widget.dart';
+import 'package:responsive_flutter/widgets/responsive/tablet/tablet_drawer_landscape_widget.dart';
+import 'package:responsive_flutter/widgets/responsive/tablet/tablet_drawer_portrait_widget.dart';
 
 import 'device_type_widget.dart';
-import 'mobile_drawer_landscape_widget.dart';
-import 'mobile_drawer_portrait_widget.dart';
 import 'orientation_widget.dart';
-import 'tablet_drawer_landscape_widget.dart';
-import 'tablet_drawer_portrait_widget.dart';
 
-class BaseDrawerWidget extends StatelessWidget {
+class DrawerWidget extends StatelessWidget {
 
-  const BaseDrawerWidget(
+  const DrawerWidget(
   {
     Key key
   }) : super(key: key);
