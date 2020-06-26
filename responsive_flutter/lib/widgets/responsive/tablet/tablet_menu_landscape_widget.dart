@@ -11,15 +11,17 @@ class TabletMenuLandscapeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var children = [
-      Expanded(
-        child: Container(),
-      ),
-      DrawerWidget()
-    ];
-    
     return Scaffold(
-      body: Row(children: children.reversed.toList())
+      body: Row(
+        children: <Widget>[
+          DrawerWidget(),
+          Expanded(
+            child: Container(
+              child: Text("Landscape: Widget that all Menu's call"),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

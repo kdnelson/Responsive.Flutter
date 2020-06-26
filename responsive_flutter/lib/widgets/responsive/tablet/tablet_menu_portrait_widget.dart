@@ -10,16 +10,18 @@ class TabletMenuPortraitWidget extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    var children = [
-      Expanded(
-        child: Container(),
-      ),
-      DrawerWidget()
-    ];
-    
+   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: children)
+      body: Row(
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              child: Text("Portrait: Widget that all Menu's call"),
+            ),
+          ),
+          DrawerWidget(),
+        ],
+      ),
     );
   }
 }

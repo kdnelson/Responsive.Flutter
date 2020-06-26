@@ -13,7 +13,14 @@ class MobileMenuLandscapeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Row(
-        children: <Widget>[DrawerWidget()],
+        children: <Widget>[
+          DrawerWidget(),
+          Expanded(
+            child: Container(
+              child: Text("Landscape: Widget that all Menu's call"),
+            ),
+          ),
+        ],
       ),
     );
   }

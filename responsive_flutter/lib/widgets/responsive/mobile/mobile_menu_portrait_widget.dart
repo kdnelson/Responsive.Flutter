@@ -10,7 +10,7 @@ class MobileMenuPortraitWidget extends StatelessWidget {
     return Scaffold(
       key: _scaffoldKey,
       drawer: DrawerWidget(),
-      body: Column(
+      body: Row(
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(top: 40.0, bottom: 15.0, left: 15.0, right: 15.0),
@@ -23,7 +23,12 @@ class MobileMenuPortraitWidget extends StatelessWidget {
                 _scaffoldKey.currentState.openDrawer();
               },
             ),
-          )
+          ),
+          Expanded(
+            child: Container(
+              child: Text("Portrait: Widget that all Menu's call"),
+            ),
+          ),
         ],
       ),
     );
