@@ -1,17 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:responsive_flutter/models/drawer_item_model.dart';
+import 'package:responsive_flutter/widgets/home/base_model_widget.dart';
 
-class TabletDrawerPortraitOptions extends StatelessWidget {
-  final String title;
-  final IconData iconData;
-
-  const TabletDrawerPortraitOptions({
-    Key key,
-    this.title,
-    this.iconData,
-  }) : super(key: key);
-
+class TabletDrawerPortraitOptions extends BaseModelWidget<DrawerItemModel> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, DrawerItemModel model) {
     return Container(
       width: 152,
       alignment: Alignment.center,
@@ -19,10 +12,10 @@ class TabletDrawerPortraitOptions extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Icon(
-            iconData,
+            model.iconData,
             size: 45,
           ),
-          Text(title, style: TextStyle(fontSize: 20)),
+          Text(model.title, style: TextStyle(fontSize: 20)),
         ],
       ),
     );

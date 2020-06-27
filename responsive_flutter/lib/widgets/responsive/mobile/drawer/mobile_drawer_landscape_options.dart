@@ -1,20 +1,15 @@
 import 'package:flutter/cupertino.dart';
+import 'package:responsive_flutter/models/drawer_item_model.dart';
+import 'package:responsive_flutter/widgets/home/base_model_widget.dart';
 
-class MobileDrawerLandscapeOptions extends StatelessWidget {
-  final IconData iconData;
-
-  const MobileDrawerLandscapeOptions(
-  {
-    Key key, this.iconData
-  }) : super(key: key);
-
+class MobileDrawerLandscapeOptions extends BaseModelWidget<DrawerItemModel> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, DrawerItemModel model) {
     return Container(
       height: 70,
       alignment: Alignment.center,
       child: Icon(
-        iconData, size: 30,
+        model.iconData, size: 30,
       ),
     );
   }

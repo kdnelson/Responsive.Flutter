@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:provider/provider.dart';
+import 'package:responsive_flutter/models/drawer_item_model.dart';
 import 'package:responsive_flutter/widgets/responsive/mobile/drawer/mobile_drawer_landscape_options.dart';
 import 'package:responsive_flutter/widgets/responsive/mobile/drawer/mobile_drawer_portrait_options.dart';
 import 'package:responsive_flutter/widgets/responsive/tablet/drawer/tablet_drawer_landscape_options.dart';
@@ -19,24 +21,16 @@ class DrawerOptionsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DeviceTypeWidget(
-      mobile: OrientationWidget(
-        portrait: MobileDrawerPortraitOptions(
-          title: title,
-          iconData: iconData,
+    return Provider.value(
+      value: DrawerItemModel(title: title, iconData: iconData),
+      child: DeviceTypeWidget(
+        mobile: OrientationWidget(
+          portrait: (context) => MobileDrawerPortraitOptions(),
+          landscape: (context) => MobileDrawerLandscapeOptions()
         ),
-        landscape: MobileDrawerLandscapeOptions(
-          iconData: iconData,
-        ),
-      ),
-      tablet: OrientationWidget(
-        portrait: TabletDrawerPortraitOptions(
-          title: title,
-          iconData: iconData,
-        ),
-        landscape: TabletDrawerLandscapeOptions(
-          title: title,
-          iconData: iconData,
+        tablet: OrientationWidget(
+          portrait: (context) => TabletDrawerPortraitOptions(),
+          landscape: (context) => TabletDrawerLandscapeOptions()
         ),
       ),
     );

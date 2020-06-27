@@ -1,16 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_flutter/widgets/home/mobile/mobile_home_portrait_widget.dart';
+import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
+import 'package:responsive_flutter/widgets/home/base_model_widget.dart';
 import 'package:responsive_flutter/widgets/responsive/common/drawer_widget.dart';
 
-class MobileMenuPortraitWidget extends StatelessWidget {
+// TODO Add extends BaseModelWidget<HomeViewModel> to the other 3 menu widgets
+// TODO Get HomeViewModel passed to the home widgets outside the responsive folder
+
+class MobileMenuPortraitWidget extends BaseModelWidget<HomeViewModel> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, HomeViewModel model) {
     return Scaffold(
       key: _scaffoldKey,
       drawer: DrawerWidget(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          model.updateTitle();
+        },
+      ),
       body: Row(
         children: <Widget>[
           Padding(
@@ -21,12 +30,13 @@ class MobileMenuPortraitWidget extends StatelessWidget {
                 size: 30,
               ),
               onPressed: () {
-                _scaffoldKey.currentState.openDrawer();
+                _scaffoldKey?.currentState?.openDrawer();
               },
             ),
           ),
           Expanded(
-              child: MobileHomePortraitWidget()
+            //child: MobileHomePortraitWidget(model),
+            child: Text(model.title),
           ),
         ],
       ),

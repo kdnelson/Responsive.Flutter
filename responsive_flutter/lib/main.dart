@@ -1,7 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/responsive/common/home_widget.dart';
+import 'widgets/responsive/common/home_responsive_widget.dart';
 
 // void main() => runApp(
 //   DevicePreview(
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       builder: DevicePreview.appBuilder,
       title: 'Responsive',
-      home: HomeWidget(),
+      home: HomeResponsiveWidget(),
     );
   }
 }

@@ -1,17 +1,20 @@
 
 import 'package:flutter/cupertino.dart';
+import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 
 class MobileHomePortraitWidget extends StatelessWidget {
+  final HomeViewModel viewmodel;
 
-  const MobileHomePortraitWidget(
+  const MobileHomePortraitWidget(HomeViewModel model, 
   {
-    Key key
+    Key key,
+    this.viewmodel
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Portrait: Widget that all Menu's call"),
+      child: Text("Mobile Portrait: " + viewmodel.title),
     );
   }
 }

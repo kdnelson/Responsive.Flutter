@@ -18,13 +18,13 @@ class DrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DeviceTypeWidget(
-      mobile: const OrientationWidget(
-        portrait: const MobileDrawerPortraitWidget(),
-        landscape: const MobileDrawerLandscapeWidget(),
+      mobile: OrientationWidget(
+        portrait: (context) => MobileDrawerPortraitWidget(),
+        landscape: (context) => MobileDrawerLandscapeWidget(),
       ),
-      tablet: const OrientationWidget(
-        portrait: const TabletDrawerPortraitWidget(),
-        landscape: const TabletDrawerLandscapeWidget(),
+      tablet: OrientationWidget(
+        portrait: (context) => TabletDrawerPortraitWidget(),
+        landscape: (context) => TabletDrawerLandscapeWidget(),
       ),
     );
   }
