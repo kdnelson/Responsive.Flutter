@@ -9,11 +9,7 @@ import 'device_type_widget.dart';
 import 'orientation_widget.dart';
 
 class DrawerWidget extends StatelessWidget {
-
-  const DrawerWidget(
-  {
-    Key key
-  }) : super(key: key);
+  const DrawerWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

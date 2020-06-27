@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:responsive_flutter/models/drawer_item_model.dart';
 import 'package:responsive_flutter/widgets/home/base_model_widget.dart';
 
-class TabletDrawerLandscapeOptions extends BaseModelWidget<DrawerItemModel> {
+class MobileDrawerPortraitOptionsWidget
+    extends BaseModelWidget<DrawerItemModel> {
   @override
   Widget build(BuildContext context, DrawerItemModel model) {
     return Container(

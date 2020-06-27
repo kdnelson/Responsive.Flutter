@@ -14,4 +14,7 @@ flutter devices                         //What are you connected to
 
 Notes:
 
-Why make a widget class constructor const?
+Const versus New?
+    Best practices: 
+        Why make a widget class constructor const?
+        When to new say a Text() widget object?

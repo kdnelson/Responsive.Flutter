@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_flutter/models/drawer_item_model.dart';
-import 'package:responsive_flutter/widgets/responsive/mobile/drawer/mobile_drawer_landscape_options.dart';
-import 'package:responsive_flutter/widgets/responsive/mobile/drawer/mobile_drawer_portrait_options.dart';
-import 'package:responsive_flutter/widgets/responsive/tablet/drawer/tablet_drawer_landscape_options.dart';
-import 'package:responsive_flutter/widgets/responsive/tablet/drawer/tablet_drawer_portrait_options.dart';
+import 'package:responsive_flutter/widgets/responsive/mobile/drawer/mobile_drawer_landscape_options_widget.dart';
+import 'package:responsive_flutter/widgets/responsive/mobile/drawer/mobile_drawer_portrait_options_widget.dart';
+import 'package:responsive_flutter/widgets/responsive/tablet/drawer/tablet_drawer_landscape_options_widget.dart';
+import 'package:responsive_flutter/widgets/responsive/tablet/drawer/tablet_drawer_portrait_options_widget.dart';
 
 import 'device_type_widget.dart';
 import 'orientation_widget.dart';
@@ -25,13 +25,11 @@ class DrawerOptionsWidget extends StatelessWidget {
       value: DrawerItemModel(title: title, iconData: iconData),
       child: DeviceTypeWidget(
         mobile: OrientationWidget(
-          portrait: (context) => MobileDrawerPortraitOptions(),
-          landscape: (context) => MobileDrawerLandscapeOptions()
-        ),
+            portrait: (context) => MobileDrawerPortraitOptionsWidget(),
+            landscape: (context) => MobileDrawerLandscapeOptionsWidget()),
         tablet: OrientationWidget(
-          portrait: (context) => TabletDrawerPortraitOptions(),
-          landscape: (context) => TabletDrawerLandscapeOptions()
-        ),
+            portrait: (context) => TabletDrawerPortraitOptionsWidget(),
+            landscape: (context) => TabletDrawerLandscapeOptionsWidget()),
       ),
     );
   }

@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
+import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 
-class TabletHomePortraitWidget extends StatelessWidget {
-  const TabletHomePortraitWidget({Key key}) : super(key: key);
+import '../base_model_widget.dart';
 
+class TabletHomePortraitWidget extends BaseModelWidget<HomeViewModel> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, HomeViewModel model) {
     return Container(
-      child: Text("Portrait",
+      child: Text("Portrait: " + model.title,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 30,

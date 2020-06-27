@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/home/base_model_widget.dart';
+import 'package:responsive_flutter/widgets/home/tablet/tablet_home_landscape_widget.dart';
 import 'package:responsive_flutter/widgets/responsive/common/drawer_widget.dart';
 
 class TabletMenuLandscapeWidget extends BaseModelWidget<HomeViewModel> {
@@ -23,12 +24,12 @@ class TabletMenuLandscapeWidget extends BaseModelWidget<HomeViewModel> {
         children: <Widget>[
           DrawerWidget(),
           Expanded(
-            // TODO child: TabletHomeLandscapeWidget(),
-            child: Text(model.title,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 60,
-                )),
+            child: TabletHomeLandscapeWidget(),
+            // child: Text(model.title,
+            //     style: TextStyle(
+            //       fontWeight: FontWeight.bold,
+            //       fontSize: 60,
+            //     )),
           ),
         ],
       ),

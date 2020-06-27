@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 
 import 'widgets/responsive/common/home_responsive_widget.dart';
 
-void main() => runApp(
-      DevicePreview(
-        child: MyApp(),
-      ),
-    );
-
 // void main() => runApp(
-//   MyApp(),
+//   DevicePreview(
+//     child: MyApp(),
+//   ),
 // );
 
-class MyApp extends StatelessWidget {
+void main() => runApp(
+      MainApplication(),
+    );
+
+class MainApplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

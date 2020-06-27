@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/home/base_model_widget.dart';
+import 'package:responsive_flutter/widgets/home/mobile/mobile_home_portrait_widget.dart';
 import 'package:responsive_flutter/widgets/responsive/common/drawer_widget.dart';
 
 class MobileMenuPortraitWidget extends BaseModelWidget<HomeViewModel> {
@@ -40,12 +41,7 @@ class MobileMenuPortraitWidget extends BaseModelWidget<HomeViewModel> {
             ],
           ),
           Expanded(
-            //TODO child: MobileHomePortraitWidget(model),
-            child: Text(model.title,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 60,
-                )),
+            child: MobileHomePortraitWidget(),
           ),
         ],
       ),
