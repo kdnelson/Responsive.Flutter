@@ -4,9 +4,6 @@ import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/home/base_model_widget.dart';
 import 'package:responsive_flutter/widgets/responsive/common/drawer_widget.dart';
 
-// TODO Add extends BaseModelWidget<HomeViewModel> to the other 3 menu widgets
-// TODO Get HomeViewModel passed to the home widgets outside the responsive folder
-
 class MobileMenuPortraitWidget extends BaseModelWidget<HomeViewModel> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -16,27 +13,39 @@ class MobileMenuPortraitWidget extends BaseModelWidget<HomeViewModel> {
       key: _scaffoldKey,
       drawer: DrawerWidget(),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.white,
+        child: Icon(Icons.add),
         onPressed: () {
           model.updateTitle();
         },
       ),
-      body: Row(
+      body: Column(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(top: 40.0, bottom: 15.0, left: 15.0, right: 15.0),
-            child: IconButton(
-              icon: Icon(
-                Icons.menu,
-                size: 30,
+          Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 40.0, bottom: 15.0, left: 15.0, right: 15.0),
+                child: IconButton(
+                  icon: Icon(
+                    Icons.menu,
+                    size: 30,
+                  ),
+                  onPressed: () {
+                    _scaffoldKey?.currentState?.openDrawer();
+                  },
+                ),
               ),
-              onPressed: () {
-                _scaffoldKey?.currentState?.openDrawer();
-              },
-            ),
+            ],
           ),
           Expanded(
-            //child: MobileHomePortraitWidget(model),
-            child: Text(model.title),
+            //TODO child: MobileHomePortraitWidget(model),
+            child: Text(model.title,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 60,
+                )),
           ),
         ],
       ),

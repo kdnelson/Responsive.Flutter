@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 
 import 'widgets/responsive/common/home_responsive_widget.dart';
 
-// void main() => runApp(
-//   DevicePreview(
-//     child: MyApp(),
-//   ),
-// );
-
 void main() => runApp(
-  MyApp(),
-);
+      DevicePreview(
+        child: MyApp(),
+      ),
+    );
+
+// void main() => runApp(
+//   MyApp(),
+// );
 
 class MyApp extends StatelessWidget {
   @override
