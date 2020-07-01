@@ -11,27 +11,22 @@ import 'device_type_widget.dart';
 import 'orientation_widget.dart';
 
 class HomeResponsiveWidget extends StatelessWidget {
-
-  const HomeResponsiveWidget(
-  {
-    Key key
-  }) : super(key: key);
+  const HomeResponsiveWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BaseWidget<HomeViewModel>(
-      viewModel: HomeViewModel(),
-      onModelReady: (model) => model.initialise(),
-       builder: (context) => DeviceTypeWidget(
-        mobile: OrientationWidget(
-          portrait: (context) => MobileMenuPortraitWidget(),
-          landscape: (context) => MobileMenuLandscapeWidget(),
-        ),
-        tablet: OrientationWidget(
-          portrait: (context) => TabletMenuPortraitWidget(),
-          landscape: (context) => TabletMenuLandscapeWidget(),
-        ),
-      )
-    );
+        viewModel: HomeViewModel(),
+        onModelReady: (model) => model.initialize(),
+        builder: (context) => DeviceTypeWidget(
+              mobile: OrientationWidget(
+                portrait: (context) => MobileMenuPortraitWidget(),
+                landscape: (context) => MobileMenuLandscapeWidget(),
+              ),
+              tablet: OrientationWidget(
+                portrait: (context) => TabletMenuPortraitWidget(),
+                landscape: (context) => TabletMenuLandscapeWidget(),
+              ),
+            ));
   }
 }

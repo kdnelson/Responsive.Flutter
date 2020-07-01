@@ -5,7 +5,7 @@ import 'package:responsive_flutter/utilities/locator.dart';
 import 'package:responsive_flutter/widgets/responsive/common/home_responsive_widget.dart';
 
 import 'services/navigator_service.dart';
-import 'widgets/login_widget.dart';
+import 'widgets/login/login_widget.dart';
 
 // void main() => runApp(
 //   DevicePreview(
