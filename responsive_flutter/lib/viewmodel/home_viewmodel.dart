@@ -4,6 +4,7 @@ class HomeViewModel extends ChangeNotifier {
   String title = 'default';
 
   void initialize() {
+    // Get state from Database...
     title = '0';
     notifyListeners();
   }

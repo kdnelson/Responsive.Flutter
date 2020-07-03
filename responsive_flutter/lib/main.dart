@@ -7,11 +7,14 @@ import 'package:responsive_flutter/widgets/responsive/common/home_responsive_wid
 import 'services/navigator_service.dart';
 import 'widgets/login/login_widget.dart';
 
-// void main() => runApp(
-//   DevicePreview(
-//     child: MyApp(),
-//   ),
-// );
+// void main() async {
+//   await LocatorInjector.setupLocator();
+//   runApp(
+//     DevicePreview(
+//       child: MainApplication(),
+//     ),
+//   );
+// }
 
 void main() async {
   await LocatorInjector.setupLocator();

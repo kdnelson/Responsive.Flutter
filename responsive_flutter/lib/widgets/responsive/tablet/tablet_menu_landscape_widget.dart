@@ -25,11 +25,6 @@ class TabletMenuLandscapeWidget extends BaseModelWidget<HomeViewModel> {
           DrawerWidget(),
           Expanded(
             child: TabletHomeLandscapeWidget(),
-            // child: Text(model.title,
-            //     style: TextStyle(
-            //       fontWeight: FontWeight.bold,
-            //       fontSize: 60,
-            //     )),
           ),
         ],
       ),

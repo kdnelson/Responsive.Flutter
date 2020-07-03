@@ -62,3 +62,15 @@ Const versus New?
     Best practices: 
         Why make a widget class constructor const?
         When to new say a Text() widget object?
+
+========================================================================================
+
+           IconButton(
+            icon: Icon(
+              model.iconData,
+              size: 25,
+            ),
+            onPressed: () {
+              AlertDialog();
+            },
+          ),

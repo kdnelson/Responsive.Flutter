@@ -27,7 +27,7 @@ class MobileMenuPortraitWidget extends BaseModelWidget<HomeViewModel> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(
-                    top: 40.0, bottom: 15.0, left: 15.0, right: 15.0),
+                    top: 45.0, bottom: 15.0, left: 15.0, right: 15.0),
                 child: IconButton(
                   icon: Icon(
                     Icons.menu,

@@ -11,7 +11,7 @@ import 'device_type_widget.dart';
 import 'orientation_widget.dart';
 
 class HomeResponsiveWidget extends StatelessWidget {
-  const HomeResponsiveWidget({Key key}) : super(key: key);
+  const HomeResponsiveWidget({Key key, bool isInitializing}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
