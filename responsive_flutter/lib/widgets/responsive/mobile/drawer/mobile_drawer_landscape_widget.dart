@@ -10,44 +10,37 @@ class MobileDrawerLandscapeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 70,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 16,
-            color: Colors.black12,
-          )
-        ],
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(top: 30.0),
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            ListTile(
-              leading: Icon(Icons.file_download, size: 35),
-              dense: false,
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).pop();
-                locator<NavigatorService>().navigateToPage(MaterialPageRoute(
-                    builder: (context) => HomeResponsiveWidget()));
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.settings, size: 35),
-              dense: false,
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).pop();
-                locator<NavigatorService>().navigateToPage(MaterialPageRoute(
-                    builder: (context) => HomeResponsiveWidget()));
-              },
-            ),
+        width: 90,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 16,
+              color: Colors.black,
+            )
           ],
         ),
-      ),
-    );
+        child: Padding(
+          padding: const EdgeInsets.only(top: 33.0, left: 9.0),
+          child: Container(
+              child: Column(children: <Widget>[
+            FlatButton.icon(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  locator<NavigatorService>().navigateToPage(MaterialPageRoute(
+                      builder: (context) => HomeResponsiveWidget()));
+                },
+                icon: Icon(Icons.file_download, size: 45),
+                label: Text("")),
+            FlatButton.icon(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  locator<NavigatorService>().navigateToPage(MaterialPageRoute(
+                      builder: (context) => HomeResponsiveWidget()));
+                },
+                icon: Icon(Icons.settings, size: 45),
+                label: Text("")),
+          ])),
+        ));
   }
 }

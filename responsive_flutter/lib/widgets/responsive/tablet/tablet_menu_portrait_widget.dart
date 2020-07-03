@@ -10,7 +10,7 @@ class TabletMenuPortraitWidget extends BaseModelWidget<HomeViewModel> {
   Widget build(BuildContext context, HomeViewModel model) {
     return Scaffold(
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 130.0),
+        padding: const EdgeInsets.only(bottom: 100.0),
         child: FloatingActionButton(
           backgroundColor: Colors.black,
           foregroundColor: Colors.white,

@@ -10,8 +10,8 @@ class TabletDrawerPortraitWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 120,
-        alignment: Alignment.center,
+        height: 100,
+        alignment: Alignment.centerLeft,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -19,59 +19,21 @@ class TabletDrawerPortraitWidget extends StatelessWidget {
           ],
         ),
         child: Container(
-          width: 180,
-          alignment: Alignment.center,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Icon(Icons.file_download, size: 45),
-                  Text('Reports', style: TextStyle(fontSize: 20)),
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  Icon(Icons.file_download, size: 45),
-                  Text('Reports', style: TextStyle(fontSize: 20)),
-                ],
-              )
-            ],
-          ),
-        )
-        // child: Padding(
-        //   padding: const EdgeInsets.only(top: 20.0),
-        //   child: Padding(
-        //     padding: const EdgeInsets.only(top: 40.0),
-        //     child: ListView(
-        //       padding: EdgeInsets.zero,
-        //       children: <Widget>[
-        //         ListTile(
-        //           leading: Icon(Icons.file_download, size: 35),
-        //           title: Text('Reports', style: TextStyle(fontSize: 21)),
-        //           dense: false,
-        //           onTap: () {
-        //             Navigator.of(context).pop();
-        //             Navigator.of(context).pop();
-        //             locator<NavigatorService>().navigateToPage(MaterialPageRoute(
-        //                 builder: (context) => HomeResponsiveWidget()));
-        //           },
-        //         ),
-        //         ListTile(
-        //           leading: Icon(Icons.settings, size: 35),
-        //           title: Text('Settings', style: TextStyle(fontSize: 21)),
-        //           dense: false,
-        //           onTap: () {
-        //             Navigator.of(context).pop();
-        //             Navigator.of(context).pop();
-        //             locator<NavigatorService>().navigateToPage(MaterialPageRoute(
-        //                 builder: (context) => HomeResponsiveWidget()));
-        //           },
-        //         ),
-        //       ],
-        //     ),
-        //   ),
-        // ),
-        );
+            child: Row(children: <Widget>[
+          FlatButton.icon(
+              onPressed: () {
+                locator<NavigatorService>().navigateToPage(MaterialPageRoute(
+                    builder: (context) => HomeResponsiveWidget()));
+              },
+              icon: Icon(Icons.file_download, size: 45),
+              label: Text('Reports', style: TextStyle(fontSize: 20))),
+          FlatButton.icon(
+              onPressed: () {
+                locator<NavigatorService>().navigateToPage(MaterialPageRoute(
+                    builder: (context) => HomeResponsiveWidget()));
+              },
+              icon: Icon(Icons.settings, size: 45),
+              label: Text('Settings', style: TextStyle(fontSize: 20)))
+        ])));
   }
 }
