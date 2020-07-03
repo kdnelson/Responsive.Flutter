@@ -10,7 +10,7 @@ class TabletHomeLandscapeWidget extends BaseModelWidget<HomeViewModel> {
   Widget build(BuildContext context, HomeViewModel model) {
     return PopScopeDialog(context,
         child: Text(
-          "Landscape: " + model.title,
+          "Landscape: " + model.counterDisplay,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 30,

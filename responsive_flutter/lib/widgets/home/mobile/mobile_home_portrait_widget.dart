@@ -10,7 +10,7 @@ class MobileHomePortraitWidget extends BaseModelWidget<HomeViewModel> {
   Widget build(BuildContext context, HomeViewModel model) {
     return PopScopeDialog(context,
         child: Text(
-          "Portrait: " + model.title,
+          "Portrait: " + model.counterDisplay,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 30,

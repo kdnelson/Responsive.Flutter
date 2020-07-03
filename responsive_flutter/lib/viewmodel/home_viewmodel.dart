@@ -1,18 +1,18 @@
 import 'package:flutter/cupertino.dart';
 
 class HomeViewModel extends ChangeNotifier {
-  String title = 'default';
+  String title = 'Home';
+  String counterDisplay = '0';
 
   void initialize() {
     // Get state from Database...
-    title = '0';
     notifyListeners();
   }
 
   int counter = 0;
   void updateTitle() {
     counter++;
-    title = '$counter';
+    counterDisplay = '$counter';
     notifyListeners();
   }
 }

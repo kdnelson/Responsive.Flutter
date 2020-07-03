@@ -23,12 +23,12 @@ class MobileMenuPortraitWidget extends BaseModelWidget<HomeViewModel> {
       ),
       body: Column(
         children: <Widget>[
-          Row(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(
-                    top: 45.0, bottom: 15.0, left: 15.0, right: 15.0),
-                child: IconButton(
+          Padding(
+            padding: const EdgeInsets.only(
+                top: 45.0, bottom: 15.0, left: 10.0, right: 10.0),
+            child: Row(
+              children: <Widget>[
+                IconButton(
                   icon: Icon(
                     Icons.menu,
                     size: 30,
@@ -37,8 +37,18 @@ class MobileMenuPortraitWidget extends BaseModelWidget<HomeViewModel> {
                     _scaffoldKey?.currentState?.openDrawer();
                   },
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: Text(
+                    model.title,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
           Expanded(
             child: MobileHomePortraitWidget(),
