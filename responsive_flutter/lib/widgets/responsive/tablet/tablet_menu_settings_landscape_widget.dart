@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
+import 'package:responsive_flutter/viewmodel/settings_viewmodel.dart';
 import 'package:responsive_flutter/widgets/home/base_model_widget.dart';
-import 'package:responsive_flutter/widgets/home/tablet/tablet_home_landscape_widget.dart';
-import 'package:responsive_flutter/widgets/responsive/common/drawer_widget.dart';
+import 'package:responsive_flutter/widgets/home/tablet/tablet_settings_landscape_widget.dart';
+import 'package:responsive_flutter/widgets/responsive/common/settings_drawer_widget.dart';
 
-class TabletMenuLandscapeWidget extends BaseModelWidget<HomeViewModel> {
+class TabletMenuSettingsLandscapeWidget
+    extends BaseModelWidget<SettingsViewModel> {
   @override
-  Widget build(BuildContext context, HomeViewModel model) {
+  Widget build(BuildContext context, SettingsViewModel model) {
     return Scaffold(
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 100.0),
@@ -22,9 +23,9 @@ class TabletMenuLandscapeWidget extends BaseModelWidget<HomeViewModel> {
       ),
       body: Row(
         children: <Widget>[
-          DrawerWidget(),
+          SettingsDrawerWidget(),
           Expanded(
-            child: TabletHomeLandscapeWidget(),
+            child: TabletSettingsLandscapeWidget(),
           ),
         ],
       ),

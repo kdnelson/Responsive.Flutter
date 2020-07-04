@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
+import 'package:responsive_flutter/viewmodel/settings_viewmodel.dart';
 import 'package:responsive_flutter/widgets/home/base_model_widget.dart';
-import 'package:responsive_flutter/widgets/home/mobile/mobile_home_landscape_widget.dart';
-import 'package:responsive_flutter/widgets/responsive/common/drawer_widget.dart';
+import 'package:responsive_flutter/widgets/home/mobile/mobile_settings_landscape_widget.dart';
+import 'package:responsive_flutter/widgets/responsive/common/settings_drawer_widget.dart';
 
-class MobileMenuLandscapeWidget extends BaseModelWidget<HomeViewModel> {
+class MobileMenuSettingsLandscapeWidget
+    extends BaseModelWidget<SettingsViewModel> {
   @override
-  Widget build(BuildContext context, HomeViewModel model) {
+  Widget build(BuildContext context, SettingsViewModel model) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.black,
@@ -19,14 +20,14 @@ class MobileMenuLandscapeWidget extends BaseModelWidget<HomeViewModel> {
       ),
       body: Row(
         children: <Widget>[
-          DrawerWidget(),
+          SettingsDrawerWidget(),
           Expanded(
             child: Center(
               child: Column(
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.only(top: 30.0),
-                    child: MobileHomeLandscapeWidget(),
+                    child: MobileSettingsLandscapeWidget(),
                   ),
                 ],
               ),

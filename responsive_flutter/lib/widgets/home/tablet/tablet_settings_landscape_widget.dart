@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
+import 'package:responsive_flutter/viewmodel/settings_viewmodel.dart';
 import 'package:responsive_flutter/widgets/dialogs/pop_scope_dialog.dart';
 
 import '../base_model_widget.dart';
 
-class TabletHomePortraitWidget extends BaseModelWidget<HomeViewModel> {
+class TabletSettingsLandscapeWidget extends BaseModelWidget<SettingsViewModel> {
   @override
-  Widget build(BuildContext context, HomeViewModel model) {
+  Widget build(BuildContext context, SettingsViewModel model) {
     return PopScopeDialog(context,
         child: Text(
-          "Home Portrait: " + model.counterDisplay,
+          "Settings Landscape: " + model.counterDisplay,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,

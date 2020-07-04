@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:responsive_flutter/services/navigator_service.dart';
 import 'package:responsive_flutter/utilities/locator.dart';
 import 'package:responsive_flutter/widgets/responsive/common/home_responsive_widget.dart';
+import 'package:responsive_flutter/widgets/responsive/common/settings_responsive_widget.dart';
 
-class MobileDrawerLandscapeWidget extends StatelessWidget {
-  const MobileDrawerLandscapeWidget({Key key}) : super(key: key);
+class MobileHomeDrawerLandscapeWidget extends StatelessWidget {
+  const MobileHomeDrawerLandscapeWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class MobileDrawerLandscapeWidget extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pop();
                   locator<NavigatorService>().navigateToPage(MaterialPageRoute(
-                      builder: (context) => HomeResponsiveWidget()));
+                      builder: (context) => SettingsResponsiveWidget()));
                 },
                 icon: Icon(Icons.settings, size: 45),
                 label: Text("")),
