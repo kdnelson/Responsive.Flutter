@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/viewmodel/login_viewmodel.dart';
-import '../home/base_widget.dart';
+import '../common/base_widget.dart';
 import 'login_entry_form_widget.dart';
 
 class LoginWidget extends StatelessWidget {
