@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/services/navigator_service.dart';
+import 'package:responsive_flutter/utilities/locator.dart';
+import 'package:responsive_flutter/widgets/responsive/common/settings_responsive_widget.dart';
 
 class MobileSettingsDrawerPortraitWidget extends StatelessWidget {
   const MobileSettingsDrawerPortraitWidget({Key key}) : super(key: key);
@@ -30,9 +33,9 @@ class MobileSettingsDrawerPortraitWidget extends StatelessWidget {
                 label: Text('Home', style: TextStyle(fontSize: 20))),
             FlatButton.icon(
                 onPressed: () {
-                  // Navigator.of(context).pop();
-                  // locator<NavigatorService>().navigateToPage(MaterialPageRoute(
-                  //     builder: (context) => SettingsResponsiveWidget()));
+                  Navigator.of(context).pop();
+                  locator<NavigatorService>().navigateToPage(MaterialPageRoute(
+                      builder: (context) => SettingsResponsiveWidget()));
                 },
                 icon: Icon(Icons.settings, size: 45),
                 label: Text('Reports', style: TextStyle(fontSize: 20)))

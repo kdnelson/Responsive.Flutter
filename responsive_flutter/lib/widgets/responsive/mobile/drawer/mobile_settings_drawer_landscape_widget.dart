@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/services/navigator_service.dart';
+import 'package:responsive_flutter/utilities/locator.dart';
+import 'package:responsive_flutter/widgets/responsive/common/settings_responsive_widget.dart';
 
 class MobileSettingsDrawerLandscapeWidget extends StatelessWidget {
   const MobileSettingsDrawerLandscapeWidget({Key key}) : super(key: key);
@@ -24,15 +27,13 @@ class MobileSettingsDrawerLandscapeWidget extends StatelessWidget {
             FlatButton.icon(
                 onPressed: () {
                   Navigator.of(context).pop();
-                  Navigator.of(context).pop();
                 },
                 icon: Icon(Icons.home, size: 45),
                 label: Text("")),
             FlatButton.icon(
                 onPressed: () {
-                  // Navigator.of(context).pop();
-                  // locator<NavigatorService>().navigateToPage(MaterialPageRoute(
-                  //     builder: (context) => SettingsResponsiveWidget()));
+                  locator<NavigatorService>().navigateToPage(MaterialPageRoute(
+                      builder: (context) => SettingsResponsiveWidget()));
                 },
                 icon: Icon(Icons.file_download, size: 45),
                 label: Text("")),

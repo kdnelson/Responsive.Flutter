@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/services/navigator_service.dart';
 import 'package:responsive_flutter/utilities/locator.dart';
-import 'package:responsive_flutter/widgets/responsive/common/home_responsive_widget.dart';
 import 'package:responsive_flutter/widgets/responsive/common/settings_responsive_widget.dart';
 
 class MobileHomeDrawerPortraitWidget extends StatelessWidget {
@@ -26,11 +25,7 @@ class MobileHomeDrawerPortraitWidget extends StatelessWidget {
           child: Container(
               child: Column(children: <Widget>[
             FlatButton.icon(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                  locator<NavigatorService>().navigateToPage(MaterialPageRoute(
-                      builder: (context) => HomeResponsiveWidget()));
-                },
+                onPressed: () {},
                 icon: Icon(Icons.file_download, size: 45),
                 label: Text('Reports', style: TextStyle(fontSize: 20))),
             FlatButton.icon(
