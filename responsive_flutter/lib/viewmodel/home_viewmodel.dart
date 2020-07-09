@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 class HomeViewModel extends ChangeNotifier {
   String title = 'Home';
   String counterDisplay = '0';
+  String manufacturingMenuTitle = 'Manufacturing Menu';
   bool isManufacturerPopped = false;
 
   void initialize() {

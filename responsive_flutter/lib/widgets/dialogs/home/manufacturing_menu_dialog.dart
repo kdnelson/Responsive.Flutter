@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
+import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 
-class ManufacturingMenuDialog extends StatelessWidget {
-  const ManufacturingMenuDialog(BuildContext context, {Key key})
-      : super(key: key);
-
+class ManufacturingMenuDialog extends BaseModelProviderWidget<HomeViewModel> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, HomeViewModel model) {
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       elevation: 20,
@@ -19,7 +18,7 @@ class ManufacturingMenuDialog extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(15.0),
               child: Text(
-                "Manufacturer Menu",
+                model.manufacturingMenuTitle,
                 style: TextStyle(
                     fontSize: 24,
                     color: Colors.black,
