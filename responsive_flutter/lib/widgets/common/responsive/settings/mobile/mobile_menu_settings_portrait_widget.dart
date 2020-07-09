@@ -19,7 +19,7 @@ class MobileMenuSettingsPortraitWidget
         foregroundColor: Colors.white,
         child: Icon(Icons.add),
         onPressed: () {
-          model.updateTitle();
+          model.updateVm();
         },
       ),
       body: Column(

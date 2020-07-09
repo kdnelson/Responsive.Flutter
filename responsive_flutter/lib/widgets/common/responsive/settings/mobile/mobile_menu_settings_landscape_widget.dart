@@ -15,7 +15,7 @@ class MobileMenuSettingsLandscapeWidget
         foregroundColor: Colors.white,
         child: Icon(Icons.add),
         onPressed: () {
-          model.updateTitle();
+          model.updateVm();
         },
       ),
       body: Row(

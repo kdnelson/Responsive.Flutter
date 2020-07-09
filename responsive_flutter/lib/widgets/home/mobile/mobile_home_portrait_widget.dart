@@ -19,12 +19,14 @@ class MobileHomePortraitWidget extends BaseModelProviderWidget<HomeViewModel> {
                 fontSize: 20,
               ),
             ),
+            SizedBox(height: 20),
             RaisedButton(
               color: Colors.black,
               onPressed: () {
                 showDialog(
                   context: context,
                   builder: (context) {
+                    model.isManufacturerPopped = true;
                     return ManufacturingMenuDialog(context);
                   },
                 );

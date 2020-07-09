@@ -7,7 +7,7 @@ class MobileSettingsDrawerPortraitWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 180,
+        width: 160,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -19,8 +19,7 @@ class MobileSettingsDrawerPortraitWidget extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.only(top: 50.0),
-          child: Container(
-              child: Column(children: <Widget>[
+          child: Column(children: <Widget>[
             FlatButton.icon(
                 onPressed: () {
                   Navigator.of(context).pop();
@@ -28,7 +27,7 @@ class MobileSettingsDrawerPortraitWidget extends StatelessWidget {
                 },
                 icon: Icon(Icons.home, size: 45),
                 label: Text('Home', style: TextStyle(fontSize: 20))),
-          ])),
+          ]),
         ));
   }
 }

@@ -19,15 +19,14 @@ class MobileSettingsDrawerLandscapeWidget extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.only(top: 33.0, left: 9.0),
-          child: Container(
-              child: Column(children: <Widget>[
+          child: Column(children: <Widget>[
             FlatButton.icon(
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
                 icon: Icon(Icons.home, size: 45),
                 label: Text("")),
-          ])),
+          ]),
         ));
   }
 }

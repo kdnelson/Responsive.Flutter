@@ -17,7 +17,7 @@ class TabletMenuHomeLandscapeWidget
           foregroundColor: Colors.white,
           child: Icon(Icons.add),
           onPressed: () {
-            model.updateTitle();
+            model.updateVm();
           },
         ),
       ),

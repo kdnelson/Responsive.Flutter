@@ -10,7 +10,7 @@ class ReportsViewModel extends ChangeNotifier {
   }
 
   int counter = 0;
-  void updateTitle() {
+  void updateVm() {
     counter++;
     counterDisplay = '$counter';
     notifyListeners();
