@@ -1,10 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:responsive_flutter/enums/view_state_enum.dart';
+import 'package:responsive_flutter/services/authentication_service.dart';
+import 'package:responsive_flutter/utilities/locator.dart';
 
 class LoginViewModel extends ChangeNotifier {
-  String greeting = 'Tap';
-  ViewState _state = ViewState.Idle;
+  String greeting = 'Tap to Login';
+  String errorMessage;
 
+  final AuthenticationService _authenticationService =
+      locator<AuthenticationService>();
+
+  ViewState _state = ViewState.Idle;
   ViewState get state => _state;
 
   void initialize() {
@@ -16,10 +22,24 @@ class LoginViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<bool> login() async {
+  Future<bool> login(String userIdText) async {
     setState(ViewState.Busy);
-    // make an api call
-    //setState(ViewState.Idle);
-    return true;
+
+    var userId = int.tryParse(userIdText);
+
+    // Not a number
+    if (userId == null) {
+      errorMessage = 'Value entered is not a number';
+      setState(ViewState.Idle);
+      return false;
+    }
+
+    var success = await _authenticationService.login(userId);
+    if (success == false) {
+      // Route to error page
+    }
+
+    setState(ViewState.Idle);
+    return success;
   }
 }

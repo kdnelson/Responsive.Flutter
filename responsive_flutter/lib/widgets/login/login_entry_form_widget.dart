@@ -15,6 +15,7 @@ class LoginEntryFormWidget extends BaseModelProviderWidget<LoginViewModel> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
+          // TODO Add login textfield here...
           model.state == ViewState.Busy
               ? CircularProgressIndicator(
                   valueColor: new AlwaysStoppedAnimation<Color>(Colors.black),
@@ -28,8 +29,9 @@ class LoginEntryFormWidget extends BaseModelProviderWidget<LoginViewModel> {
                           backgroundColor: Colors.white,
                           color: Colors.black)),
                   onPressed: () async {
-                    var loginRequest = await model.login();
-                    if (loginRequest) {
+                    // TODO get textField and pass in userId
+                    var loginRequest = await model.login('6');
+                    if (loginRequest == true) {
                       locator<NavigatorService>().navigateToPageWithReplacement(
                           MaterialPageRoute(
                               builder: (context) => HomeResponsiveWidget()));
