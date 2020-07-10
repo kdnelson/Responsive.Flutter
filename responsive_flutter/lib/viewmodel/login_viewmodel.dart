@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:responsive_flutter/enums/view_state_enum.dart';
 import 'package:responsive_flutter/services/authentication_service.dart';
 import 'package:responsive_flutter/utilities/locator.dart';
+import 'dart:math';
 
 class LoginViewModel extends ChangeNotifier {
   String greeting = 'Tap to Login';
@@ -22,10 +23,12 @@ class LoginViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<bool> login(String userIdText) async {
+  Future<bool> login() async {
     setState(ViewState.Busy);
 
-    var userId = int.tryParse(userIdText);
+    // TODO pass userId from LoginVm to HomeVm
+    var randomInt = Random.secure();
+    var userId = randomInt.nextInt(10);
 
     // Not a number
     if (userId == null) {

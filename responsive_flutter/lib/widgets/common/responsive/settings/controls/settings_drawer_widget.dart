@@ -5,8 +5,8 @@ import 'package:responsive_flutter/widgets/common/responsive/settings/mobile/dra
 import 'package:responsive_flutter/widgets/common/responsive/settings/tablet/drawer/tablet_settings_drawer_landscape_widget.dart';
 import 'package:responsive_flutter/widgets/common/responsive/settings/tablet/drawer/tablet_settings_drawer_portrait_widget.dart';
 
-import 'device_type_widget.dart';
-import 'orientation_widget.dart';
+import '../../common/device_type_widget.dart';
+import '../../common/orientation_widget.dart';
 
 class SettingsDrawerWidget extends StatelessWidget {
   const SettingsDrawerWidget({Key key}) : super(key: key);

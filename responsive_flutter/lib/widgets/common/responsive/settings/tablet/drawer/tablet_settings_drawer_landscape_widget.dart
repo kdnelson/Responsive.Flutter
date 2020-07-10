@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/services/navigator_service.dart';
 import 'package:responsive_flutter/utilities/locator.dart';
-import 'package:responsive_flutter/widgets/common/responsive/common/settings_responsive_widget.dart';
+import 'package:responsive_flutter/widgets/common/responsive/settings/controls/settings_responsive_widget.dart';
 
 class TabletSettingsDrawerLandscapeWidget extends StatelessWidget {
   const TabletSettingsDrawerLandscapeWidget({Key key}) : super(key: key);

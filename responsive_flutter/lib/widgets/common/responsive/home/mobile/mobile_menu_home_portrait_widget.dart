@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
-import 'package:responsive_flutter/widgets/common/responsive/common/home_drawer_widget.dart';
+import 'package:responsive_flutter/widgets/common/responsive/home/controls/home_drawer_widget.dart';
 import 'package:responsive_flutter/widgets/home/mobile/mobile_home_portrait_widget.dart';
 
 class MobileMenuHomePortraitWidget
@@ -14,14 +14,6 @@ class MobileMenuHomePortraitWidget
     return Scaffold(
       key: _scaffoldKey,
       drawer: HomeDrawerWidget(),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
-        child: Icon(Icons.add),
-        onPressed: () {
-          model.updateVm();
-        },
-      ),
       body: Column(
         children: <Widget>[
           Padding(

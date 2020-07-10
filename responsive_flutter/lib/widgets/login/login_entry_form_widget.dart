@@ -5,7 +5,7 @@ import 'package:responsive_flutter/services/navigator_service.dart';
 import 'package:responsive_flutter/utilities/locator.dart';
 import 'package:responsive_flutter/viewmodel/login_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
-import 'package:responsive_flutter/widgets/common/responsive/common/home_responsive_widget.dart';
+import 'package:responsive_flutter/widgets/common/responsive/home/controls/home_responsive_widget.dart';
 
 class LoginEntryFormWidget extends BaseModelProviderWidget<LoginViewModel> {
   @override
@@ -30,7 +30,7 @@ class LoginEntryFormWidget extends BaseModelProviderWidget<LoginViewModel> {
                           color: Colors.black)),
                   onPressed: () async {
                     // TODO get textField and pass in userId
-                    var loginRequest = await model.login('6');
+                    var loginRequest = await model.login();
                     if (loginRequest == true) {
                       locator<NavigatorService>().navigateToPageWithReplacement(
                           MaterialPageRoute(
