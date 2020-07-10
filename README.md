@@ -14,9 +14,9 @@ main
 	|-->HomeResponsiveWidget extends BaseWidget<HomeViewModel> (Using the Home pages as an example.  It replicates the same for all pages attached to menu drawer)
 		|-->RB (Entering the Responsive Block, under Widgets/Common) 
 			|--> Call the appropriate widget of 4 choices ie. MobileMenuPortraitWidget (SF - BaseWidget<HomeViewModel>)
-				|--> DrawerWidget                 AND                   |--> MobileHomePortraitWidget (SF - BaseWidget<HomeViewModel>) (Exiting the Responsive Block)
-					|-->RB			  	                                        |--> Text(Print vm.title)
-						|--> Call the appropriate widget of 4 ie. MobileDrawerPortraitWidget (SL) (Exiting the Responsive Block)
+				|--> DrawerWidget              AND                |--> MobileHomePortraitWidget (SF - BaseWidget<HomeViewModel>) (Exiting the Responsive Block)
+					|-->RB			  	             	|--> Text(Print vm.title)
+					        |--> Call the appropriate widget of 4 ie. MobileDrawerPortraitWidget (SL) (Exiting the Responsive Block)
 							
 So for every new page added to the drawer menu, add these folders to get started...
 
@@ -25,6 +25,7 @@ Widgets
   |-->common
     |-->responsive
       |-->newpage
+        |-->controls (RB files used by newpage)
         |-->mobile
         |-->tablet
     
