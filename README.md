@@ -16,7 +16,7 @@ main
 			|--> Call the appropriate widget of 4 choices ie. MobileMenuPortraitWidget (SF - BaseWidget<HomeViewModel>)
 				|--> DrawerWidget              AND                |--> MobileHomePortraitWidget (SF - BaseWidget<HomeViewModel>) (Exiting the Responsive Block)
 					|-->RB			  	             	|--> Text(Print vm.title)
-					        |--> Call the appropriate widget of 4 ie. MobileDrawerPortraitWidget (SL) (Exiting the Responsive Block)
+					     |--> Call the appropriate widget of 4 ie. MobileDrawerPortraitWidget (SL) (Exiting the Responsive Block)
 							
 So for every new page added to the drawer menu, add these folders to get started...
 
