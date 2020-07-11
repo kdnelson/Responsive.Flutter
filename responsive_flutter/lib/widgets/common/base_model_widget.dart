@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 
-abstract class BaseModelProviderWidget<T> extends Widget {
+abstract class BaseViewModelProviderWidget<T> extends Widget {
   // Define that we want to get back a type of T when building
   // Make it abstract so that we have to override, like a stateless or stateful widget.
   @protected
@@ -12,10 +12,10 @@ abstract class BaseModelProviderWidget<T> extends Widget {
 }
 
 class _DataProviderElement<T> extends ComponentElement {
-  _DataProviderElement(BaseModelProviderWidget widget) : super(widget);
+  _DataProviderElement(BaseViewModelProviderWidget widget) : super(widget);
 
   @override
-  BaseModelProviderWidget get widget => super.widget;
+  BaseViewModelProviderWidget get widget => super.widget;
 
   // When executing the above build method, we pass back the model we get from Provider.
   @override

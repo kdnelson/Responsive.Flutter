@@ -8,8 +8,7 @@ import 'package:responsive_flutter/utilities/locator.dart';
 
 class HomeViewModel extends ChangeNotifier {
   String title = 'Home';
-  String counterDisplay = '0';
-  String manufacturingMenuTitle = 'Manufacturing Menu';
+  String manufacturingMenuTitle = 'Popup Menu';
   bool isManufacturerPopped = false;
 
   PostsService _postsService = locator<PostsService>();
@@ -28,10 +27,7 @@ class HomeViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  int counter = 0;
   void updateVm() {
-    counter++;
-    counterDisplay = '$counter';
     notifyListeners();
   }
 

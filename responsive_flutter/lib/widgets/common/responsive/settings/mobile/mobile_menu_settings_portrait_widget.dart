@@ -6,7 +6,7 @@ import 'package:responsive_flutter/widgets/common/responsive/settings/controls/s
 import 'package:responsive_flutter/widgets/settings/mobile/mobile_settings_portrait_widget.dart';
 
 class MobileMenuSettingsPortraitWidget
-    extends BaseModelProviderWidget<SettingsViewModel> {
+    extends BaseViewModelProviderWidget<SettingsViewModel> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

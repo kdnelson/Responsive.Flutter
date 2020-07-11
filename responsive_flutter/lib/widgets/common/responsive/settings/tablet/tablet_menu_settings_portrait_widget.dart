@@ -6,7 +6,7 @@ import 'package:responsive_flutter/widgets/common/responsive/settings/controls/s
 import 'package:responsive_flutter/widgets/settings/tablet/tablet_settings_portrait_widget.dart';
 
 class TabletMenuSettingsPortraitWidget
-    extends BaseModelProviderWidget<SettingsViewModel> {
+    extends BaseViewModelProviderWidget<SettingsViewModel> {
   @override
   Widget build(BuildContext context, SettingsViewModel model) {
     return Scaffold(

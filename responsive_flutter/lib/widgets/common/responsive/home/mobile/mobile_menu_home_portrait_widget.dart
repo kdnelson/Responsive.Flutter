@@ -6,7 +6,7 @@ import 'package:responsive_flutter/widgets/common/responsive/home/controls/home_
 import 'package:responsive_flutter/widgets/home/mobile/mobile_home_portrait_widget.dart';
 
 class MobileMenuHomePortraitWidget
-    extends BaseModelProviderWidget<HomeViewModel> {
+    extends BaseViewModelProviderWidget<HomeViewModel> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

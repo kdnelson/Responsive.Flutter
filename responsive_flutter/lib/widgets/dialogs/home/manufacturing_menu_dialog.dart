@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 
-class ManufacturingMenuDialog extends BaseModelProviderWidget<HomeViewModel> {
+class ManufacturingMenuDialog
+    extends BaseViewModelProviderWidget<HomeViewModel> {
   @override
   Widget build(BuildContext context, HomeViewModel model) {
     return Dialog(

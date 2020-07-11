@@ -6,7 +6,7 @@ import 'package:responsive_flutter/widgets/dialogs/common/exit_app_dialog.dart';
 import '../../common/base_model_widget.dart';
 
 class TabletSettingsLandscapeWidget
-    extends BaseModelProviderWidget<SettingsViewModel> {
+    extends BaseViewModelProviderWidget<SettingsViewModel> {
   @override
   Widget build(BuildContext context, SettingsViewModel model) {
     return ExitAppDialog(context,

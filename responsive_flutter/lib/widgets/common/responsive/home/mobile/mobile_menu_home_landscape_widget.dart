@@ -6,7 +6,7 @@ import 'package:responsive_flutter/widgets/common/responsive/home/controls/home_
 import 'package:responsive_flutter/widgets/home/mobile/mobile_home_landscape_widget.dart';
 
 class MobileMenuHomeLandscapeWidget
-    extends BaseModelProviderWidget<HomeViewModel> {
+    extends BaseViewModelProviderWidget<HomeViewModel> {
   @override
   Widget build(BuildContext context, HomeViewModel model) {
     return Scaffold(

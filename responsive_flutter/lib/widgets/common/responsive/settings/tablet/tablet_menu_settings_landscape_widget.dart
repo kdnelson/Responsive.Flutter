@@ -6,7 +6,7 @@ import 'package:responsive_flutter/widgets/common/responsive/settings/controls/s
 import 'package:responsive_flutter/widgets/settings/tablet/tablet_settings_landscape_widget.dart';
 
 class TabletMenuSettingsLandscapeWidget
-    extends BaseModelProviderWidget<SettingsViewModel> {
+    extends BaseViewModelProviderWidget<SettingsViewModel> {
   @override
   Widget build(BuildContext context, SettingsViewModel model) {
     return Scaffold(

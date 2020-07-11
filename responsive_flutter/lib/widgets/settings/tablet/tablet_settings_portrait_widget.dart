@@ -5,7 +5,7 @@ import 'package:responsive_flutter/widgets/dialogs/common/exit_app_dialog.dart';
 import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 
 class TabletSettingsPortraitWidget
-    extends BaseModelProviderWidget<SettingsViewModel> {
+    extends BaseViewModelProviderWidget<SettingsViewModel> {
   @override
   Widget build(BuildContext context, SettingsViewModel model) {
     return ExitAppDialog(context,

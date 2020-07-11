@@ -1,14 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/enums/view_state_enum.dart';
+import 'package:responsive_flutter/models/post.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_widget.dart';
 import 'package:responsive_flutter/widgets/dialogs/common/exit_app_dialog.dart';
 import 'package:responsive_flutter/widgets/dialogs/home/manufacturing_menu_dialog.dart';
+import 'package:responsive_flutter/widgets/home/mobile/mobile_home_portrait_details_widget.dart';
 
 import '../../common/base_model_widget.dart';
 
-class MobileHomePortraitWidget extends BaseModelProviderWidget<HomeViewModel> {
+class MobileHomePortraitWidget
+    extends BaseViewModelProviderWidget<HomeViewModel> {
   @override
   Widget build(BuildContext context, HomeViewModel model) {
     return ExitAppDialog(
@@ -50,40 +53,26 @@ class MobileHomePortraitWidget extends BaseModelProviderWidget<HomeViewModel> {
                           ),
                         ),
                         SizedBox(height: 5),
-                        // TODO add this to remove above spacing MediaQuery.removePadding(),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              top: 0.0, bottom: 0.0, right: 15.0, left: 15.0),
-                          child: SizedBox(
-                            height: 490,
-                            child: ListView.builder(
-                                itemCount: model.posts.length,
-                                itemBuilder: (BuildContext context, int index) {
-                                  return Card(
-                                    child: ListTile(
-                                      dense: true,
-                                      title: Text(
-                                        model.posts[index].title,
-                                        style: TextStyle(
-                                          fontSize: 14.0,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black,
-                                        ),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                      onTap: () {
-                                        // onScreenCatSelected(context, utilitiesBloc, menuBloc,
-                                        //   snapshot.data[index].screenCategory.buttonName, index);
-                                      },
-                                    ),
-                                  );
-                                }),
-                          ),
-                        )
+                        MediaQuery.removePadding(
+                            context: context,
+                            removeTop: true,
+                            child: SizedBox(
+                              height: 490,
+                              child: getPostsUi(model.posts),
+                            ))
                       ]),
           ],
         ),
       ),
     );
   }
+
+  Widget getPostsUi(List<Post> posts) => ListView.builder(
+      itemCount: posts.length,
+      itemBuilder: (context, index) => MobileHomePortraitDetailsWidget(
+            post: posts[index],
+            onTap: () {
+              //Navigator.pushNamed(context, 'post', arguments: posts[index]);
+            },
+          ));
 }

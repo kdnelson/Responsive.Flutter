@@ -7,7 +7,7 @@ import 'package:responsive_flutter/viewmodel/login_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 import 'package:responsive_flutter/widgets/common/responsive/home/controls/home_responsive_widget.dart';
 
-class LoginEntryFormWidget extends BaseModelProviderWidget<LoginViewModel> {
+class LoginEntryFormWidget extends BaseViewModelProviderWidget<LoginViewModel> {
   @override
   Widget build(BuildContext context, LoginViewModel model) {
     return Container(
