@@ -13,12 +13,6 @@ class MobileHomeDrawerLandscapeWidget extends StatelessWidget {
         width: 90,
         decoration: BoxDecoration(
           color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 16,
-              color: Colors.black,
-            )
-          ],
         ),
         child: Padding(
           padding: const EdgeInsets.only(top: 33.0, left: 9.0),

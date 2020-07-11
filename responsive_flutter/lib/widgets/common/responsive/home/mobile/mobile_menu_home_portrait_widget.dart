@@ -43,9 +43,14 @@ class MobileMenuHomePortraitWidget
               ],
             ),
           ),
-          Expanded(
-            child: MobileHomePortraitWidget(),
-          ),
+          MediaQuery.removePadding(
+              context: context,
+              removeTop: true,
+              child: MobileHomePortraitWidget()),
+
+          // Expanded(
+          //   child: MobileHomePortraitWidget(),
+          // ),
         ],
       ),
     );

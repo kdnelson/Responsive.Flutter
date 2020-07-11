@@ -10,14 +10,6 @@ class MobileMenuHomeLandscapeWidget
   @override
   Widget build(BuildContext context, HomeViewModel model) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
-        child: Icon(Icons.add),
-        onPressed: () {
-          model.updateVm();
-        },
-      ),
       body: Row(
         children: <Widget>[
           HomeDrawerWidget(),
@@ -25,10 +17,13 @@ class MobileMenuHomeLandscapeWidget
             child: Center(
               child: Column(
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(top: 30.0),
-                    child: MobileHomeLandscapeWidget(),
-                  ),
+                  MediaQuery.removePadding(
+                      context: context,
+                      removeTop: true,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 30.0),
+                        child: MobileHomeLandscapeWidget(),
+                      )),
                 ],
               ),
             ),

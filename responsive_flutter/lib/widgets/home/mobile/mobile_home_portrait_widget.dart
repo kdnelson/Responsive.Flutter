@@ -57,7 +57,7 @@ class MobileHomePortraitWidget
                             context: context,
                             removeTop: true,
                             child: SizedBox(
-                              height: 490,
+                              height: 530,
                               child: getPostsUi(model.posts),
                             ))
                       ]),
