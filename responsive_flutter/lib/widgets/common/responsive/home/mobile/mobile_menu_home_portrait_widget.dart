@@ -47,10 +47,6 @@ class MobileMenuHomePortraitWidget
               context: context,
               removeTop: true,
               child: MobileHomePortraitWidget()),
-
-          // Expanded(
-          //   child: MobileHomePortraitWidget(),
-          // ),
         ],
       ),
     );

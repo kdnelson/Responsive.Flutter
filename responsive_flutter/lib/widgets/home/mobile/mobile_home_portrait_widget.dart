@@ -1,14 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/enums/view_state_enum.dart';
-import 'package:responsive_flutter/models/post.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
+import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 import 'package:responsive_flutter/widgets/common/base_widget.dart';
 import 'package:responsive_flutter/widgets/dialogs/common/exit_app_dialog.dart';
 import 'package:responsive_flutter/widgets/dialogs/home/manufacturing_menu_dialog.dart';
-import 'package:responsive_flutter/widgets/home/mobile/mobile_home_portrait_details_widget.dart';
-
-import '../../common/base_model_widget.dart';
+import 'package:responsive_flutter/widgets/home/mobile/mobile_home_get_posts_per_user.dart';
 
 class MobileHomePortraitWidget
     extends BaseViewModelProviderWidget<HomeViewModel> {
@@ -58,7 +56,7 @@ class MobileHomePortraitWidget
                             removeTop: true,
                             child: SizedBox(
                               height: 530,
-                              child: getPostsUi(model.posts),
+                              child: MobileHomeGetPostsPerUser(),
                             ))
                       ]),
           ],
@@ -66,13 +64,4 @@ class MobileHomePortraitWidget
       ),
     );
   }
-
-  Widget getPostsUi(List<Post> posts) => ListView.builder(
-      itemCount: posts.length,
-      itemBuilder: (context, index) => MobileHomePortraitDetailsWidget(
-            post: posts[index],
-            onTap: () {
-              //Navigator.pushNamed(context, 'post', arguments: posts[index]);
-            },
-          ));
 }

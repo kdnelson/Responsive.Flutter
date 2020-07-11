@@ -3,6 +3,7 @@ import 'package:responsive_flutter/services/api.dart';
 import 'package:responsive_flutter/services/authentication_service.dart';
 import 'package:responsive_flutter/services/navigator_service.dart';
 import 'package:responsive_flutter/services/posts_service.dart';
+import 'package:responsive_flutter/services/user_service.dart';
 
 GetIt locator = GetIt.instance;
 
@@ -11,6 +12,7 @@ class LocatorInjector {
     locator.registerLazySingleton(() => NavigatorService());
     locator.registerLazySingleton(() => AuthenticationService());
     locator.registerLazySingleton(() => PostsService());
+    locator.registerLazySingleton(() => UserService());
     locator.registerLazySingleton(() => Api());
   }
 }

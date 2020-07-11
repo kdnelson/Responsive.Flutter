@@ -13,8 +13,4 @@ class PostsService extends BaseService {
   Future getPostsForUser(int userId) async {
     _posts = await _api.getPostsForUser(userId);
   }
-
-  void incrementLikes(int postId) {
-    _posts.firstWhere((post) => post.id == postId).likes++;
-  }
 }
