@@ -30,11 +30,12 @@ class LoginEntryFormWidget extends BaseViewModelProviderWidget<LoginViewModel> {
                           color: Colors.black)),
                   onPressed: () async {
                     // TODO get textField and pass in userId
-                    var loginRequest = await model.login();
-                    if (loginRequest == true) {
+                    var userId = await model.login();
+                    if (userId > -1) {
                       locator<NavigatorService>().navigateToPageWithReplacement(
                           MaterialPageRoute(
-                              builder: (context) => HomeResponsiveWidget()));
+                              builder: (context) =>
+                                  HomeResponsiveWidget(userId)));
                     }
                   },
                 )

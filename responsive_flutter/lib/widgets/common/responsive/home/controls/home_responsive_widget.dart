@@ -10,13 +10,15 @@ import 'package:responsive_flutter/widgets/common/responsive/home/tablet/tablet_
 import 'package:responsive_flutter/widgets/common/responsive/home/tablet/tablet_menu_home_portrait_widget.dart';
 
 class HomeResponsiveWidget extends StatelessWidget {
-  const HomeResponsiveWidget({Key key, bool isInitializing}) : super(key: key);
+  final int userId;
+
+  const HomeResponsiveWidget(this.userId, {Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BaseWidget<HomeViewModel>(
         viewModel: HomeViewModel(),
-        onModelReady: (model) => model.initialize(),
+        onModelReady: (model) => model.initialize(userId),
         builder: (context) => DeviceTypeWidget(
               mobile: OrientationWidget(
                 portrait: (context) => MobileMenuHomePortraitWidget(),

@@ -31,7 +31,7 @@ class MainApplication extends StatelessWidget {
         switch (routeSettings.name) {
           case 'home':
             return MaterialPageRoute(
-                builder: (context) => HomeResponsiveWidget());
+                builder: (context) => HomeResponsiveWidget(-1));
           case 'login':
             return MaterialPageRoute(builder: (context) => LoginWidget());
           default:

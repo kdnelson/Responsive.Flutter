@@ -23,7 +23,7 @@ class TabletHomeDrawerPortraitWidget extends StatelessWidget {
           FlatButton.icon(
               onPressed: () {
                 locator<NavigatorService>().navigateToPage(MaterialPageRoute(
-                    builder: (context) => HomeResponsiveWidget()));
+                    builder: (context) => HomeResponsiveWidget(-1)));
               },
               icon: Icon(Icons.settings, size: 45),
               label: Text('Settings', style: TextStyle(fontSize: 20)))

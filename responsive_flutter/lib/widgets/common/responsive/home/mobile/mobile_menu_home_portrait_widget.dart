@@ -9,6 +9,8 @@ class MobileMenuHomePortraitWidget
     extends BaseViewModelProviderWidget<HomeViewModel> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  MobileMenuHomePortraitWidget();
+
   @override
   Widget build(BuildContext context, HomeViewModel model) {
     return Scaffold(

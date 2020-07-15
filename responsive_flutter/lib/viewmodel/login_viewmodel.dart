@@ -23,10 +23,10 @@ class LoginViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<bool> login() async {
+  Future<int> login() async {
+    int response = -1;
     setState(ViewState.Busy);
 
-    // TODO pass userId from LoginVm to HomeVm
     var randomInt = Random.secure();
     var userId = randomInt.nextInt(10);
 
@@ -34,15 +34,18 @@ class LoginViewModel extends ChangeNotifier {
     if (userId == null) {
       errorMessage = 'Value entered is not a number';
       setState(ViewState.Idle);
-      return false;
+      return response;
     }
 
     var success = await _authenticationService.login(userId);
-    if (success == false) {
+    if (success == true) {
+      response = userId;
+      return response;
+    } else {
       // Route to error page
     }
 
     setState(ViewState.Idle);
-    return success;
+    return response;
   }
 }

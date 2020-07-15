@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:responsive_flutter/enums/view_state_enum.dart';
 import 'package:responsive_flutter/models/post.dart';
@@ -27,8 +25,11 @@ class HomeViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void initialize() {
-    getPosts();
+  void initialize(userId) {
+    if (userId > -1) {
+      getPosts(userId);
+    }
+
     notifyListeners();
   }
 
@@ -41,11 +42,7 @@ class HomeViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future getPosts() async {
-    // TODO get userId from LoginVm
-    var randomInt = Random.secure();
-    var userId = randomInt.nextInt(10);
-
+  Future getPosts(int userId) async {
     setState(ViewState.Busy);
     await _userService.getUserProfile(userId);
     await _postsService.getPostsForUser(userId);
