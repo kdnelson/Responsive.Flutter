@@ -19,6 +19,8 @@ class MobileHomeLandscapeWidget
       child: Container(
         color: Colors.white,
         child: Column(
+          // TODO Use this for a text entry
+          // TextEditingController _controller = TextEditingController();
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             model.state == ViewState.Busy

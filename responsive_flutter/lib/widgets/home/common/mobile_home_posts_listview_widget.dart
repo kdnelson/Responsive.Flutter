@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/models/post.dart';
 
-class MobileHomeListViewWidget extends StatelessWidget {
+class MobileHomePostsListViewWidget extends StatelessWidget {
   final Post post;
   final Function onTap;
-  const MobileHomeListViewWidget({this.post, this.onTap});
+  const MobileHomePostsListViewWidget({this.post, this.onTap});
 
   @override
   Widget build(BuildContext context) {

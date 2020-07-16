@@ -7,9 +7,10 @@ import 'base_service.dart';
 class CommentsService extends BaseService {
   Api _api = locator<Api>();
 
-  List<Comment> comments;
+  List<Comment> _comments;
+  List<Comment> get comments => _comments;
 
   Future getCommentsPerPost(int postId) async {
-    comments = await _api.getCommentsForPost(postId);
+    _comments = await _api.getCommentsForPost(postId);
   }
 }

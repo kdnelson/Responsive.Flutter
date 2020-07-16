@@ -28,7 +28,8 @@ class HomePostDetailsWidget extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(model.posts[this.postIndex].body),
-            HomeCommentsPerPostWidget(model.posts[this.postIndex].id)
+            SizedBox(height: 20),
+            HomeCommentsPerPostWidget(model, model.posts[this.postIndex].id)
           ],
         ),
       ),
