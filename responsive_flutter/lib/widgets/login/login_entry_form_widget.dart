@@ -17,8 +17,10 @@ class LoginEntryFormWidget extends BaseViewModelProviderWidget<LoginViewModel> {
         children: <Widget>[
           // TODO Add login textfield here...
           model.state == ViewState.Busy
-              ? CircularProgressIndicator(
-                  valueColor: new AlwaysStoppedAnimation<Color>(Colors.black),
+              ? Center(
+                  child: CircularProgressIndicator(
+                    valueColor: new AlwaysStoppedAnimation<Color>(Colors.black),
+                  ),
                 )
               : FlatButton(
                   color: Colors.white,

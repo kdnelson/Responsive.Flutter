@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
+import 'package:responsive_flutter/widgets/home/common/home_comments_per_post_widget.dart';
 
-class MobileHomeListViewDetailsWidget extends StatelessWidget {
+class HomePostDetailsWidget extends StatelessWidget {
   final HomeViewModel model;
   final int postIndex;
-  MobileHomeListViewDetailsWidget(this.model, this.postIndex);
+  HomePostDetailsWidget(this.model, this.postIndex);
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +28,7 @@ class MobileHomeListViewDetailsWidget extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(model.posts[this.postIndex].body),
-            // TODO Add this comment list
-            //Comments(post.id)
+            HomeCommentsPerPostWidget(model.posts[this.postIndex].id)
           ],
         ),
       ),

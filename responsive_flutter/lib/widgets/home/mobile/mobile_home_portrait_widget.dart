@@ -6,7 +6,7 @@ import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 import 'package:responsive_flutter/widgets/common/base_widget.dart';
 import 'package:responsive_flutter/widgets/dialogs/common/exit_app_dialog.dart';
 import 'package:responsive_flutter/widgets/dialogs/home/manufacturing_menu_dialog.dart';
-import 'package:responsive_flutter/widgets/home/mobile/mobile_home_get_posts_per_user.dart';
+import 'package:responsive_flutter/widgets/home/common/home_posts_per_user.dart';
 
 class MobileHomePortraitWidget
     extends BaseViewModelProviderWidget<HomeViewModel> {
@@ -20,8 +20,12 @@ class MobileHomePortraitWidget
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             model.state == ViewState.Busy
-                ? CircularProgressIndicator(
-                    valueColor: new AlwaysStoppedAnimation<Color>(Colors.black),
+                ? Padding(
+                    padding: const EdgeInsets.only(top: 200.0),
+                    child: CircularProgressIndicator(
+                      valueColor:
+                          new AlwaysStoppedAnimation<Color>(Colors.black),
+                    ),
                   )
                 : Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -56,7 +60,7 @@ class MobileHomePortraitWidget
                             removeTop: true,
                             child: SizedBox(
                               height: 530,
-                              child: MobileHomeGetPostsPerUser(),
+                              child: HomePostsPerUser(),
                             ))
                       ]),
           ],
