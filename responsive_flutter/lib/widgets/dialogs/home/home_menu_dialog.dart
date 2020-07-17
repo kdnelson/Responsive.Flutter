@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/utilities/styles.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 
-class ManufacturingMenuDialog
-    extends BaseViewModelProviderWidget<HomeViewModel> {
+class HomeMenuDialog extends BaseViewModelProviderWidget<HomeViewModel> {
   @override
   Widget build(BuildContext context, HomeViewModel model) {
     return Dialog(
@@ -19,10 +19,10 @@ class ManufacturingMenuDialog
             Padding(
               padding: EdgeInsets.all(15.0),
               child: Text(
-                model.manufacturingMenuTitle,
+                model.popupMenuTitle,
                 style: TextStyle(
                     fontSize: 24,
-                    color: Colors.black,
+                    color: foregroundColor,
                     fontWeight: FontWeight.bold),
               ),
             ),
@@ -37,13 +37,13 @@ class ManufacturingMenuDialog
                     width: 150,
                   ),
                   RaisedButton(
-                    color: Colors.red,
+                    color: cautionBackgroundColor,
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
                     child: Text(
                       'Close',
-                      style: TextStyle(fontSize: 18.0, color: Colors.white),
+                      style: TextStyle(fontSize: 18.0, color: backgroundColor),
                     ),
                   )
                 ],

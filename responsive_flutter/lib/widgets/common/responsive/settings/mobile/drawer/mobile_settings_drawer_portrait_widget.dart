@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/utilities/styles.dart';
 
 class MobileSettingsDrawerPortraitWidget extends StatelessWidget {
   const MobileSettingsDrawerPortraitWidget({Key key}) : super(key: key);
@@ -9,11 +10,11 @@ class MobileSettingsDrawerPortraitWidget extends StatelessWidget {
     return Container(
         width: 160,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: backgroundColor,
           boxShadow: [
             BoxShadow(
               blurRadius: 16,
-              color: Colors.black,
+              color: foregroundColor,
             )
           ],
         ),

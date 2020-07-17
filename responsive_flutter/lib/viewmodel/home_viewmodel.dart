@@ -10,8 +10,9 @@ import 'package:responsive_flutter/utilities/locator.dart';
 
 class HomeViewModel extends ChangeNotifier {
   String title = 'Home';
-  String manufacturingMenuTitle = 'Popup Menu';
-  bool isManufacturerPopped = false;
+  String menuLabel = 'Menu';
+  String popupMenuTitle = 'Popup Menu';
+  bool isPopupOpen = false;
 
   UserService _userService = locator<UserService>();
   User get user => _userService.user;
@@ -43,7 +44,7 @@ class HomeViewModel extends ChangeNotifier {
   }
 
   void setManufacturerPopState(bool state) {
-    isManufacturerPopped = state;
+    isPopupOpen = state;
     notifyListeners();
   }
 

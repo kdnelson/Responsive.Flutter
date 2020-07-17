@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/utilities/styles.dart';
 import 'package:responsive_flutter/viewmodel/settings_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 import 'package:responsive_flutter/widgets/common/responsive/settings/controls/settings_drawer_widget.dart';
@@ -11,8 +12,8 @@ class MobileMenuSettingsLandscapeWidget
   Widget build(BuildContext context, SettingsViewModel model) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
+        backgroundColor: foregroundColor,
+        foregroundColor: backgroundColor,
         child: Icon(Icons.add),
         onPressed: () {
           model.updateVm();

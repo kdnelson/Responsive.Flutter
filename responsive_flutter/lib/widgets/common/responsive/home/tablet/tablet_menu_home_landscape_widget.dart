@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/utilities/styles.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 import 'package:responsive_flutter/widgets/common/responsive/home/controls/home_drawer_widget.dart';
@@ -13,8 +14,8 @@ class TabletMenuHomeLandscapeWidget
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 100.0),
         child: FloatingActionButton(
-          backgroundColor: Colors.black,
-          foregroundColor: Colors.white,
+          backgroundColor: foregroundColor,
+          foregroundColor: backgroundColor,
           child: Icon(Icons.add),
           onPressed: () {
             model.updateVm();

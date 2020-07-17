@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/models/comment.dart';
+import 'package:responsive_flutter/utilities/styles.dart';
 
 class CommentItem extends StatelessWidget {
   final Comment comment;
@@ -12,7 +13,7 @@ class CommentItem extends StatelessWidget {
       padding: EdgeInsets.all(10.0),
       margin: EdgeInsets.symmetric(vertical: 10.0),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0), color: Colors.white),
+          borderRadius: BorderRadius.circular(10.0), color: backgroundColor),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

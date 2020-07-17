@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/models/post.dart';
+import 'package:responsive_flutter/utilities/styles.dart';
 
 class MobileHomePostsListViewWidget extends StatelessWidget {
   final Post post;
@@ -15,7 +16,7 @@ class MobileHomePostsListViewWidget extends StatelessWidget {
         margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
         padding: EdgeInsets.all(10.0),
         decoration: BoxDecoration(
-            color: Colors.white,
+            color: backgroundColor,
             borderRadius: BorderRadius.circular(5.0),
             boxShadow: [
               BoxShadow(

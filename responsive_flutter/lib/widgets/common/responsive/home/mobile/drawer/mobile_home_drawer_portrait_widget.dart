@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/services/navigator_service.dart';
 import 'package:responsive_flutter/utilities/locator.dart';
+import 'package:responsive_flutter/utilities/styles.dart';
 import 'package:responsive_flutter/widgets/common/responsive/settings/controls/settings_responsive_widget.dart';
 
 class MobileHomeDrawerPortraitWidget extends StatelessWidget {
@@ -12,11 +13,11 @@ class MobileHomeDrawerPortraitWidget extends StatelessWidget {
     return Container(
         width: 160,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: backgroundColor,
           boxShadow: [
             BoxShadow(
               blurRadius: 16,
-              color: Colors.black,
+              color: foregroundColor,
             )
           ],
         ),

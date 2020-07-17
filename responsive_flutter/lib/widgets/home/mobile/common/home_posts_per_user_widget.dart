@@ -5,9 +5,9 @@ import 'package:responsive_flutter/utilities/locator.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 import 'package:responsive_flutter/widgets/home/common/mobile_home_posts_listview_widget.dart';
-import 'package:responsive_flutter/widgets/home/mobile/landscape/mobile_home_landscape_post_details_widget.dart';
+import 'package:responsive_flutter/widgets/home/mobile/common/home_post_details_widget.dart';
 
-class MobileHomeLandscapePostsPerUserWidget
+class HomePostsPerUserWidget
     extends BaseViewModelProviderWidget<HomeViewModel> {
   @override
   Widget build(BuildContext context, HomeViewModel model) {
@@ -17,8 +17,7 @@ class MobileHomeLandscapePostsPerUserWidget
               post: model.posts[index],
               onTap: () {
                 locator<NavigatorService>().navigateToPage(MaterialPageRoute(
-                    builder: (context) =>
-                        MobileHomeLandscapePostDetailsWidget(model, index)));
+                    builder: (context) => HomePostDetailsWidget(model, index)));
               },
             ));
   }

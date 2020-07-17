@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/utilities/styles.dart';
 
 class ExitAppDialog extends StatelessWidget {
   final Widget child;
@@ -28,7 +29,8 @@ class ExitAppDialog extends StatelessWidget {
                         padding: EdgeInsets.all(15.0),
                         child: Text(
                           'Exit Responsive App?',
-                          style: TextStyle(fontSize: 25.0, color: Colors.black),
+                          style:
+                              TextStyle(fontSize: 25.0, color: foregroundColor),
                         ),
                       ),
                       Padding(
@@ -39,28 +41,28 @@ class ExitAppDialog extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: <Widget>[
                             RaisedButton(
-                              color: Colors.black,
+                              color: foregroundColor,
                               onPressed: () {
                                 Navigator.of(context).pop(true);
                               },
                               child: Text(
                                 'Okay',
                                 style: TextStyle(
-                                    fontSize: 18.0, color: Colors.white),
+                                    fontSize: 18.0, color: backgroundColor),
                               ),
                             ),
                             SizedBox(
                               width: 20,
                             ),
                             RaisedButton(
-                              color: Colors.red,
+                              color: cautionBackgroundColor,
                               onPressed: () {
                                 Navigator.of(context).pop(false);
                               },
                               child: Text(
                                 'Cancel',
                                 style: TextStyle(
-                                    fontSize: 18.0, color: Colors.white),
+                                    fontSize: 18.0, color: backgroundColor),
                               ),
                             )
                           ],

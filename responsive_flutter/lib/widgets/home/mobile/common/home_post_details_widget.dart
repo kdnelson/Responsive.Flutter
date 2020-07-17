@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/enums/view_state_enum.dart';
+import 'package:responsive_flutter/utilities/styles.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_widget.dart';
-import 'package:responsive_flutter/widgets/home/mobile/portrait/mobile_home_portrait_comments_per_post_widget.dart';
+import 'package:responsive_flutter/widgets/home/mobile/common/home_comments_per_post_widget.dart';
 
-class MobileHomePortraitPostDetailsWidget extends StatelessWidget {
+class HomePostDetailsWidget extends StatelessWidget {
   final HomeViewModel model;
   final int postIndex;
-  MobileHomePortraitPostDetailsWidget(this.model, this.postIndex);
+  HomePostDetailsWidget(this.model, this.postIndex);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class MobileHomePortraitPostDetailsWidget extends StatelessWidget {
         builder: (context) => model.state == ViewState.Busy
             ? Center(child: CircularProgressIndicator())
             : Scaffold(
-                backgroundColor: Colors.white,
+                backgroundColor: backgroundColor,
                 body: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Column(
@@ -29,7 +30,7 @@ class MobileHomePortraitPostDetailsWidget extends StatelessWidget {
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 30.0,
-                              color: Colors.black)),
+                              color: foregroundColor)),
                       Text(
                         'by ${model.user.name}',
                         style: TextStyle(fontSize: 15.0),
@@ -37,7 +38,7 @@ class MobileHomePortraitPostDetailsWidget extends StatelessWidget {
                       SizedBox(height: 20),
                       Text(model.posts[this.postIndex].body),
                       SizedBox(height: 20),
-                      MobileHomePortraitCommentsPerPostWidget()
+                      HomeCommentsPerPostWidget()
                     ],
                   ),
                 ),

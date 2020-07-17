@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_flutter/enums/view_state_enum.dart';
 import 'package:responsive_flutter/services/navigator_service.dart';
 import 'package:responsive_flutter/utilities/locator.dart';
+import 'package:responsive_flutter/utilities/styles.dart';
 import 'package:responsive_flutter/viewmodel/login_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 import 'package:responsive_flutter/widgets/common/responsive/home/controls/home_responsive_widget.dart';
@@ -11,7 +12,7 @@ class LoginEntryFormWidget extends BaseViewModelProviderWidget<LoginViewModel> {
   @override
   Widget build(BuildContext context, LoginViewModel model) {
     return Container(
-      color: Colors.white,
+      color: backgroundColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -19,17 +20,18 @@ class LoginEntryFormWidget extends BaseViewModelProviderWidget<LoginViewModel> {
           model.state == ViewState.Busy
               ? Center(
                   child: CircularProgressIndicator(
-                    valueColor: new AlwaysStoppedAnimation<Color>(Colors.black),
+                    valueColor:
+                        new AlwaysStoppedAnimation<Color>(foregroundColor),
                   ),
                 )
               : FlatButton(
-                  color: Colors.white,
+                  color: backgroundColor,
                   child: Text(model.greeting,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 30,
-                          backgroundColor: Colors.white,
-                          color: Colors.black)),
+                          backgroundColor: backgroundColor,
+                          color: foregroundColor)),
                   onPressed: () async {
                     // TODO get textField and pass in userId
                     var userId = await model.login();
