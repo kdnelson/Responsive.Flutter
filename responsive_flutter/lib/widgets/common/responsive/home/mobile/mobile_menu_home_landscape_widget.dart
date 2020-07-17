@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 import 'package:responsive_flutter/widgets/common/responsive/home/controls/home_drawer_widget.dart';
-import 'package:responsive_flutter/widgets/home/mobile/mobile_home_landscape_widget.dart';
+import 'package:responsive_flutter/widgets/home/mobile/landscape/mobile_home_landscape_widget.dart';
 
 class MobileMenuHomeLandscapeWidget
     extends BaseViewModelProviderWidget<HomeViewModel> {

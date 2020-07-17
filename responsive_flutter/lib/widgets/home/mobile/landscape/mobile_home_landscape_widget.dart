@@ -4,7 +4,7 @@ import 'package:responsive_flutter/enums/view_state_enum.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 import 'package:responsive_flutter/widgets/dialogs/common/exit_app_dialog.dart';
-import 'package:responsive_flutter/widgets/home/common/home_posts_per_user.dart';
+import 'package:responsive_flutter/widgets/home/mobile/landscape/mobile_home_landscape_posts_per_user_widget.dart';
 
 class MobileHomeLandscapeWidget
     extends BaseViewModelProviderWidget<HomeViewModel> {
@@ -40,7 +40,7 @@ class MobileHomeLandscapeWidget
                             removeTop: true,
                             child: SizedBox(
                               height: 320,
-                              child: HomePostsPerUser(),
+                              child: MobileHomeLandscapePostsPerUserWidget(),
                             ))
                       ]),
           ],

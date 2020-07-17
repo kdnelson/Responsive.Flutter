@@ -51,7 +51,6 @@ class HomeViewModel extends ChangeNotifier {
     setState(ViewState.Busy);
     await _userService.getUserProfile(userId);
     await _postsService.getPostsForUser(userId);
-    await _commentsService.getCommentsPerPost(84);
     setState(ViewState.Idle);
   }
 

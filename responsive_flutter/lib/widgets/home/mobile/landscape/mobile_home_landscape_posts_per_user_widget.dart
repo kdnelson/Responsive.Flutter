@@ -4,10 +4,11 @@ import 'package:responsive_flutter/services/navigator_service.dart';
 import 'package:responsive_flutter/utilities/locator.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
-import 'package:responsive_flutter/widgets/home/common/home_post_details_widget.dart';
 import 'package:responsive_flutter/widgets/home/common/mobile_home_posts_listview_widget.dart';
+import 'package:responsive_flutter/widgets/home/mobile/landscape/mobile_home_landscape_post_details_widget.dart';
 
-class HomePostsPerUser extends BaseViewModelProviderWidget<HomeViewModel> {
+class MobileHomeLandscapePostsPerUserWidget
+    extends BaseViewModelProviderWidget<HomeViewModel> {
   @override
   Widget build(BuildContext context, HomeViewModel model) {
     return ListView.builder(
@@ -16,7 +17,8 @@ class HomePostsPerUser extends BaseViewModelProviderWidget<HomeViewModel> {
               post: model.posts[index],
               onTap: () {
                 locator<NavigatorService>().navigateToPage(MaterialPageRoute(
-                    builder: (context) => HomePostDetailsWidget(model, index)));
+                    builder: (context) =>
+                        MobileHomeLandscapePostDetailsWidget(model, index)));
               },
             ));
   }
