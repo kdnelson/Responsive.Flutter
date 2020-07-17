@@ -51,13 +51,13 @@ Widgets
 
 ****** Issues ******
 
-Have HomeVm and widget listen and rebuild on LoginVm userId entry
 Add nonReactive/reactive methods to the BaseViewModelProviderWidget
 
 ****** Review ******
 
 final variables
 const ver new and when to use them
-keys
+get better at keys
 InheritedWidget
-StreamController
+StreamController, when do I need one?
+Get better at using Expand/Flexable
