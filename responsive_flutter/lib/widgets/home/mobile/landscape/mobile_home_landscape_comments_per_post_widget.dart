@@ -16,16 +16,12 @@ class MobileHomeLandscapeCommentsPerPostWidget
               valueColor: new AlwaysStoppedAnimation<Color>(Colors.black),
             ),
           )
-        : MediaQuery.removePadding(
-            context: context,
-            removeTop: true,
-            child: SizedBox(
-              height: 100.0,
-              child: ListView(
-                children: model.comments
-                    .map((comment) => CommentItem(comment))
-                    .toList(),
-              ),
-            ));
+        : Expanded(
+            child: ListView(
+              children: model.comments
+                  .map((comment) => CommentItem(comment))
+                  .toList(),
+            ),
+          );
   }
 }
