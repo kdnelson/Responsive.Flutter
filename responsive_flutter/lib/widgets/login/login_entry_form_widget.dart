@@ -7,7 +7,6 @@ import 'package:responsive_flutter/utilities/styles.dart';
 import 'package:responsive_flutter/viewmodel/login_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 import 'package:responsive_flutter/widgets/common/responsive/home/controls/home_responsive_widget.dart';
-import 'package:responsive_flutter/widgets/reactive_trial/reactive_widget.dart';
 
 class LoginEntryFormWidget extends BaseViewModelProviderWidget<LoginViewModel> {
   @override
@@ -39,8 +38,9 @@ class LoginEntryFormWidget extends BaseViewModelProviderWidget<LoginViewModel> {
                     if (userId > -1) {
                       locator<NavigatorService>().navigateToPageWithReplacement(
                           MaterialPageRoute(
-                              builder: (context) => ReactiveView()));
-                      //HomeResponsiveWidget(userId)));
+                              builder: (context) =>
+                                  HomeResponsiveWidget(userId)));
+                      //ReactiveView());
                     }
                   },
                 )

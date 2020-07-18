@@ -1,14 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_flutter/viewmodel/settings_viewmodel.dart';
-import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 
-class MobileSettingsPortraitWidget
-    extends BaseViewModelProviderWidget<SettingsViewModel> {
+class MobileSettingsPortraitWidget extends StatelessWidget {
   @override
-  Widget build(BuildContext context, SettingsViewModel model) {
+  Widget build(BuildContext context) {
     return Text(
-      "Settings Portrait: " + model.counterDisplay,
+      "Settings Portrait: ",
       style: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 20,

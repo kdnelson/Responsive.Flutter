@@ -15,13 +15,34 @@ class MobileMenuSettingsPortraitWidget
     return Scaffold(
       key: _scaffoldKey,
       drawer: SettingsDrawerWidget(),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: foregroundColor,
-        foregroundColor: backgroundColor,
-        child: Icon(Icons.add),
-        onPressed: () {
-          model.updateVm();
-        },
+      floatingActionButton: Stack(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(left: 32),
+            child: Align(
+              alignment: Alignment.bottomLeft,
+              child: FloatingActionButton(
+                  backgroundColor: foregroundColor,
+                  foregroundColor: backgroundColor,
+                  child: Icon(Icons.remove),
+                  heroTag: null,
+                  onPressed: () {
+                    model.updateVm();
+                  }),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: FloatingActionButton(
+                backgroundColor: foregroundColor,
+                foregroundColor: backgroundColor,
+                child: Icon(Icons.add),
+                heroTag: null,
+                onPressed: () {
+                  model.updateVm();
+                }),
+          ),
+        ],
       ),
       body: Column(
         children: <Widget>[
