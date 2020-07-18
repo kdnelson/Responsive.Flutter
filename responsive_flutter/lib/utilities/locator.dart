@@ -5,6 +5,7 @@ import 'package:responsive_flutter/services/comments_service.dart';
 import 'package:responsive_flutter/services/navigator_service.dart';
 import 'package:responsive_flutter/services/posts_service.dart';
 import 'package:responsive_flutter/services/user_service.dart';
+import 'package:responsive_flutter/widgets/reactive_trial/counter_service.dart';
 
 GetIt locator = GetIt.instance;
 
@@ -16,5 +17,6 @@ class LocatorInjector {
     locator.registerLazySingleton(() => PostsService());
     locator.registerLazySingleton(() => CommentsService());
     locator.registerLazySingleton(() => Api());
+    locator.registerLazySingleton(() => CounterService());
   }
 }
