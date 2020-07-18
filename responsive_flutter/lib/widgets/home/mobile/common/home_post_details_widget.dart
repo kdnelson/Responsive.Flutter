@@ -16,46 +16,32 @@ class HomePostDetailsWidget extends StatelessWidget {
         viewModel: HomeViewModel(),
         onModelReady: (model) =>
             model.getCommentsPerPost(model.posts[this.postIndex].id),
-        builder: (context) => model.posts == null
-            ? Center(
-                child: Text(
-                'Model is Empty',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ))
-            : model.state == ViewState.Busy
-                ? Center(
-                    child: CircularProgressIndicator(
-                      valueColor:
-                          new AlwaysStoppedAnimation<Color>(foregroundColor),
-                    ),
-                  )
-                : Scaffold(
-                    backgroundColor: backgroundColor,
-                    body: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(height: 50),
-                          Text(model.posts[this.postIndex].title,
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 30.0,
-                                  color: foregroundColor)),
-                          Text(
-                            'by ${model.user.name}',
-                            style: TextStyle(fontSize: 15.0),
-                          ),
-                          SizedBox(height: 20),
-                          Text(model.posts[this.postIndex].body),
-                          SizedBox(height: 20),
-                          HomeCommentsPerPostWidget()
-                        ],
+        builder: (context) => model.state == ViewState.Busy
+            ? Center(child: CircularProgressIndicator())
+            : Scaffold(
+                backgroundColor: backgroundColor,
+                body: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(height: 50),
+                      Text(model.posts[this.postIndex].title,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30.0,
+                              color: foregroundColor)),
+                      Text(
+                        'by ${model.user.name}',
+                        style: TextStyle(fontSize: 15.0),
                       ),
-                    ),
-                  ));
+                      SizedBox(height: 20),
+                      Text(model.posts[this.postIndex].body),
+                      SizedBox(height: 20),
+                      HomeCommentsPerPostWidget()
+                    ],
+                  ),
+                ),
+              ));
   }
 }

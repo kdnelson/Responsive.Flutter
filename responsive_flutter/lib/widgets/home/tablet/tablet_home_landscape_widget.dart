@@ -2,22 +2,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/dialogs/common/exit_app_dialog.dart';
-import 'package:stacked/stacked.dart';
 
-class TabletHomeLandscapeWidget extends StatelessWidget {
+import '../../common/base_model_widget.dart';
+
+class TabletHomeLandscapeWidget
+    extends BaseViewModelProviderWidget<HomeViewModel> {
   @override
-  Widget build(BuildContext context) {
-    return ViewModelBuilder<HomeViewModel>.reactive(
-      viewModelBuilder: () => HomeViewModel(),
-      disposeViewModel: true,
-      builder: (context, model, child) => ExitAppDialog(context,
-          child: Text(
-            model.title + " Landscape",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
-          )),
-    );
+  Widget build(BuildContext context, HomeViewModel model) {
+    return ExitAppDialog(context,
+        child: Text(
+          model.title + " Landscape",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+        ));
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-class SettingsViewModel extends ChangeNotifier {
-  String title = 'Settings';
+class ReportsViewModel extends ChangeNotifier {
+  String title = 'Reports';
   String counterDisplay = '0';
 
   void initialize() {
