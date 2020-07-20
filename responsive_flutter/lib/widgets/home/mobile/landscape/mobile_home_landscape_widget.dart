@@ -12,7 +12,7 @@ class MobileHomeLandscapeWidget
   @override
   Widget build(BuildContext context, HomeViewModel model) {
     if (model.isPopupOpen == true) {
-      model.setManufacturerPopState(false);
+      model.setHomePopState(false);
       Navigator.of(context).pop();
     }
     return ExitAppDialog(

@@ -43,7 +43,7 @@ class HomeViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setManufacturerPopState(bool state) {
+  void setHomePopState(bool state) {
     isPopupOpen = state;
     notifyListeners();
   }

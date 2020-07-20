@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/viewmodel/login_viewmodel.dart';
-import '../common/base_widget.dart';
+import 'package:stacked/stacked.dart';
 import 'login_entry_form_widget.dart';
 
 class LoginWidget extends StatelessWidget {
@@ -9,9 +9,9 @@ class LoginWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseWidget<LoginViewModel>(
-        viewModel: LoginViewModel(),
+    return ViewModelBuilder<LoginViewModel>.reactive(
+        viewModelBuilder: () => LoginViewModel(),
         onModelReady: (model) => model.initialize(),
-        builder: (context) => LoginEntryFormWidget());
+        builder: (context, model, child) => LoginEntryFormWidget());
   }
 }

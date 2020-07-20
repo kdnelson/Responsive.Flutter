@@ -2,11 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/utilities/styles.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
-import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 
-class HomeMenuDialog extends BaseViewModelProviderWidget<HomeViewModel> {
+class HomeMenuDialog extends StatelessWidget {
+  final HomeViewModel model;
+
+  HomeMenuDialog(this.model);
+
   @override
-  Widget build(BuildContext context, HomeViewModel model) {
+  Widget build(
+    BuildContext context,
+  ) {
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       elevation: 20,
@@ -39,6 +44,7 @@ class HomeMenuDialog extends BaseViewModelProviderWidget<HomeViewModel> {
                   RaisedButton(
                     color: cautionBackgroundColor,
                     onPressed: () {
+                      model.setHomePopState(false);
                       Navigator.of(context).pop();
                     },
                     child: Text(

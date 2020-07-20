@@ -4,7 +4,6 @@ import 'package:responsive_flutter/enums/view_state_enum.dart';
 import 'package:responsive_flutter/utilities/styles.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
-import 'package:responsive_flutter/widgets/common/base_widget.dart';
 import 'package:responsive_flutter/widgets/dialogs/common/exit_app_dialog.dart';
 import 'package:responsive_flutter/widgets/dialogs/home/home_menu_dialog.dart';
 import 'package:responsive_flutter/widgets/home/mobile/common/home_posts_per_user_widget.dart';
@@ -42,10 +41,8 @@ class MobileHomePortraitWidget
                               showDialog(
                                 context: context,
                                 builder: (context) {
-                                  model.isPopupOpen = true;
-                                  return BaseWidget<HomeViewModel>(
-                                      viewModel: HomeViewModel(),
-                                      builder: (context) => HomeMenuDialog());
+                                  model.setHomePopState(true);
+                                  return HomeMenuDialog(model);
                                 },
                               );
                             },
