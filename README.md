@@ -51,7 +51,9 @@ Widgets
 
 ****** Issues ******
 
-Add nonReactive/reactive methods to the BaseViewModelProviderWidget
+RB (update notes as this...)
+Maybe rename BaseViewModelProviderWidget to signal its used for the Device/UI responsiveness only
+Once you are directed to the correct widget view, then use ViewModelBuilder with .nonReactive or .reactive constructors
 
 ****** Review ******
 
