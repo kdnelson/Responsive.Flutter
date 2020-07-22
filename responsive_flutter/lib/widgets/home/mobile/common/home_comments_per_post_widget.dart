@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:responsive_flutter/enums/view_state_enum.dart';
 import 'package:responsive_flutter/utilities/styles.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
-import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
 import 'package:responsive_flutter/widgets/home/common/home_comment_item.dart';
+import 'package:responsive_flutter/widgets/responsive/common/base_viewmodel_provider_widget.dart';
 
 class HomeCommentsPerPostWidget
     extends BaseViewModelProviderWidget<HomeViewModel> {

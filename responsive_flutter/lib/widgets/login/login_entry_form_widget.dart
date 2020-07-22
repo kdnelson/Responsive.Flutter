@@ -5,8 +5,8 @@ import 'package:responsive_flutter/services/navigator_service.dart';
 import 'package:responsive_flutter/utilities/locator.dart';
 import 'package:responsive_flutter/utilities/styles.dart';
 import 'package:responsive_flutter/viewmodel/login_viewmodel.dart';
-import 'package:responsive_flutter/widgets/common/base_model_widget.dart';
-import 'package:responsive_flutter/widgets/common/responsive/home/controls/home_responsive_widget.dart';
+import 'package:responsive_flutter/widgets/responsive/common/base_viewmodel_provider_widget.dart';
+import 'package:responsive_flutter/widgets/responsive/home/controls/home_responsive_widget.dart';
 
 class LoginEntryFormWidget extends BaseViewModelProviderWidget<LoginViewModel> {
   @override
