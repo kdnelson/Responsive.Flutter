@@ -57,8 +57,6 @@ Widgets
 
 ****** Issues ******
 
-Media top remove for comments
-Can ViewModelBuilder replace BaseViewModelProviderWidget?
 
 ****** Review ******
 
