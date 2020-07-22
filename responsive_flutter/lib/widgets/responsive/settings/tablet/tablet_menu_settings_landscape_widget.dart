@@ -18,7 +18,7 @@ class TabletMenuSettingsLandscapeWidget
           foregroundColor: backgroundColor,
           child: Icon(Icons.add),
           onPressed: () {
-            model.updateVm();
+            model.increaseCounter();
           },
         ),
       ),

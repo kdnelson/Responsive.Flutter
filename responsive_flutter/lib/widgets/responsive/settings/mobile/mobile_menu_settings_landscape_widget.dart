@@ -27,7 +27,7 @@ class MobileMenuSettingsLandscapeWidget
                   child: Icon(Icons.remove),
                   heroTag: null,
                   onPressed: () {
-                    model.updateVm();
+                    model.decreaseCounter();
                   }),
             ),
           ),
@@ -39,7 +39,7 @@ class MobileMenuSettingsLandscapeWidget
                 child: Icon(Icons.add),
                 heroTag: null,
                 onPressed: () {
-                  model.updateVm();
+                  model.increaseCounter();
                 }),
           ),
         ],
