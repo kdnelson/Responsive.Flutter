@@ -38,7 +38,10 @@ class HomePostDetailsWidget extends StatelessWidget {
                       SizedBox(height: 20),
                       Text(model.posts[this.postIndex].body),
                       SizedBox(height: 20),
-                      HomeCommentsPerPostWidget()
+                      MediaQuery.removePadding(
+                          context: context,
+                          removeTop: true,
+                          child: HomeCommentsPerPostWidget())
                     ],
                   ),
                 ),
