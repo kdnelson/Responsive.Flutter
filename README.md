@@ -12,7 +12,7 @@
   The model will just call the function to do that. Authentication service will use the Api to get the user details and track it. 
   The model just calls the function and passes values to it.
 
-****** Code Design Per Page Add To Drawer Menu ******
+****** Code Design Per Vm Widget Added To Drawer Menu ******
 
 Responsive Block (RB) 
    |--> DeviceTypeWidget (SL) "What type of device do we have here?"
@@ -33,12 +33,9 @@ main
 						      |				               OR
 						      |--> widget's builder returns ViewModelBuilder<SomeViewModel>{.reactive()/nonreactive}
 							  |--> SomeWidgetPortraitWidget extends BaseViewModelProviderWidget<SomeViewModel>
-								(allows for more child widgets bound to the HomeViewModel, just extend 							      				                         BaseViewModelProviderWidget<HomeViewModel> as it's parent did.)
-														
+								(allows for more child widgets bound to the HomeViewModel, just extend 							      				                         BaseViewModelProviderWidget<HomeViewModel> as it's parent did.)	
 						
-						
-						
-So for every new page added to the drawer menu, add these folders to get started...
+So, for every new Vm Widget added to the drawer menu, add these folders to get started...
 
 (This handles the UI portrait and lanscape changes and calls the appriate page for that context rebuild)
 Widgets
