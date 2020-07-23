@@ -2,6 +2,7 @@
 
 ****** ScopedModel - High Level Architecture Overview ******
 
+
 + Each view will have it's own model that extends the ChangeNotifier.
 + Notify listeners for a view will ONLY BE CALLED when the View's state changes.
 + Each view only has 2 states. Idle and Busy. Any other piece of UI contained in a view, that requires logic and state / UI updates will have it's own model associated with it.   This way the main view only paints when the main view state changes.
@@ -12,7 +13,9 @@
   The model will just call the function to do that. Authentication service will use the Api to get the user details and track it. 
   The model just calls the function and passes values to it.
 
+
 ****** Code Design Per Vm Widget Added To Drawer Menu ******
+
 
 Responsive Block (RB) 
    |--> DeviceTypeWidget (SL) "What type of device do we have here?"
@@ -54,6 +57,15 @@ Widgets
     |-->newpage
          |-->mobile
          |-->tablet
+
+
+****** Multiple Widgets Listening To A Single ViewModel ******
+
+
+The Settings page demonstrates its own viewmodel with a counter.  It's state is held until the page is popped back to the Home page.
+Notice how incrimenting the counter, popping back to the Home page, and returning back to the Settings page displays a zero counter.
+Yet, all actions made on the Single/Double number counter state is held regardless of navigation.
+
 
 ****** Issues ******
 
