@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/viewmodel/settings_viewmodel.dart';
-import 'package:responsive_flutter/widgets/reactive_trial/double_increase_counter_widget.dart';
-import 'package:responsive_flutter/widgets/reactive_trial/single_increase_counter_widget.dart';
+import 'package:responsive_flutter/widgets/cart/decrease_cart_counter_widget.dart';
+import 'package:responsive_flutter/widgets/cart/increase_cart_counter_widget.dart';
 import 'package:responsive_flutter/widgets/responsive/common/base_viewmodel_provider_widget.dart';
 
 class MobileSettingsLandscapeWidget
@@ -20,14 +20,12 @@ class MobileSettingsLandscapeWidget
           ),
         ),
       ),
-      Row(
-        children: <Widget>[
-          SizedBox(width: 165),
-          SingleIncreaseCounterWidget(),
-          SizedBox(width: 50),
-          DoubleIncreaseCounterWidget(),
-        ],
-      ),
+      Row(children: <Widget>[
+        SizedBox(width: 165),
+        DecreaseCartCounterWidget(),
+        SizedBox(width: 50),
+        IncreaseCartCounterWidget(),
+      ]),
     ]);
   }
 }
