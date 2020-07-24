@@ -4,6 +4,7 @@ import 'package:responsive_flutter/enums/view_state_enum.dart';
 import 'package:responsive_flutter/utilities/styles.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/dialogs/common/exit_app_dialog.dart';
+import 'package:responsive_flutter/widgets/home/common/home_shopping_cart_counter_widget.dart';
 import 'package:responsive_flutter/widgets/home/mobile/common/home_posts_per_user_widget.dart';
 import 'package:responsive_flutter/widgets/responsive/common/base_viewmodel_provider_widget.dart';
 
@@ -35,12 +36,15 @@ class MobileHomeLandscapeWidget
                 : Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
-                        SizedBox(height: 5),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 17.0),
+                          child: HomeShoppingCartCounterWidget(),
+                        ),
                         MediaQuery.removePadding(
                             context: context,
                             removeTop: true,
                             child: SizedBox(
-                              height: 320,
+                              height: 300,
                               child: HomePostsPerUserWidget(),
                             ))
                       ]),
