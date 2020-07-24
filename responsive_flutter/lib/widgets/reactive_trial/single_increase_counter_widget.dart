@@ -9,7 +9,7 @@ class SingleIncreaseCounterWidget extends StatelessWidget {
     return ViewModelBuilder<SingleIncreaseCounterViewModel>.reactive(
       viewModelBuilder: () => SingleIncreaseCounterViewModel(),
       builder: (context, model, child) => GestureDetector(
-        onTap: model.updateCounter,
+        onTap: model.singleIncreaseCounter,
         child: Container(
           width: 100,
           height: 100,

@@ -10,8 +10,13 @@ class SingleIncreaseCounterViewModel extends ReactiveViewModel {
 
   int get counter => _counterService.counter;
 
-  void updateCounter() {
+  void singleIncreaseCounter() {
     _counterService.incrementCounter();
+    notifyListeners();
+  }
+
+  void doubleIncreaseCounter() {
+    _counterService.doubleCounter();
     notifyListeners();
   }
 }

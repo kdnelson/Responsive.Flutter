@@ -1,19 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_flutter/widgets/reactive_trial/double_increase_counter_viewmodel.dart';
+import 'package:responsive_flutter/widgets/reactive_trial/single_increase_counter_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
 class DoubleIncreaseCounterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<DoubleIncreaseCounterViewModel>.reactive(
-      viewModelBuilder: () => DoubleIncreaseCounterViewModel(),
+    return ViewModelBuilder<SingleIncreaseCounterViewModel>.reactive(
+      viewModelBuilder: () => SingleIncreaseCounterViewModel(),
       builder: (context, model, child) => GestureDetector(
-        onTap: model.updateCounter,
+        onTap: model.doubleIncreaseCounter,
         child: Container(
           width: 100,
           height: 100,
-          color: Colors.green,
+          color: Colors.blue,
           alignment: Alignment.center,
           child: Column(
             mainAxisSize: MainAxisSize.min,
