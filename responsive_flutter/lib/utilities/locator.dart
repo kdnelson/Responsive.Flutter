@@ -11,12 +11,12 @@ GetIt locator = GetIt.instance;
 
 class LocatorInjector {
   static Future<void> setupLocator() async {
-    locator.registerLazySingleton(() => NavigatorService());
-    locator.registerLazySingleton(() => AuthenticationService());
-    locator.registerLazySingleton(() => UserService());
-    locator.registerLazySingleton(() => PostsService());
-    locator.registerLazySingleton(() => CommentsService());
     locator.registerLazySingleton(() => Api());
+    locator.registerLazySingleton(() => AuthenticationService());
+    locator.registerLazySingleton(() => NavigatorService());
+    locator.registerLazySingleton(() => CommentsService());
+    locator.registerLazySingleton(() => PostsService());
     locator.registerLazySingleton(() => ShoppingCartService());
+    locator.registerLazySingleton(() => UserService());
   }
 }

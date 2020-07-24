@@ -3,20 +3,20 @@ import 'package:responsive_flutter/services/shopping_cart_service.dart';
 import 'package:stacked/stacked.dart';
 
 class ShoppingCartViewModel extends ReactiveViewModel {
-  final _counterService = locator<ShoppingCartService>();
+  final _shoppingCartService = locator<ShoppingCartService>();
 
   @override
-  List<ReactiveServiceMixin> get reactiveServices => [_counterService];
+  List<ReactiveServiceMixin> get reactiveServices => [_shoppingCartService];
 
-  int get counter => _counterService.counter;
+  int get counter => _shoppingCartService.counter;
 
   void increaseCounter() {
-    _counterService.incrementCounter();
+    _shoppingCartService.incrementCounter();
     notifyListeners();
   }
 
   void decreaseCounter() {
-    _counterService.decreaseCounter();
+    _shoppingCartService.decreaseCounter();
     notifyListeners();
   }
 }
