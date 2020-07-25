@@ -59,12 +59,13 @@ Widgets
          |-->tablet
 
 
-****** Multiple Widgets Listening To A Single ViewModel ******
+****** Multiple Widgets Listening To A Single ViewModel Across Several Routed Pages  ******
 
 
 The Settings page demonstrates its own viewmodel with a counter.  It's state is held until the page is popped back to the Home page.
 Notice how incrimenting the counter, popping back to the Home page, and returning back to the Settings page displays a zero counter.
-Yet, all actions made on the Single/Double number counter state is held regardless of navigation.
+Yet, all actions made on the Shopping Cart number counter state is held regardless of navigation.  Then ShoppingCart service adds to the ReactiveServiceMixin library
+an instance of itself.  This ReactiveServiceMixin library, with the use of the library observable_ish, takes in a dynamic type and polymorphically casts it to either a RxValue, RxList, or RxSet type.  Then any change to the service's properties will reactively update the widget bound to the service though the viewmodel.  
 
 
 ****** Issues ******
