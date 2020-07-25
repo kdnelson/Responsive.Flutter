@@ -2,7 +2,6 @@
 
 ****** ScopedModel - High Level Architecture Overview ******
 
-
 + Each view will have it's own model that extends the ChangeNotifier.
 + Notify listeners for a view will ONLY BE CALLED when the View's state changes.
 + Each view only has 2 states. Idle and Busy. Any other piece of UI contained in a view, that requires logic and state / UI updates will have it's own model associated with it.   This way the main view only paints when the main view state changes.
@@ -13,9 +12,7 @@
   The model will just call the function to do that. Authentication service will use the Api to get the user details and track it. 
   The model just calls the function and passes values to it.
 
-
 ****** Code Design Per Vm Widget Added To Drawer Menu ******
-
 
 Responsive Block (RB) 
    |--> DeviceTypeWidget (SL) "What type of device do we have here?"
@@ -58,18 +55,24 @@ Widgets
          |-->mobile
          |-->tablet
 
-
 ****** Multiple Widgets Listening To A Single ViewModel Across Several Routed Pages  ******
-
 
 The Settings page demonstrates its own viewmodel with a counter.  It's state is held until the page is popped back to the Home page.
 Notice how incrimenting the counter, popping back to the Home page, and returning back to the Settings page displays a zero counter.
 Yet, all actions made on the Shopping Cart number counter state is held regardless of navigation.  Then ShoppingCart service adds to the ReactiveServiceMixin library
 an instance of itself.  This ReactiveServiceMixin library, with the use of the library observable_ish, takes in a dynamic type and polymorphically casts it to either a RxValue, RxList, or RxSet type.  Then any change to the service's properties will reactively update the widget bound to the service though the viewmodel.  
 
+****** Partial Widgets Listening To Settings Page  ******
+
+The SettingsCounterPartialWidget, SettingsCounterWidget, and SettingsCounterParityWidget are called and initialized at app load.  Both SettingsCounterPartialWidget and SettingsCounterWidget will not rebuild for every counter change.  However, SettingsCounterParityWidget will listen and rebuild for every change.
+
+****** Notes ******
+
+I would rather implement a few viewmodels with several reactive widgets that listen to them.  Don't thses widgets act as partial widgets already?
 
 ****** Issues ******
 
+Create a base Viewmodel and push the idle and busy state into it.
 
 ****** Review ******
 
