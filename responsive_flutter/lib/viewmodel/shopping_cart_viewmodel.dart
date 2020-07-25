@@ -4,11 +4,10 @@ import 'package:stacked/stacked.dart';
 
 class ShoppingCartViewModel extends ReactiveViewModel {
   final _shoppingCartService = locator<ShoppingCartService>();
+  int get counter => _shoppingCartService.counter;
 
   @override
   List<ReactiveServiceMixin> get reactiveServices => [_shoppingCartService];
-
-  int get counter => _shoppingCartService.counter;
 
   void increaseCounter() {
     _shoppingCartService.incrementCounter();

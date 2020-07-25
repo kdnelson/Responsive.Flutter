@@ -15,6 +15,7 @@ class LoginViewModel extends ChangeNotifier {
   ViewState get state => _state;
 
   void initialize() {
+    // Get state from Database...
     notifyListeners();
   }
 

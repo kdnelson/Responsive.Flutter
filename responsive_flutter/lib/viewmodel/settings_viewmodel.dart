@@ -4,15 +4,27 @@ class SettingsViewModel extends ChangeNotifier {
   String title = 'Settings';
   String counterDisplay = '0';
   int counter = 0;
+  String _parity = 'Even';
+  String get parity => _parity;
 
   void initialize() {
     // Get state from Database...
     notifyListeners();
   }
 
+  void updateParity(int value) {
+    if (value.isOdd) {
+      _parity = 'Odd';
+    } else {
+      _parity = 'Even';
+    }
+    notifyListeners();
+  }
+
   void increaseCounter() {
     counter++;
     counterDisplay = '$counter';
+    updateParity(counter);
     notifyListeners();
   }
 
@@ -24,7 +36,7 @@ class SettingsViewModel extends ChangeNotifier {
     } else {
       counterDisplay = '$counter';
     }
-
+    updateParity(counter);
     notifyListeners();
   }
 }

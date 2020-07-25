@@ -32,6 +32,7 @@ class HomeViewModel extends ChangeNotifier {
   }
 
   void initialize(userId) {
+    // Get state from Database...
     if (userId > -1) {
       getPosts(userId);
     }
