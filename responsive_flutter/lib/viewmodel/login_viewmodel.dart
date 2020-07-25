@@ -1,32 +1,24 @@
-import 'package:flutter/cupertino.dart';
-import 'package:responsive_flutter/enums/view_state_enum.dart';
 import 'package:responsive_flutter/services/authentication_service.dart';
 import 'package:responsive_flutter/utilities/locator.dart';
 import 'dart:math';
 
-class LoginViewModel extends ChangeNotifier {
+import 'package:stacked/stacked.dart';
+
+class LoginViewModel extends BaseViewModel {
   String greeting = 'Tap to Login';
   String errorMessage;
 
   final AuthenticationService _authenticationService =
       locator<AuthenticationService>();
 
-  ViewState _state = ViewState.Idle;
-  ViewState get state => _state;
-
   void initialize() {
     // Get state from Database...
     notifyListeners();
   }
 
-  void setState(ViewState viewState) {
-    _state = viewState;
-    notifyListeners();
-  }
-
   Future<int> login() async {
     int response = -1;
-    setState(ViewState.Busy);
+    setBusy(true);
 
     var randomInt = Random.secure();
     var userId = randomInt.nextInt(10);
@@ -34,7 +26,7 @@ class LoginViewModel extends ChangeNotifier {
     // Not a number
     if (userId == null) {
       errorMessage = 'Value entered is not a number';
-      setState(ViewState.Idle);
+      setBusy(false);
       return response;
     }
 
@@ -46,7 +38,7 @@ class LoginViewModel extends ChangeNotifier {
       // Route to error page
     }
 
-    setState(ViewState.Idle);
+    setBusy(false);
     return response;
   }
 }

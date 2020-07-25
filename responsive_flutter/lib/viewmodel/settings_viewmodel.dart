@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:stacked/stacked.dart';
 
-class SettingsViewModel extends ChangeNotifier {
+class SettingsViewModel extends BaseViewModel {
   String title = 'Settings';
   String counterDisplay = '0';
   int counter = 0;

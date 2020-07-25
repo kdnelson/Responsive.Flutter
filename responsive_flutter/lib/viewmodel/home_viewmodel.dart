@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-import 'package:responsive_flutter/enums/view_state_enum.dart';
 import 'package:responsive_flutter/models/comment.dart';
 import 'package:responsive_flutter/models/post.dart';
 import 'package:responsive_flutter/models/user.dart';
@@ -7,8 +5,9 @@ import 'package:responsive_flutter/services/comments_service.dart';
 import 'package:responsive_flutter/services/posts_service.dart';
 import 'package:responsive_flutter/services/user_service.dart';
 import 'package:responsive_flutter/utilities/locator.dart';
+import 'package:stacked/stacked.dart';
 
-class HomeViewModel extends ChangeNotifier {
+class HomeViewModel extends BaseViewModel {
   String title = 'Home';
   String menuLabel = 'Menu';
   String popupMenuTitle = 'Popup Menu';
@@ -22,14 +21,6 @@ class HomeViewModel extends ChangeNotifier {
 
   CommentsService _commentsService = locator<CommentsService>();
   List<Comment> get comments => _commentsService.comments;
-
-  ViewState _state = ViewState.Idle;
-  ViewState get state => _state;
-
-  void setState(ViewState viewState) {
-    _state = viewState;
-    notifyListeners();
-  }
 
   void initialize(userId) {
     // Get state from Database...
@@ -50,15 +41,15 @@ class HomeViewModel extends ChangeNotifier {
   }
 
   Future getPosts(int userId) async {
-    setState(ViewState.Busy);
+    setBusy(true);
     await _userService.getUserProfile(userId);
     await _postsService.getPostsForUser(userId);
-    setState(ViewState.Idle);
+    setBusy(false);
   }
 
   Future getCommentsPerPost(int postId) async {
-    setState(ViewState.Busy);
+    setBusy(true);
     await _commentsService.getCommentsPerPost(postId);
-    setState(ViewState.Idle);
+    setBusy(false);
   }
 }

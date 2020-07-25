@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_flutter/enums/view_state_enum.dart';
 import 'package:responsive_flutter/utilities/styles.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/dialogs/common/exit_app_dialog.dart';
@@ -25,7 +24,7 @@ class MobileHomeLandscapeWidget
           // TextEditingController _controller = TextEditingController();
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            model.state == ViewState.Busy
+            model.isBusy
                 ? Padding(
                     padding: const EdgeInsets.only(top: 100.0),
                     child: CircularProgressIndicator(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_flutter/enums/view_state_enum.dart';
 import 'package:responsive_flutter/utilities/styles.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
 import 'package:responsive_flutter/widgets/home/mobile/common/home_comments_per_post_widget.dart';
@@ -16,8 +15,11 @@ class HomePostDetailsWidget extends StatelessWidget {
         viewModelBuilder: () => HomeViewModel(),
         onModelReady: (model) =>
             model.getCommentsPerPost(model.posts[this.postIndex].id),
-        builder: (context, model, child) => model.state == ViewState.Busy
-            ? Center(child: CircularProgressIndicator())
+        builder: (context, model, child) => model.isBusy
+            ? Center(
+                child: CircularProgressIndicator(
+                valueColor: new AlwaysStoppedAnimation<Color>(foregroundColor),
+              ))
             : Scaffold(
                 backgroundColor: backgroundColor,
                 body: Padding(

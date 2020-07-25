@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_flutter/enums/view_state_enum.dart';
 import 'package:responsive_flutter/services/navigator_service.dart';
 import 'package:responsive_flutter/utilities/locator.dart';
 import 'package:responsive_flutter/utilities/styles.dart';
@@ -17,7 +16,7 @@ class LoginEntryFormWidget extends BaseViewModelProviderWidget<LoginViewModel> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           // TODO Add login textfield here...
-          model.state == ViewState.Busy
+          model.isBusy
               ? Center(
                   child: CircularProgressIndicator(
                     valueColor:
