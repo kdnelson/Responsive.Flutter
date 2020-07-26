@@ -24,9 +24,12 @@ class MobileHomePortraitWidget
             model.isBusy
                 ? Padding(
                     padding: const EdgeInsets.only(top: 200.0),
-                    child: CircularProgressIndicator(
-                      valueColor:
-                          new AlwaysStoppedAnimation<Color>(foregroundColor),
+                    child: Container(
+                      color: backgroundColor,
+                      child: CircularProgressIndicator(
+                        valueColor:
+                            new AlwaysStoppedAnimation<Color>(foregroundColor),
+                      ),
                     ),
                   )
                 : Column(

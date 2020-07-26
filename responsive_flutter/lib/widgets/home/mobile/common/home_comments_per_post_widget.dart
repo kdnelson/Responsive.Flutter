@@ -12,8 +12,11 @@ class HomeCommentsPerPostWidget
     return model.isBusy
         ? Padding(
             padding: const EdgeInsets.only(top: 20.0),
-            child: CircularProgressIndicator(
-              valueColor: new AlwaysStoppedAnimation<Color>(foregroundColor),
+            child: Container(
+              color: backgroundColor,
+              child: CircularProgressIndicator(
+                valueColor: new AlwaysStoppedAnimation<Color>(foregroundColor),
+              ),
             ),
           )
         : Expanded(

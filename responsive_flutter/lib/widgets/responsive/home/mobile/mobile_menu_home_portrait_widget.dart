@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_flutter/viewmodel/home_viewmodel.dart';
-import 'package:responsive_flutter/widgets/home/mobile/portrait/mobile_home_portrait_widget.dart';
+import 'package:responsive_flutter/widgets/home/mobile/mobile_home_portrait_widget.dart';
 import 'package:responsive_flutter/widgets/responsive/common/base_viewmodel_provider_widget.dart';
 import 'package:responsive_flutter/widgets/responsive/home/controls/home_drawer_widget.dart';
 

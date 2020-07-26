@@ -16,10 +16,16 @@ class HomePostDetailsWidget extends StatelessWidget {
         onModelReady: (model) =>
             model.getCommentsPerPost(model.posts[this.postIndex].id),
         builder: (context, model, child) => model.isBusy
-            ? Center(
-                child: CircularProgressIndicator(
-                valueColor: new AlwaysStoppedAnimation<Color>(foregroundColor),
-              ))
+            ? Scaffold(
+                backgroundColor: backgroundColor,
+                body: Center(
+                  child: Container(
+                      color: backgroundColor,
+                      child: CircularProgressIndicator(
+                        valueColor:
+                            new AlwaysStoppedAnimation<Color>(foregroundColor),
+                      )),
+                ))
             : Scaffold(
                 backgroundColor: backgroundColor,
                 body: Padding(
