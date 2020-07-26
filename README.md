@@ -62,13 +62,13 @@ Notice how incrimenting the counter, popping back to the Home page, and returnin
 Yet, all actions made on the Shopping Cart number counter state is held regardless of navigation.  Then ShoppingCart service adds to the ReactiveServiceMixin library
 an instance of itself.  This ReactiveServiceMixin library, with the use of the library observable_ish, takes in a dynamic type and polymorphically casts it to either a RxValue, RxList, or RxSet type.  Then any change to the service's properties will reactively update the widget bound to the service though the viewmodel.  
 
-****** Partial Widgets Listening To Settings Page  ******
+****** Partial Widgets Listening To A Vm  ******
 
 The SettingsCounterPartialWidget, SettingsCounterWidget, and SettingsCounterParityWidget are called and initialized at app load.  Both SettingsCounterPartialWidget and SettingsCounterWidget will not rebuild for every counter change.  However, SettingsCounterParityWidget will listen and rebuild for every change.
 
 ****** Notes ******
 
-I would rather implement a few viewmodels with several reactive widgets that listen to them.  Don't thses widgets act as partial widgets already?
+I would rather implement a few viewmodels with several reactive widgets that listen to them.  Don't these widgets act as partial widgets already?
 
 ****** Issues ******
 
