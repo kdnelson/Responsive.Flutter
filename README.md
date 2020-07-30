@@ -71,8 +71,12 @@ The SettingsCounterPartialWidget, SettingsCounterWidget, and SettingsCounterPari
 I would rather implement a few viewmodels with several reactive widgets that listen to them.  Don't these widgets act as partial widgets already?
 
 ****** Issues ******
-
-Create a base Viewmodel and push the idle and busy state into it.
+MobileHomeLandscapeWidget
+    if (model.isPopupOpen == true) {
+      model.setHomePopState(false);
+      Navigator.of(context).pop();
+    }
+I/flutter (27563): Another exception was thrown: setState() or markNeedsBuild() called during build.
 
 ****** Review ******
 
