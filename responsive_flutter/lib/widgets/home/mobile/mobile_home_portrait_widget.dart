@@ -24,12 +24,9 @@ class MobileHomePortraitWidget
             model.isBusy
                 ? Padding(
                     padding: const EdgeInsets.only(top: 200.0),
-                    child: Container(
-                      color: backgroundColor,
-                      child: CircularProgressIndicator(
-                        valueColor:
-                            new AlwaysStoppedAnimation<Color>(foregroundColor),
-                      ),
+                    child: CircularProgressIndicator(
+                      valueColor:
+                          new AlwaysStoppedAnimation<Color>(foregroundColor),
                     ),
                   )
                 : Column(
@@ -51,10 +48,10 @@ class MobileHomePortraitWidget
                               child: RaisedButton(
                                 color: foregroundColor,
                                 onPressed: () {
+                                  model.setHomePopState(true);
                                   showDialog(
                                     context: context,
                                     builder: (context) {
-                                      model.setHomePopState(true);
                                       return HomeMenuDialog(model);
                                     },
                                   );
