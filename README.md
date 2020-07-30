@@ -72,7 +72,8 @@ I would rather implement a few viewmodels with several reactive widgets that lis
 
 ****** Issues ******
 
-Create a base Viewmodel and push the idle and busy state into it.
+Launching popup menu
+I/flutter (27563): Another exception was thrown: setState() or markNeedsBuild() called during build.
 
 ****** Review ******
 
