@@ -7,7 +7,6 @@ class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case 'home':
-        //return MaterialPageRoute(builder: (context) => ReactiveView());:
         return MaterialPageRoute(
             builder: (context) => HomeResponsiveWidget(-1));
       case 'login':
