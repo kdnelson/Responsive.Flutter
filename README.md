@@ -85,3 +85,14 @@ const ver new and when to use them
 get better at keys
 InheritedWidget? How is Stacks using it
 StreamController, when do I need one?
+
+****** Knowledge ******
+
+When you start a Flutter (or any Dart) application, a new Thread process (in Dart language = “Isolate") is created and launched. 
+This thread will be the only one that you will have to care for the entire application.
+
+So, when this thread is created, Dart automatically
+
++ Initializes 2 Queues, namely “MicroTask” and “Event” FIFO queues;
++ Executes the main() method and, once this code execution is completed,
++ Launches the Event Loop
