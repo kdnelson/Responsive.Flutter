@@ -68,7 +68,7 @@ The SettingsCounterPartialWidget, SettingsCounterWidget, and SettingsCounterPari
 
 ****** Notes ******
 
-I would rather implement a few viewmodels with several reactive widgets that listen to them.  Don't these widgets act as partial widgets already?
+I would rather implement a few viewmodels with several reactive widgets that listen to them.  Don't these widgets act as partial widgets already? I don't think I need to use the partial widget paradym.
 
 ****** Issues ******
 MobileHomeLandscapeWidget
