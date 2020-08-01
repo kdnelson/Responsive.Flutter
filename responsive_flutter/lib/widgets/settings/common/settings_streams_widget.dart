@@ -4,10 +4,6 @@ import 'package:responsive_flutter/viewmodel/streams_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
 class SettingsStreamsWidget extends StatelessWidget {
-  final StreamsViewModel model;
-
-  const SettingsStreamsWidget({Key key, this.model}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<StreamsViewModel>.reactive(
