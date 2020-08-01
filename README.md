@@ -146,8 +146,7 @@ Isolates:
   Isolate once the job is done, there exists a very convenient Helper, called compute.
 
   This compute function will do all this for you:
-
-  spawns an Isolate,
-  runs a callback function on that isolate, passing it some data,
-  returns the value, outcome the callback,
-  and kills the Isolate at the end of the execution of the callback.
+  + Spawns an Isolate,
+  + Runs a callback function on that isolate, passing it some data,
+  + Returns the value, outcome the callback,
+  + Kills the Isolate at the end of the execution of the callback.
