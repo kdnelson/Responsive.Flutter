@@ -23,12 +23,12 @@ class IsolateHelper {
     isolates.add(await Isolate.spawn(isolatePayload, iso3));
 
     receivePort.listen((data) {
-      print('Data: $data');
+      print('Recieved: $data');
     });
   }
 
   static void isolatePayload(IsolateDto dto) async {
-    print('https://swapi.dev/api/people/${dto.message}');
+    print('Send: https://swapi.dev/api/people/${dto.message}');
     var request = await HttpClient()
         .getUrl(Uri.parse('https://swapi.dev/api/people/${dto.message}'));
     var response = await request.close();
