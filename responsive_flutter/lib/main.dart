@@ -1,8 +1,10 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/demos/future_demo.dart';
 import 'package:responsive_flutter/utilities/locator.dart';
 import 'package:responsive_flutter/utilities/router.dart';
 
+import 'demos/isolate_demo.dart';
 import 'services/navigator_service.dart';
 
 // void main() async {
@@ -15,6 +17,10 @@ import 'services/navigator_service.dart';
 // }
 
 void main() async {
+  FutureDemo();
+  await Future.delayed(Duration(seconds: 10));
+  IsolateDemo();
+
   await LocatorInjector.setupLocator();
   runApp(MainApplication());
 }
