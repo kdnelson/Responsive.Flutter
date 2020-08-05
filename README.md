@@ -68,9 +68,13 @@ The SettingsCounterPartialWidget, SettingsCounterWidget, and SettingsCounterPari
 
 ****** Notes ******
 
-I would rather implement a few viewmodels with several reactive widgets that listen to them.  Don't these widgets act as partial widgets already? I don't think I need to use the partial widget paradym.
++ I would rather implement a few viewmodels with several reactive mixins widgets that listen to them.  Don't these widgets act as partial widgets already? I don't think I need to use the partial widget paradym.
+
++ The stream switch is nice but for every top-level FloatingActionBtn hit or user device rotation, the page is reloaded and the stream switch is set to the first default choice.
+  I would rather maintain both streams in a reactive mixin and show/hide streams as needed.
 
 ****** Issues ******
+
 MobileHomeLandscapeWidget
     if (model.isPopupOpen == true) {
       model.setHomePopState(false);
@@ -78,14 +82,15 @@ MobileHomeLandscapeWidget
     }
 I/flutter (27563): Another exception was thrown: setState() or markNeedsBuild() called during build.
 
-****** Review ******
+****** Study/Review ******
 
-final variables
-const ver new and when to use them
-get better at keys
-InheritedWidget? How is Stacks using it
-StreamController, when do I need one?
-StreamBuilders?  Add example?  Look at how OrangeDarkTerror is using it.
++ Final variables
++ Const ver new and when to use them
++ Get better at keys
++ Mixins
++ InheritedWidget? How is Stacks using it
++ StreamController, when do I need one?
++ StreamBuilders?  Add example?  Look at how OrangeDarkTerror is using it.
 
 ****** Flutter Knowledge ******
 
