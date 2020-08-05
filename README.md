@@ -1,5 +1,19 @@
 # Responsive.Flutter
 
+****** Flutter Commands ******
+
+flutter doctor                          //gives the state of things.  Google issues to get everything to green
+flutter run --track-widget-creation     //verbose app running
+
+[Shift] R                               //Hot reload as you make code changes to a running app
+[Control] R                             //Kill running app
+taskkill /F /IM dart.exe                //Kill possible orphaned processes
+flutter clean
+
+flutter pub get                         //Get packages updates
+flutter screenshot                      //Show off your work
+flutter devices                         //What are you connected to
+
 ****** ScopedModel - High Level Architecture Overview ******
 
 + Each view will have it's own model that extends the ChangeNotifier.
