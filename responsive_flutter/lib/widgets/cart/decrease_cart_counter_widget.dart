@@ -13,7 +13,7 @@ class DecreaseCartCounterWidget extends StatelessWidget {
         onTap: model.decreaseCounter,
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.blue,
+            color: decreaseBackgroundColor,
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(5),
                 topRight: Radius.circular(5),

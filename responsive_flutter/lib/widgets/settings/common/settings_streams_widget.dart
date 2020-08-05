@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter/utilities/styles.dart';
 import 'package:responsive_flutter/viewmodel/streams_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
@@ -14,7 +15,7 @@ class SettingsStreamsWidget extends StatelessWidget {
             onTap: model.swapSources,
             child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.yellow,
+                  color: streamSwitchBackgroundColor,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(5),
                       topRight: Radius.circular(5),

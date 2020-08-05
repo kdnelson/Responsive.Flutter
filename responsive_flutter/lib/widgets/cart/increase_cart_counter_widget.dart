@@ -13,7 +13,7 @@ class IncreaseCartCounterWidget extends StatelessWidget {
         onTap: model.increaseCounter,
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.green,
+            color: increaseBackgroundColor,
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(5),
                 topRight: Radius.circular(5),
