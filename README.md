@@ -16,6 +16,8 @@ flutter devices                         //What are you connected to
 
 ****** ScopedModel - High Level Architecture Overview ******
 
++ Adopted Stacked Flutter Responsive ScopedModel Architecture:
+  https://www.filledstacks.com/post/building-a-responsive-ui-architecture-in-flutter/
 + Each view will have it's own model that extends the ChangeNotifier.
 + Notify listeners for a view will ONLY BE CALLED when the View's state changes.
 + Each view only has 2 states. Idle and Busy. Any other piece of UI contained in a view, that requires logic and state / UI updates will have it's own model associated with it.   This way the main view only paints when the main view state changes.
