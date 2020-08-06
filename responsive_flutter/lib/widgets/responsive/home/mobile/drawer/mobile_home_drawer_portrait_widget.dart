@@ -31,7 +31,8 @@ class MobileHomeDrawerPortraitWidget extends StatelessWidget {
                       builder: (context) => SettingsResponsiveWidget()));
                 },
                 icon: Icon(Icons.settings, size: 45),
-                label: Text('Settings', style: TextStyle(fontSize: 20)))
+                label: Text('Settings',
+                    style: TextStyle(fontSize: 20, color: foregroundColor)))
           ]),
         ));
   }

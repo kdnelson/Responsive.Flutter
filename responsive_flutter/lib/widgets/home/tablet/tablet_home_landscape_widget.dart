@@ -9,11 +9,13 @@ class TabletHomeLandscapeWidget
   @override
   Widget build(BuildContext context, HomeViewModel model) {
     return ExitAppDialog(context,
-        child: Text(
-          model.title + " Landscape",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
+        child: Center(
+          child: Text(
+            model.title + " Landscape",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 30,
+            ),
           ),
         ));
   }

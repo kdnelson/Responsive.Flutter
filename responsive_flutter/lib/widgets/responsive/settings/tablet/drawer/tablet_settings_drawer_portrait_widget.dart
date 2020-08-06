@@ -16,7 +16,7 @@ class TabletSettingsDrawerPortraitWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor,
           boxShadow: [
-            BoxShadow(blurRadius: 16, color: foregroundColor),
+            BoxShadow(blurRadius: 4, color: foregroundColor),
           ],
         ),
         child: Container(
@@ -27,7 +27,8 @@ class TabletSettingsDrawerPortraitWidget extends StatelessWidget {
                     builder: (context) => SettingsResponsiveWidget()));
               },
               icon: Icon(Icons.settings, size: 45),
-              label: Text('Settings', style: TextStyle(fontSize: 20)))
+              label: Text('Settings',
+                  style: TextStyle(fontSize: 20, color: foregroundColor)))
         ])));
   }
 }

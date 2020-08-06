@@ -27,7 +27,8 @@ class MobileSettingsDrawerPortraitWidget extends StatelessWidget {
                   Navigator.of(context).pop();
                 },
                 icon: Icon(Icons.home, size: 45),
-                label: Text('Home', style: TextStyle(fontSize: 20))),
+                label: Text('Home',
+                    style: TextStyle(fontSize: 20, color: foregroundColor))),
           ]),
         ));
   }
