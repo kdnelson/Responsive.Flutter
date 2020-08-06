@@ -82,10 +82,15 @@ The SettingsCounterPartialWidget, SettingsCounterWidget, and SettingsCounterPari
 
 ****** Notes ******
 
-+ I would rather implement a few viewmodels with several reactive mixins widgets that listen to them.  Don't these widgets act as partial widgets already? I don't think I need to use the partial widget paradym.
++ I would rather implement a few viewmodels with several reactive mixins widgets that listen to them.  Don't these widgets act as partial widgets already? I don't think I need  
+  to use the partial widget paradym.
 
 + The stream switch is nice but for every top-level FloatingActionBtn hit or user device rotation, the page is reloaded and the stream switch is set to the first default choice.
   I would rather maintain both streams in a reactive mixin and show/hide streams as needed.
+  
++ FloatingActionBtns have to be built on a Scaffold that often wraps a routed page.  Pressing on a FloatingActionBtn should be used to route to a detail page related to the     
+  previous page and not so much used to modify the data of the wrapped page.  You could use it to mod data of that page but for each press, the widget tree is rebuilt.  This is 
+  cuz the FloatingActionBtn is attached to the scaffold - the parent of that page.
 
 ****** Issues ******
 
