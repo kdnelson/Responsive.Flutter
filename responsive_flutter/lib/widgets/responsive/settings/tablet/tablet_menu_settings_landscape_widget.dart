@@ -11,16 +11,13 @@ class TabletMenuSettingsLandscapeWidget
   @override
   Widget build(BuildContext context, SettingsViewModel model) {
     return Scaffold(
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 100.0),
-        child: FloatingActionButton(
-          backgroundColor: foregroundColor,
-          foregroundColor: backgroundColor,
-          child: Icon(Icons.add),
-          onPressed: () {
-            model.increaseCounter();
-          },
-        ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: foregroundColor,
+        foregroundColor: backgroundColor,
+        child: Icon(Icons.add),
+        onPressed: () {
+          model.increaseCounter();
+        },
       ),
       body: Row(
         children: <Widget>[

@@ -12,6 +12,7 @@ class TabletHomeDrawerLandscapeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: Container(
+            width: 158.0,
             alignment: Alignment.topLeft,
             decoration: BoxDecoration(
               color: backgroundColor,
@@ -22,7 +23,7 @@ class TabletHomeDrawerLandscapeWidget extends StatelessWidget {
             child: Container(
                 child: Row(children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(top: 30.0),
+                padding: const EdgeInsets.only(top: 33.0),
                 child: FlatButton.icon(
                     onPressed: () {
                       locator<NavigatorService>().navigateToPage(
