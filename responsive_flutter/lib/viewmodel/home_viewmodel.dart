@@ -35,7 +35,7 @@ class HomeViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void setHomePopState(bool state) {
+  void setHomePopupState(bool state) {
     isPopupOpen = state;
     notifyListeners();
   }

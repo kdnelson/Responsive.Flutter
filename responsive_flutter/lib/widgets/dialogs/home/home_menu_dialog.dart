@@ -44,7 +44,7 @@ class HomeMenuDialog extends StatelessWidget {
                   RaisedButton(
                     color: cautionBackgroundColor,
                     onPressed: () {
-                      model.setHomePopState(false);
+                      model.setHomePopupState(false);
                       Navigator.of(context).pop();
                     },
                     child: Text(

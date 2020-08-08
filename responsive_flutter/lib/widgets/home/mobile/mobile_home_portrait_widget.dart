@@ -48,7 +48,7 @@ class MobileHomePortraitWidget
                               child: RaisedButton(
                                 color: foregroundColor,
                                 onPressed: () {
-                                  model.setHomePopState(true);
+                                  model.setHomePopupState(true);
                                   showDialog(
                                     context: context,
                                     builder: (context) {

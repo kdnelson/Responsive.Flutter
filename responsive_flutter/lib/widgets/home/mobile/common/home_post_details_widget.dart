@@ -49,7 +49,9 @@ class HomePostDetailsWidget extends StatelessWidget {
                       MediaQuery.removePadding(
                           context: context,
                           removeTop: true,
-                          child: HomeCommentsPerPostWidget())
+                          child: Expanded(
+                            child: HomeCommentsPerPostWidget(),
+                          ))
                     ],
                   ),
                 ),

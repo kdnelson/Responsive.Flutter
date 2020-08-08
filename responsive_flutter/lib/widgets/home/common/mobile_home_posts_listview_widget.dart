@@ -13,7 +13,7 @@ class MobileHomePostsListViewWidget extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
+        margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         padding: EdgeInsets.all(10.0),
         decoration: BoxDecoration(
             color: backgroundColor,
@@ -28,7 +28,7 @@ class MobileHomePostsListViewWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              '${post.title} - ${post.likes.toString()}',
+              '${post.title}',
               maxLines: 2,
               style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16.0),
             ),

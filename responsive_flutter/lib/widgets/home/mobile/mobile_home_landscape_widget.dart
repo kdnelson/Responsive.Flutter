@@ -12,7 +12,7 @@ class MobileHomeLandscapeWidget
   @override
   Widget build(BuildContext context, HomeViewModel model) {
     if (model.isPopupOpen == true) {
-      model.setHomePopState(false);
+      model.setHomePopupState(false);
       Navigator.of(context).pop();
     }
     return ExitAppDialog(
@@ -35,21 +35,33 @@ class MobileHomeLandscapeWidget
                       ),
                     ),
                   )
-                : Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(right: 17.0),
-                          child: HomeShoppingCartCounterWidget(),
-                        ),
-                        MediaQuery.removePadding(
-                            context: context,
-                            removeTop: true,
-                            child: SizedBox(
-                              height: 300,
-                              child: HomePostsPerUserWidget(),
-                            ))
-                      ]),
+                : Padding(
+                    padding: const EdgeInsets.only(top: 5.0),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: <Widget>[
+                          Center(
+                            child: Text(
+                              model.title + " Landscape",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 17.0),
+                            child: HomeShoppingCartCounterWidget(),
+                          ),
+                          MediaQuery.removePadding(
+                              context: context,
+                              removeTop: true,
+                              child: SizedBox(
+                                height: 270.0,
+                                child: HomePostsPerUserWidget(),
+                              ))
+                        ]),
+                  ),
           ],
         ),
       ),

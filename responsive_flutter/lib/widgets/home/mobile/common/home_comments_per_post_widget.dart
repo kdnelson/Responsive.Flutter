@@ -19,7 +19,8 @@ class HomeCommentsPerPostWidget
               ),
             ),
           )
-        : Expanded(
+        : Container(
+            height: 300.0,
             child: ListView(
               children: model.comments
                   .map((comment) => CommentItem(comment))

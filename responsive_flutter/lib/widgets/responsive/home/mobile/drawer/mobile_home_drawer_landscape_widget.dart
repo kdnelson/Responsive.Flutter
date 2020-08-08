@@ -12,9 +12,8 @@ class MobileHomeDrawerLandscapeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         width: 90,
-        decoration: BoxDecoration(
-          color: backgroundColor,
-        ),
+        alignment: Alignment.centerLeft,
+        color: backgroundColor,
         child: Padding(
           padding: const EdgeInsets.only(top: 33.0, left: 9.0),
           child: Column(children: <Widget>[

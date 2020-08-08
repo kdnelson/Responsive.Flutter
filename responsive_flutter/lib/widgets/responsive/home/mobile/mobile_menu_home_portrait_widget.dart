@@ -20,7 +20,7 @@ class MobileMenuHomePortraitWidget
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(
-                top: 45.0, bottom: 15.0, left: 10.0, right: 10.0),
+                top: 45.0, bottom: 10.0, left: 10.0, right: 10.0),
             child: Row(
               children: <Widget>[
                 IconButton(
@@ -33,12 +33,12 @@ class MobileMenuHomePortraitWidget
                   },
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 10.0),
+                  padding: const EdgeInsets.only(top: 2.0, left: 10.0),
                   child: Text(
-                    model.title,
+                    model.title + " Portrait",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 30,
+                      fontSize: 22,
                     ),
                   ),
                 ),

@@ -14,14 +14,8 @@ class TabletHomeDrawerPortraitWidget extends StatelessWidget {
         child: Container(
             height: 100.0,
             alignment: Alignment.centerLeft,
-            decoration: BoxDecoration(
-              color: backgroundColor,
-              boxShadow: [
-                BoxShadow(blurRadius: 4, color: foregroundColor),
-              ],
-            ),
-            child: Container(
-                child: Row(children: <Widget>[
+            color: backgroundColor,
+            child: Row(children: <Widget>[
               FlatButton.icon(
                   onPressed: () {
                     locator<NavigatorService>().navigateToPage(
@@ -31,6 +25,6 @@ class TabletHomeDrawerPortraitWidget extends StatelessWidget {
                   icon: Icon(Icons.settings, size: 45),
                   label: Text('Settings',
                       style: TextStyle(fontSize: 20, color: foregroundColor)))
-            ]))));
+            ])));
   }
 }

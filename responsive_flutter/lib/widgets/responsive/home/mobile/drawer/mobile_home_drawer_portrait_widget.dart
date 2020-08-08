@@ -12,15 +12,8 @@ class MobileHomeDrawerPortraitWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         width: 160,
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 16,
-              color: foregroundColor,
-            )
-          ],
-        ),
+        alignment: Alignment.bottomCenter,
+        color: backgroundColor,
         child: Padding(
           padding: const EdgeInsets.only(top: 50.0),
           child: Column(children: <Widget>[
