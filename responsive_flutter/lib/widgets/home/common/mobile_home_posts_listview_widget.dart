@@ -16,7 +16,7 @@ class MobileHomePostsListViewWidget extends StatelessWidget {
         margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         padding: EdgeInsets.all(10.0),
         decoration: BoxDecoration(
-            color: backgroundColor,
+            color: backGroundColor,
             borderRadius: BorderRadius.circular(5.0),
             boxShadow: [
               BoxShadow(

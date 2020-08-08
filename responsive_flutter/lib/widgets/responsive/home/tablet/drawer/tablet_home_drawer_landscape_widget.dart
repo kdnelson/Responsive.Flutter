@@ -14,7 +14,7 @@ class TabletHomeDrawerLandscapeWidget extends StatelessWidget {
         child: Container(
             width: 158.0,
             alignment: Alignment.topLeft,
-            color: backgroundColor,
+            color: menuBackgroundColor,
             child: Row(children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(top: 33.0),
@@ -25,10 +25,11 @@ class TabletHomeDrawerLandscapeWidget extends StatelessWidget {
                               builder: (context) =>
                                   SettingsResponsiveWidget()));
                     },
-                    icon: Icon(Icons.settings, size: 45),
+                    icon:
+                        Icon(Icons.settings, size: 45, color: backGroundColor),
                     label: Text('Settings',
                         style:
-                            TextStyle(fontSize: 20, color: foregroundColor))),
+                            TextStyle(fontSize: 20, color: backGroundColor))),
               )
             ])));
   }

@@ -11,12 +11,7 @@ class TabletSettingsDrawerLandscapeWidget extends StatelessWidget {
         child: Container(
             width: 158.0,
             alignment: Alignment.topLeft,
-            decoration: BoxDecoration(
-              color: backgroundColor,
-              boxShadow: [
-                BoxShadow(blurRadius: 4, color: foregroundColor),
-              ],
-            ),
+            color: menuBackgroundColor,
             child: Container(
                 child: Row(children: <Widget>[
               Padding(
@@ -25,10 +20,10 @@ class TabletSettingsDrawerLandscapeWidget extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    icon: Icon(Icons.home, size: 45),
+                    icon: Icon(Icons.home, size: 45,color: backGroundColor),
                     label: Text('Home',
                         style:
-                            TextStyle(fontSize: 20, color: foregroundColor))),
+                            TextStyle(fontSize: 20, color: backGroundColor))),
               )
             ]))));
   }

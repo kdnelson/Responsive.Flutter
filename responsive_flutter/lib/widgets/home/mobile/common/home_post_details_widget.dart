@@ -17,17 +17,17 @@ class HomePostDetailsWidget extends StatelessWidget {
             model.getCommentsPerPost(model.posts[this.postIndex].id),
         builder: (context, model, child) => model.isBusy
             ? Scaffold(
-                backgroundColor: backgroundColor,
+                backgroundColor: backGroundColor,
                 body: Center(
                   child: Container(
-                      color: backgroundColor,
+                      color: backGroundColor,
                       child: CircularProgressIndicator(
                         valueColor:
-                            new AlwaysStoppedAnimation<Color>(foregroundColor),
+                            new AlwaysStoppedAnimation<Color>(foreGroundColor),
                       )),
                 ))
             : Scaffold(
-                backgroundColor: backgroundColor,
+                backgroundColor: backGroundColor,
                 body: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Column(
@@ -38,7 +38,7 @@ class HomePostDetailsWidget extends StatelessWidget {
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 30.0,
-                              color: foregroundColor)),
+                              color: foreGroundColor)),
                       Text(
                         'by ${model.user.name}',
                         style: TextStyle(fontSize: 15.0),

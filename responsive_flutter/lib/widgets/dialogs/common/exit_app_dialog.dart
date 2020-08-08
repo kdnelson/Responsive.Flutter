@@ -20,7 +20,7 @@ class ExitAppDialog extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12.0),
                 ),
                 child: Container(
-                  height: 300.0,
+                  height: 150.0,
                   width: 300.0,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -30,29 +30,36 @@ class ExitAppDialog extends StatelessWidget {
                         child: Text(
                           'Exit Responsive App?',
                           style:
-                              TextStyle(fontSize: 25.0, color: foregroundColor),
+                              TextStyle(fontSize: 25.0, color: foreGroundColor),
                         ),
                       ),
+                      Divider(
+                        color: Colors.black,
+                        height: 2,
+                        thickness: 1,
+                        indent: 10,
+                        endIndent: 10,
+                      ),
                       Padding(
-                        padding:
-                            const EdgeInsets.only(left: 10, right: 10, top: 50),
+                        padding: const EdgeInsets.only(
+                            left: 10, right: 10, top: 20, bottom: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: <Widget>[
                             RaisedButton(
-                              color: foregroundColor,
+                              color: foreGroundColor,
                               onPressed: () {
                                 Navigator.of(context).pop(true);
                               },
                               child: Text(
                                 'Okay',
                                 style: TextStyle(
-                                    fontSize: 18.0, color: backgroundColor),
+                                    fontSize: 18.0, color: backGroundColor),
                               ),
                             ),
                             SizedBox(
-                              width: 20,
+                              width: 50,
                             ),
                             RaisedButton(
                               color: cautionBackgroundColor,
@@ -62,7 +69,7 @@ class ExitAppDialog extends StatelessWidget {
                               child: Text(
                                 'Cancel',
                                 style: TextStyle(
-                                    fontSize: 18.0, color: backgroundColor),
+                                    fontSize: 18.0, color: backGroundColor),
                               ),
                             )
                           ],

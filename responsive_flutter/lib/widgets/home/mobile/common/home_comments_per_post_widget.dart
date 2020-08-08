@@ -13,9 +13,9 @@ class HomeCommentsPerPostWidget
         ? Padding(
             padding: const EdgeInsets.only(top: 20.0),
             child: Container(
-              color: backgroundColor,
+              color: backGroundColor,
               child: CircularProgressIndicator(
-                valueColor: new AlwaysStoppedAnimation<Color>(foregroundColor),
+                valueColor: new AlwaysStoppedAnimation<Color>(foreGroundColor),
               ),
             ),
           )

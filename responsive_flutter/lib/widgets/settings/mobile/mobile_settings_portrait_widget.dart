@@ -13,16 +13,25 @@ class MobileSettingsPortraitWidget
   Widget build(BuildContext context, SettingsViewModel model) {
     return Column(
       children: <Widget>[
+        Center(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 50.0),
+            child: Text(
+              model.title,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 40,
+              ),
+            ),
+          ),
+        ),
         SettingsCounterPartialWidget(),
         SizedBox(height: 30),
-        Row(
-          children: <Widget>[
-            SizedBox(width: 55),
-            DecreaseCartCounterWidget(),
-            SizedBox(width: 50),
-            IncreaseCartCounterWidget(),
-          ],
-        ),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+          DecreaseCartCounterWidget(),
+          SizedBox(width: 20.0),
+          IncreaseCartCounterWidget(),
+        ]),
         SizedBox(height: 30),
         SettingsStreamsWidget(),
       ],

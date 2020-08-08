@@ -10,11 +10,11 @@ class MobileSettingsDrawerPortraitWidget extends StatelessWidget {
     return Container(
         width: 160,
         decoration: BoxDecoration(
-          color: backgroundColor,
+          color: menuBackgroundColor,
           boxShadow: [
             BoxShadow(
-              blurRadius: 16,
-              color: foregroundColor,
+              blurRadius: 4,
+              color: foreGroundColor,
             )
           ],
         ),
@@ -26,9 +26,9 @@ class MobileSettingsDrawerPortraitWidget extends StatelessWidget {
                   Navigator.of(context).pop();
                   Navigator.of(context).pop();
                 },
-                icon: Icon(Icons.home, size: 45),
+                icon: Icon(Icons.home, size: 45, color: backGroundColor),
                 label: Text('Home',
-                    style: TextStyle(fontSize: 20, color: foregroundColor))),
+                    style: TextStyle(fontSize: 20, color: backGroundColor))),
           ]),
         ));
   }

@@ -12,13 +12,20 @@ class MobileSettingsLandscapeWidget
   @override
   Widget build(BuildContext context, SettingsViewModel model) {
     return Column(children: <Widget>[
-      SizedBox(height: 10),
+      Center(
+        child: Text(
+          model.title,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 40,
+          ),
+        ),
+      ),
       SettingsCounterPartialWidget(),
-      SizedBox(height: 15),
-      Row(children: <Widget>[
-        SizedBox(width: 165),
+      SizedBox(height: 10),
+      Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
         DecreaseCartCounterWidget(),
-        SizedBox(width: 50),
+        SizedBox(width: 10.0),
         IncreaseCartCounterWidget(),
       ]),
       SizedBox(height: 20),

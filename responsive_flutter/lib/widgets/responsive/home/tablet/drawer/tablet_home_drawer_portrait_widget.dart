@@ -14,7 +14,7 @@ class TabletHomeDrawerPortraitWidget extends StatelessWidget {
         child: Container(
             height: 100.0,
             alignment: Alignment.centerLeft,
-            color: backgroundColor,
+            color: menuBackgroundColor,
             child: Row(children: <Widget>[
               FlatButton.icon(
                   onPressed: () {
@@ -22,9 +22,9 @@ class TabletHomeDrawerPortraitWidget extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => SettingsResponsiveWidget()));
                   },
-                  icon: Icon(Icons.settings, size: 45),
+                  icon: Icon(Icons.settings, size: 45, color: backGroundColor),
                   label: Text('Settings',
-                      style: TextStyle(fontSize: 20, color: foregroundColor)))
+                      style: TextStyle(fontSize: 20, color: backGroundColor)))
             ])));
   }
 }

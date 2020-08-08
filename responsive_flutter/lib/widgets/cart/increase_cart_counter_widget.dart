@@ -38,7 +38,7 @@ class IncreaseCartCounterWidget extends StatelessWidget {
                 'Tap To + Counter',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: backgroundColor,
+                  color: backGroundColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
                 ),
@@ -47,7 +47,7 @@ class IncreaseCartCounterWidget extends StatelessWidget {
                 model.counter < 0 ? '0' : model.counter.toString(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: backgroundColor,
+                  color: backGroundColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
                 ),

@@ -11,7 +11,7 @@ class LoginEntryFormWidget extends BaseViewModelProviderWidget<LoginViewModel> {
   @override
   Widget build(BuildContext context, LoginViewModel model) {
     return Container(
-      color: backgroundColor,
+      color: backGroundColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -19,21 +19,21 @@ class LoginEntryFormWidget extends BaseViewModelProviderWidget<LoginViewModel> {
           model.isBusy
               ? Center(
                   child: Container(
-                    color: backgroundColor,
+                    color: backGroundColor,
                     child: CircularProgressIndicator(
                       valueColor:
-                          new AlwaysStoppedAnimation<Color>(foregroundColor),
+                          new AlwaysStoppedAnimation<Color>(foreGroundColor),
                     ),
                   ),
                 )
               : FlatButton(
-                  color: backgroundColor,
+                  color: backGroundColor,
                   child: Text(model.greeting,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 30,
-                          backgroundColor: backgroundColor,
-                          color: foregroundColor)),
+                          backgroundColor: backGroundColor,
+                          color: foreGroundColor)),
                   onPressed: () async {
                     // TODO get textField and pass in userId
                     var userId = await model.login();

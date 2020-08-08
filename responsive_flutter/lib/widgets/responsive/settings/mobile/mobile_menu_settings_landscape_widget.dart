@@ -22,8 +22,8 @@ class MobileMenuSettingsLandscapeWidget
             child: Align(
               alignment: Alignment.bottomLeft,
               child: FloatingActionButton(
-                  backgroundColor: foregroundColor,
-                  foregroundColor: backgroundColor,
+                  backgroundColor: foreGroundColor,
+                  foregroundColor: backGroundColor,
                   child: Icon(Icons.remove),
                   heroTag: null,
                   onPressed: () {
@@ -34,8 +34,8 @@ class MobileMenuSettingsLandscapeWidget
           Align(
             alignment: Alignment.bottomRight,
             child: FloatingActionButton(
-                backgroundColor: foregroundColor,
-                foregroundColor: backgroundColor,
+                backgroundColor: foreGroundColor,
+                foregroundColor: backGroundColor,
                 child: Icon(Icons.add),
                 heroTag: null,
                 onPressed: () {

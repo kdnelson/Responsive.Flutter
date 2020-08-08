@@ -18,7 +18,7 @@ class MobileHomeLandscapeWidget
     return ExitAppDialog(
       context,
       child: Container(
-        color: backgroundColor,
+        color: backGroundColor,
         child: Column(
           // TODO Use this for a text entry
           // TextEditingController _controller = TextEditingController();
@@ -28,10 +28,10 @@ class MobileHomeLandscapeWidget
                 ? Padding(
                     padding: const EdgeInsets.only(top: 100.0),
                     child: Container(
-                      color: backgroundColor,
+                      color: backGroundColor,
                       child: CircularProgressIndicator(
                         valueColor:
-                            new AlwaysStoppedAnimation<Color>(foregroundColor),
+                            new AlwaysStoppedAnimation<Color>(foreGroundColor),
                       ),
                     ),
                   )
@@ -42,7 +42,7 @@ class MobileHomeLandscapeWidget
                         children: <Widget>[
                           Center(
                             child: Text(
-                              model.title + " Landscape",
+                              model.title,
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,

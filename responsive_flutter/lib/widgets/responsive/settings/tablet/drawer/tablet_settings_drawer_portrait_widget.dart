@@ -11,21 +11,16 @@ class TabletSettingsDrawerPortraitWidget extends StatelessWidget {
         child: Container(
             height: 100.0,
             alignment: Alignment.centerLeft,
-            decoration: BoxDecoration(
-              color: backgroundColor,
-              boxShadow: [
-                BoxShadow(blurRadius: 4, color: foregroundColor),
-              ],
-            ),
+            color: menuBackgroundColor,
             child: Container(
                 child: Row(children: <Widget>[
               FlatButton.icon(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  icon: Icon(Icons.home, size: 45),
+                  icon: Icon(Icons.home, size: 45, color: backGroundColor),
                   label: Text('Home',
-                      style: TextStyle(fontSize: 20, color: foregroundColor)))
+                      style: TextStyle(fontSize: 20, color: backGroundColor)))
             ]))));
   }
 }

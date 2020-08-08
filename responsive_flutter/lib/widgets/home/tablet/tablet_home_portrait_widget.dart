@@ -15,7 +15,7 @@ class TabletHomePortraitWidget
     return ExitAppDialog(
       context,
       child: Container(
-        color: backgroundColor,
+        color: backGroundColor,
         child: Column(
           // TODO Use this for a text entry
           // TextEditingController _controller = TextEditingController();
@@ -23,10 +23,10 @@ class TabletHomePortraitWidget
           children: <Widget>[
             model.isBusy
                 ? Padding(
-                    padding: const EdgeInsets.only(top: 200.0),
+                    padding: const EdgeInsets.only(top: 500.0),
                     child: CircularProgressIndicator(
                       valueColor:
-                          new AlwaysStoppedAnimation<Color>(foregroundColor),
+                          new AlwaysStoppedAnimation<Color>(foreGroundColor),
                     ),
                   )
                 : Padding(
@@ -36,10 +36,10 @@ class TabletHomePortraitWidget
                         children: <Widget>[
                           Center(
                             child: Text(
-                              model.title + " Portrait",
+                              model.title,
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 30,
+                                fontSize: 35,
                               ),
                             ),
                           ),
@@ -57,7 +57,7 @@ class TabletHomePortraitWidget
                                     right: 20.0,
                                     left: 20.0),
                                 child: RaisedButton(
-                                  color: foregroundColor,
+                                  color: foreGroundColor,
                                   onPressed: () {
                                     model.setHomePopupState(true);
                                     showDialog(
@@ -70,7 +70,7 @@ class TabletHomePortraitWidget
                                   child: Text(
                                     model.menuLabel,
                                     style: TextStyle(
-                                        fontSize: 18.0, color: backgroundColor),
+                                        fontSize: 18.0, color: backGroundColor),
                                   ),
                                 ),
                               ),

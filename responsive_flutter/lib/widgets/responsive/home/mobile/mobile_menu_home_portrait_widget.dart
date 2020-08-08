@@ -35,7 +35,7 @@ class MobileMenuHomePortraitWidget
                 Padding(
                   padding: const EdgeInsets.only(top: 2.0, left: 10.0),
                   child: Text(
-                    model.title + " Portrait",
+                    model.title,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 22,

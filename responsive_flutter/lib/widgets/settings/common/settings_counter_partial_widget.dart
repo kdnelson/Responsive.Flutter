@@ -7,9 +7,11 @@ class SettingsCounterPartialWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
         SettingsCounterWidget(),
+        SizedBox(width: 20.0),
         SettingsCounterParityWidget(),
       ],
     );

@@ -13,7 +13,7 @@ class CommentItem extends StatelessWidget {
       padding: EdgeInsets.all(10.0),
       margin: EdgeInsets.symmetric(vertical: 10.0),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0), color: backgroundColor),
+          borderRadius: BorderRadius.circular(10.0), color: backGroundColor),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

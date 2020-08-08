@@ -13,7 +13,7 @@ class MobileHomeDrawerPortraitWidget extends StatelessWidget {
     return Container(
         width: 160,
         alignment: Alignment.bottomCenter,
-        color: backgroundColor,
+        color: menuBackgroundColor,
         child: Padding(
           padding: const EdgeInsets.only(top: 50.0),
           child: Column(children: <Widget>[
@@ -23,9 +23,9 @@ class MobileHomeDrawerPortraitWidget extends StatelessWidget {
                   locator<NavigatorService>().navigateToPage(MaterialPageRoute(
                       builder: (context) => SettingsResponsiveWidget()));
                 },
-                icon: Icon(Icons.settings, size: 45),
+                icon: Icon(Icons.settings, size: 45, color: backGroundColor),
                 label: Text('Settings',
-                    style: TextStyle(fontSize: 20, color: foregroundColor)))
+                    style: TextStyle(fontSize: 18, color: backGroundColor)))
           ]),
         ));
   }

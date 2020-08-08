@@ -22,8 +22,8 @@ class MobileMenuSettingsPortraitWidget
             child: Align(
               alignment: Alignment.bottomLeft,
               child: FloatingActionButton(
-                  backgroundColor: foregroundColor,
-                  foregroundColor: backgroundColor,
+                  backgroundColor: foreGroundColor,
+                  foregroundColor: backGroundColor,
                   child: Icon(Icons.remove),
                   heroTag: null,
                   onPressed: () {
@@ -34,8 +34,8 @@ class MobileMenuSettingsPortraitWidget
           Align(
             alignment: Alignment.bottomRight,
             child: FloatingActionButton(
-                backgroundColor: foregroundColor,
-                foregroundColor: backgroundColor,
+                backgroundColor: foreGroundColor,
+                foregroundColor: backGroundColor,
                 child: Icon(Icons.add),
                 heroTag: null,
                 onPressed: () {
@@ -66,7 +66,7 @@ class MobileMenuSettingsPortraitWidget
                     model.title,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 30,
+                      fontSize: 22,
                     ),
                   ),
                 ),

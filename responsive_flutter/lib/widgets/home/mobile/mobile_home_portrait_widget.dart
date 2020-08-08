@@ -15,7 +15,7 @@ class MobileHomePortraitWidget
     return ExitAppDialog(
       context,
       child: Container(
-        color: backgroundColor,
+        color: backGroundColor,
         child: Column(
           // TODO Use this for a text entry
           // TextEditingController _controller = TextEditingController();
@@ -26,7 +26,7 @@ class MobileHomePortraitWidget
                     padding: const EdgeInsets.only(top: 200.0),
                     child: CircularProgressIndicator(
                       valueColor:
-                          new AlwaysStoppedAnimation<Color>(foregroundColor),
+                          new AlwaysStoppedAnimation<Color>(foreGroundColor),
                     ),
                   )
                 : Column(
@@ -46,7 +46,7 @@ class MobileHomePortraitWidget
                                   right: 20.0,
                                   left: 20.0),
                               child: RaisedButton(
-                                color: foregroundColor,
+                                color: foreGroundColor,
                                 onPressed: () {
                                   model.setHomePopupState(true);
                                   showDialog(
@@ -59,7 +59,7 @@ class MobileHomePortraitWidget
                                 child: Text(
                                   model.menuLabel,
                                   style: TextStyle(
-                                      fontSize: 18.0, color: backgroundColor),
+                                      fontSize: 18.0, color: backGroundColor),
                                 ),
                               ),
                             ),

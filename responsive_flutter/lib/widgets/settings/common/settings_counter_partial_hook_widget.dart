@@ -11,7 +11,7 @@ class SettingsCounterWidget extends HookViewModelWidget<SettingsViewModel> {
     SettingsViewModel model,
   ) {
     return Text(
-      "Settings Portrait: " + model.counterDisplay,
+      "Counter: " + model.counterDisplay,
       style: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 20,

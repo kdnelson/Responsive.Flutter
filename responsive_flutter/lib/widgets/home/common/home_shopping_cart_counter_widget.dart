@@ -13,8 +13,8 @@ class HomeShoppingCartCounterWidget extends StatelessWidget {
             'Cart: ' + model.counter.toString(),
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-                color: foregroundColor,
-                backgroundColor: backgroundColor,
+                color: foreGroundColor,
+                backgroundColor: backGroundColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 20.0)));
   }

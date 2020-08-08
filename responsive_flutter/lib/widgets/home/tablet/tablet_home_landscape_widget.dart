@@ -18,7 +18,7 @@ class TabletHomeLandscapeWidget
     return ExitAppDialog(
       context,
       child: Container(
-        color: backgroundColor,
+        color: backGroundColor,
         child: Column(
           // TODO Use this for a text entry
           // TextEditingController _controller = TextEditingController();
@@ -26,12 +26,12 @@ class TabletHomeLandscapeWidget
           children: <Widget>[
             model.isBusy
                 ? Padding(
-                    padding: const EdgeInsets.only(top: 100.0),
+                    padding: const EdgeInsets.only(top: 400.0),
                     child: Container(
-                      color: backgroundColor,
+                      color: backGroundColor,
                       child: CircularProgressIndicator(
                         valueColor:
-                            new AlwaysStoppedAnimation<Color>(foregroundColor),
+                            new AlwaysStoppedAnimation<Color>(foreGroundColor),
                       ),
                     ),
                   )
@@ -42,22 +42,23 @@ class TabletHomeLandscapeWidget
                         children: <Widget>[
                           Center(
                             child: Text(
-                              model.title + " Landscape",
+                              model.title,
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 30,
+                                fontSize: 35,
                               ),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(right: 17.0),
+                            padding: const EdgeInsets.only(
+                                right: 17.0, bottom: 20.0),
                             child: HomeShoppingCartCounterWidget(),
                           ),
                           MediaQuery.removePadding(
                               context: context,
                               removeTop: true,
                               child: SizedBox(
-                                height: 660,
+                                height: 635,
                                 child: HomePostsPerUserWidget(),
                               ))
                         ]),

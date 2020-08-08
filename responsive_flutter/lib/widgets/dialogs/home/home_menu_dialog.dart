@@ -27,7 +27,7 @@ class HomeMenuDialog extends StatelessWidget {
                 model.popupMenuTitle,
                 style: TextStyle(
                     fontSize: 24,
-                    color: foregroundColor,
+                    color: foreGroundColor,
                     fontWeight: FontWeight.bold),
               ),
             ),
@@ -49,7 +49,7 @@ class HomeMenuDialog extends StatelessWidget {
                     },
                     child: Text(
                       'Close',
-                      style: TextStyle(fontSize: 18.0, color: backgroundColor),
+                      style: TextStyle(fontSize: 18.0, color: backGroundColor),
                     ),
                   )
                 ],
