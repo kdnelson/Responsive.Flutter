@@ -37,13 +37,13 @@ class FutureDemo {
     print('C end from $from');
   }
 
-  // TODO Notice 'MethodD' is not called last.
+  // Notice 'MethodD' is not called last.
   // If this is your intention, simply add await Future(() {} in the 'methodC'
   methodD() {
     print('D');
   }
 
-  // TODO Notice the .forEach collects all values in the loop, exits the loop,
+  // Notice the .forEach collects all values in the loop, exits the loop,
   // then pushes all the values as callbacks to the Event Queue to run sequencially
   void method1() {
     List<String> myArray = <String>['a', 'b', 'c'];
@@ -54,7 +54,7 @@ class FutureDemo {
     print('Method1: end of loop');
   }
 
-  // TODO Notice the .for iterates all values in the loop, pushes each value as a callback
+  // Notice the .for iterates all values in the loop, pushes each value as a callback
   // to the Event Queue to run sequencially.  Then calls 'End of loop'
   void method2() async {
     List<String> myArray = <String>['a', 'b', 'c'];

@@ -4,6 +4,7 @@ import 'package:responsive_flutter/models/user.dart';
 import 'package:responsive_flutter/services/comments_service.dart';
 import 'package:responsive_flutter/services/posts_service.dart';
 import 'package:responsive_flutter/services/user_service.dart';
+import 'package:responsive_flutter/utilities/isolate_helper.dart';
 import 'package:responsive_flutter/utilities/locator.dart';
 import 'package:stacked/stacked.dart';
 
@@ -12,6 +13,8 @@ class HomeViewModel extends BaseViewModel {
   String menuLabel = 'Menu';
   String popupMenuTitle = 'Popup Menu';
   bool isPopupOpen = false;
+
+  IsolateHelper isoHelper = new IsolateHelper();
 
   UserService _userService = locator<UserService>();
   User get user => _userService.user;
@@ -22,12 +25,16 @@ class HomeViewModel extends BaseViewModel {
   CommentsService _commentsService = locator<CommentsService>();
   List<Comment> get comments => _commentsService.comments;
 
-  void initialize(userId) {
+  void initialize(userId) async {
     // Get state from Database...
     if (userId > -1) {
       getPosts(userId);
     }
 
+    isoHelper.start();
+    isoHelper.stop();
+
+    isoHelper.run().then((value) => print('HomeVm: $value'));
     notifyListeners();
   }
 
