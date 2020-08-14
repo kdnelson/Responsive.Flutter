@@ -13,6 +13,7 @@ class HomeViewModel extends BaseViewModel {
   String menuLabel = 'Menu';
   String popupMenuTitle = 'Popup Menu';
   bool isPopupOpen = false;
+  dynamic isolateResponse;
 
   IsolateHelper isoHelper = new IsolateHelper();
 
@@ -31,10 +32,8 @@ class HomeViewModel extends BaseViewModel {
       getPosts(userId);
     }
 
-    isoHelper.start();
+    isolateResponse = await isoHelper.spawnIsolate();
     isoHelper.stop();
-
-    isoHelper.run().then((value) => print('HomeVm: $value'));
     notifyListeners();
   }
 

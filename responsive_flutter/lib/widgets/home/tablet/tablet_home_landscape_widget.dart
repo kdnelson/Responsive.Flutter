@@ -49,11 +49,38 @@ class TabletHomeLandscapeWidget
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                right: 17.0, bottom: 20.0),
-                            child: HomeShoppingCartCounterWidget(),
-                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: <Widget>[
+                                model.isolateResponse == null
+                                    ? Padding(
+                                        padding: const EdgeInsets.only(
+                                            right: 10.0, bottom: 20.0),
+                                        child: Text('Loading...',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 20,
+                                            )),
+                                      )
+                                    : Padding(
+                                        padding: const EdgeInsets.only(
+                                            right: 10.0, bottom: 20.0),
+                                        child: Text(
+                                          'IsolateDto: ' +
+                                              model.isolateResponse.length
+                                                  .toString(),
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 20,
+                                          ),
+                                        ),
+                                      ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      right: 17.0, bottom: 20.0),
+                                  child: HomeShoppingCartCounterWidget(),
+                                ),
+                              ]),
                           MediaQuery.removePadding(
                               context: context,
                               removeTop: true,
