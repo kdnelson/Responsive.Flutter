@@ -105,10 +105,32 @@ I/flutter (27563): Another exception was thrown: setState() or markNeedsBuild() 
 
 ****** Study/Review ******
 
++ Keys
+  For every widget tree, Flutter builds a corresponding element tree
+  The element tree keeps track of the type of each widget and a reference to its child widgets
+  The element tree is a skeletal representation of the widget tree
+  If the widget tile in the row is swapped, the element tree checks that the type and key are the 
+    same as the widget tree.  If not, the element tree will delete the row element reference and rebuild 
+    the references based on the widget tree to match
+  The widget tree is modifiable by the user while the element tree evaluates the changes to the widget tree 
+    and adjusts the element tree to match.
+  Keys are used to preserve scroll position or collection modification order
+  Keys are needed if the types in a collections have no distinction from on another
+  For example, if the keys are attached to the tile widget in a list, but then you add a padding widget around
+    the tile widget - you lose the key reference for the element tree to keep things in order.
+    The element tree can only deal with one level of child reference.  These are local keys, they match up
+    between the two trees at a certain level.  If it can't find a same level match, it will drop the child
+    and reinitialize a new widget.  This may not have the same color or other dependancy attributes as expected.
+    In this case, move your key reference to the padding widget and all will be well.
+  ValueKeys - Say the text in the widget is unique, so we are good
+  ObjectKey - The combination of all the object's attributes make a unique key, so we are good
+  UniqueKey - System generated Guid for uniqueness, so we are good
+  PageStorageKeys - Used for scroll position uniqueness
+  GlobalKeys are used to maintain state of a widget accross the app pages.  Using Redux is better for this though.
+
 + Final variables
 + Const ver new and when to use them
-+ Get better at keys
-+ Mixins
++ Mixins (use the Redux mixin as an example to explain)
 + InheritedWidget? How is Stacks using it
 + StreamController, when do I need one?
 + StreamBuilders?  Add example?  Look at how OrangeDarkTerror is using it.
