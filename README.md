@@ -1,5 +1,12 @@
 # Responsive.Flutter
 
+
+****** Flutter Knowledge ******
+
+Flutter animations
+Camera
+OCR Technology
+
 ****** Flutter Commands ******
 
 flutter doctor                          //gives the state of things.  Google issues to get everything to green
