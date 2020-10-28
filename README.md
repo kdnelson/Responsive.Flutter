@@ -1,11 +1,103 @@
 # Responsive.Flutter
 
+****** Study/Review ******
+
++ Keys
+  For every widget tree, Flutter builds a corresponding element tree
+  The element tree keeps track of the type of each widget and a reference to its child widgets
+  The element tree is a skeletal representation of the widget tree
+  If the widget tile in the row is swapped, the element tree checks that the type and key are the 
+    same as the widget tree.  If not, the element tree will delete the row element reference and rebuild 
+    the references based on the widget tree to match
+  The widget tree is modifiable by the user while the element tree evaluates the changes to the widget tree 
+    and adjusts the element tree to match.
+  Keys are used to preserve scroll position or collection modification order
+  Keys are needed if the types in a collections have no distinction from on another
+  For example, if the keys are attached to the tile widget in a list, but then you add a padding widget around
+    the tile widget - you lose the key reference for the element tree to keep things in order.
+    The element tree can only deal with one level of child reference.  These are local keys, they match up
+    between the two trees at a certain level.  If it can't find a same level match, it will drop the child
+    and reinitialize a new widget.  This may not have the same color or other dependancy attributes as expected.
+    In this case, move your key reference to the padding widget and all will be well.
+  ValueKeys - Say the text in the widget is unique, so we are good
+  ObjectKey - The combination of all the object's attributes make a unique key, so we are good
+  UniqueKey - System generated Guid for uniqueness, so we are good
+  PageStorageKeys - Used for scroll position uniqueness
+  GlobalKeys are used to maintain state of a widget accross the app pages.  Using Redux is better for this though.
+
++ Final variables
++ Const ver new and when to use them
++ Mixins (use the Redux mixin as an example to explain)
++ InheritedWidget? How is Stacks using it
++ StreamController, when do I need one?
++ StreamBuilders?  Add example?  Look at how OrangeDarkTerror is using it.
++ Flutter animations
++ Camera
++ OCR Technology
 
 ****** Flutter Knowledge ******
 
-Flutter animations
-Camera
-OCR Technology
+When you start a Flutter (or any Dart) application, a new Thread process (in Dart language = “Isolate") is created and launched. 
+This thread will be the only one that you will have to care for the entire application.
+
+So, when this thread is created, Dart automatically
+
++ Initializes 2 Queues, namely “MicroTask” and “Event” FIFO queues;
++ Executes the main() method and, once this code execution is completed,
++ Launches the Event Loop
+
+The Event Queue versus the MicroTask Queue:
+The Event Queue has priority, however the MicroTask will look for opportunities to run very short async tasks when the Event Queue allows it.
+The Flutter system rarely uses the MicroTask Queue in comparison to the Event Queue. 
+
+The Event Queue handles these operations:
++ I/O
++ Gesture
++ Drawing
++ Timers
++ Streams
++ Futures
+
+When you instantiate a new Future (Like a C# Task):
++ Not run in parallel.  The event queue grabs and runs it in the same main isolate.
++ Simple adding async to a method turns that method into a future.
++ It runs synchronously the code of that method up to the very first await keyword, then it pauses the execution of the remainder of that method
+  The next line of code will be run as soon as the Future, referenced by the await keyword, will have completed
++ Exampe: Notice the "After the Future" print doesn't wait for the Futuer to complete
+
+  void main(){
+    print('Before the Future');
+    Future((){
+        print('Running the Future');
+    }).then((_){
+        print('Future is complete');
+    });
+    print('After the Future');
+  }
+
+  Before the Future
+  After the Future
+  Running the Future
+  Future is complete
+
++ An instance of that Future is created and recorded in an internal array, managed by Dart;
++ The code that needs to be executed by this Future is directly pushed into the Event Queue;
++ The future instance is returned with a status (=incomplete);
++ If any, the next synchronous code is executed (NOT the code of the Future)
+
+Isolates:
++ If a method takes a couple of milliseconds => use a Future
++ If a processing might take several hundreds of milliseconds => use an Isolate
++ Isolate communication can only be done between the main isolate and any other programmically created isolate
++ They each have their own 2 queues
++ If you only need to run some piece of code to do some specific job and do not need to interact with that 
+  Isolate once the job is done, there exists a very convenient Helper, called compute.
+
+  This compute function will do all this for you:
+  + Spawns an Isolate,
+  + Runs a callback function on that isolate, passing it some data,
+  + Returns the value, outcome the callback,
+  + Kills the Isolate at the end of the execution of the callback.
 
 ****** Flutter Commands ******
 
@@ -110,98 +202,4 @@ MobileHomeLandscapeWidget
     }
 I/flutter (27563): Another exception was thrown: setState() or markNeedsBuild() called during build.
 
-****** Study/Review ******
 
-+ Keys
-  For every widget tree, Flutter builds a corresponding element tree
-  The element tree keeps track of the type of each widget and a reference to its child widgets
-  The element tree is a skeletal representation of the widget tree
-  If the widget tile in the row is swapped, the element tree checks that the type and key are the 
-    same as the widget tree.  If not, the element tree will delete the row element reference and rebuild 
-    the references based on the widget tree to match
-  The widget tree is modifiable by the user while the element tree evaluates the changes to the widget tree 
-    and adjusts the element tree to match.
-  Keys are used to preserve scroll position or collection modification order
-  Keys are needed if the types in a collections have no distinction from on another
-  For example, if the keys are attached to the tile widget in a list, but then you add a padding widget around
-    the tile widget - you lose the key reference for the element tree to keep things in order.
-    The element tree can only deal with one level of child reference.  These are local keys, they match up
-    between the two trees at a certain level.  If it can't find a same level match, it will drop the child
-    and reinitialize a new widget.  This may not have the same color or other dependancy attributes as expected.
-    In this case, move your key reference to the padding widget and all will be well.
-  ValueKeys - Say the text in the widget is unique, so we are good
-  ObjectKey - The combination of all the object's attributes make a unique key, so we are good
-  UniqueKey - System generated Guid for uniqueness, so we are good
-  PageStorageKeys - Used for scroll position uniqueness
-  GlobalKeys are used to maintain state of a widget accross the app pages.  Using Redux is better for this though.
-
-+ Final variables
-+ Const ver new and when to use them
-+ Mixins (use the Redux mixin as an example to explain)
-+ InheritedWidget? How is Stacks using it
-+ StreamController, when do I need one?
-+ StreamBuilders?  Add example?  Look at how OrangeDarkTerror is using it.
-
-****** Flutter Knowledge ******
-
-When you start a Flutter (or any Dart) application, a new Thread process (in Dart language = “Isolate") is created and launched. 
-This thread will be the only one that you will have to care for the entire application.
-
-So, when this thread is created, Dart automatically
-
-+ Initializes 2 Queues, namely “MicroTask” and “Event” FIFO queues;
-+ Executes the main() method and, once this code execution is completed,
-+ Launches the Event Loop
-
-The Event Queue versus the MicroTask Queue:
-The Event Queue has priority, however the MicroTask will look for opportunities to run very short async tasks when the Event Queue allows it.
-The Flutter system rarely uses the MicroTask Queue in comparison to the Event Queue. 
-
-The Event Queue handles these operations:
-+ I/O
-+ Gesture
-+ Drawing
-+ Timers
-+ Streams
-+ Futures
-
-When you instantiate a new Future (Like a C# Task):
-+ Not run in parallel.  The event queue grabs and runs it in the same main isolate.
-+ Simple adding async to a method turns that method into a future.
-+ It runs synchronously the code of that method up to the very first await keyword, then it pauses the execution of the remainder of that method
-  The next line of code will be run as soon as the Future, referenced by the await keyword, will have completed
-+ Exampe: Notice the "After the Future" print doesn't wait for the Futuer to complete
-
-  void main(){
-    print('Before the Future');
-    Future((){
-        print('Running the Future');
-    }).then((_){
-        print('Future is complete');
-    });
-    print('After the Future');
-  }
-
-  Before the Future
-  After the Future
-  Running the Future
-  Future is complete
-
-+ An instance of that Future is created and recorded in an internal array, managed by Dart;
-+ The code that needs to be executed by this Future is directly pushed into the Event Queue;
-+ The future instance is returned with a status (=incomplete);
-+ If any, the next synchronous code is executed (NOT the code of the Future)
-
-Isolates:
-+ If a method takes a couple of milliseconds => use a Future
-+ If a processing might take several hundreds of milliseconds => use an Isolate
-+ Isolate communication can only be done between the main isolate and any other programmically created isolate
-+ They each have their own 2 queues
-+ If you only need to run some piece of code to do some specific job and do not need to interact with that 
-  Isolate once the job is done, there exists a very convenient Helper, called compute.
-
-  This compute function will do all this for you:
-  + Spawns an Isolate,
-  + Runs a callback function on that isolate, passing it some data,
-  + Returns the value, outcome the callback,
-  + Kills the Isolate at the end of the execution of the callback.
