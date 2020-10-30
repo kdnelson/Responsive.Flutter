@@ -158,9 +158,9 @@ Dedicated Services(Just normal objects, to not confuse beginners) will perform a
       	  |-->newpage
         	|-->controls (RB base files used by newpage)
                 |-->mobile
-	            |--> drawewr
+	            |--> drawer
           	|-->tablet
-	            |--> drawewr
+	            |--> drawer
     
    AND
 
