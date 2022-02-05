@@ -24,15 +24,21 @@
 + UniqueKey - System generated Guid for uniqueness, so we are good
 + PageStorageKeys - Used for scroll position uniqueness
 + GlobalKeys are used to maintain state of a widget accross the app pages.  Using Redux is better for this though.
-+ Final variables
-+ Const ver new and when to use them
-+ Mixins (use the Redux mixin as an example to explain)
+
+////// Hmmm //////
+
++ Final variables?
++ Const ver new and when to use them?
++ Mixins (use the Redux mixin as an example to explain)?
 + InheritedWidget? How is Stacks using it
 + StreamController, when do I need one?
 + StreamBuilders?  Add example?  Look at how OrangeDarkTerror is using it.
-+ Flutter animations
++ Flutter animations?
 + Camera
 + OCR Technology
+
+////// Dart Wrokflow //////
+
 + When you start a Flutter (or any Dart) application, a new Thread process (in Dart language = “Isolate") is created and launched. 
   This thread will be the only one that you will have to care for the entire application.   
   So, when this thread is created, Dart automatically
@@ -43,7 +49,7 @@
   The Event Queue has priority, however the MicroTask will look for opportunities to run very short async tasks when the Event Queue allows it.
   The Flutter system rarely uses the MicroTask Queue in comparison to the Event Queue. 
 
-+ The Event Queue handles these operations:
+////// The Event Queue handles these operations: //////
   I/O
   Gesture
   Drawing
@@ -51,7 +57,7 @@
   Streams
   Futures
 
-+ When you instantiate a new Future (Like a C# Task):
+////// When you instantiate a new Future (Like a C# Task): //////
   Not run in parallel.  The event queue grabs and runs it in the same main isolate.
   Simple adding async to a method turns that method into a future.
   It runs synchronously the code of that method up to the very first await keyword, then it pauses the execution of the remainder of that method
@@ -78,7 +84,7 @@
     The future instance is returned with a status (=incomplete);
     If any, the next synchronous code is executed (NOT the code of the Future)
 
-+ Isolates:
+////// Isolates: //////
   If a method takes a couple of milliseconds => use a Future
   If a processing might take several hundreds of milliseconds => use an Isolate
   Isolate communication can only be done between the main isolate and any other programmically created isolate
@@ -86,7 +92,7 @@
   If you only need to run some piece of code to do some specific job and do not need to interact with that 
     Isolate once the job is done, there exists a very convenient Helper, called compute.
 
-+ This compute function will do all this for you:
+////// This compute function will do all this for you: //////
   Spawns an Isolate,
   Runs a callback function on that isolate, passing it some data,
   Returns the value, outcome the callback,
@@ -112,26 +118,26 @@ flutter devices                         //What are you connected to
 
 ****** Architecture ******
 
-+ ScopedModel - High Level Architecture Overview
+////// ScopedModel - High Level Architecture Overview //////
 
-Adopted Stacked Flutter Responsive ScopedModel Architecture:
++ Adopted Stacked Flutter Responsive ScopedModel Architecture:
   https://www.filledstacks.com/post/building-a-responsive-ui-architecture-in-flutter/
-Each view will have it's own model that extends the ChangeNotifier.
-Notify listeners for a view will ONLY BE CALLED when the View's state changes.
-Each view only has 2 states. Idle and Busy. Any other piece of UI contained in a view, that requires logic and state / UI updates will have it's own model associated with it.   This way the main view only paints when the main view state changes.
-Providers will NOT be passed in through app level global provider, unless it's required by more than 1 view in the app architecture (Users information).
-Providers and services will be injected using get_it.
-Models will ONLY request data from Services and reduce state from that data. Nothing else.
-Dedicated Services(Just normal objects, to not confuse beginners) will perform all the actual work. Api class will request and serialize data. 
++ Each view will have it's own model that extends the ChangeNotifier.
++ Notify listeners for a view will ONLY BE CALLED when the View's state changes.
++ Each view only has 2 states. Idle and Busy. Any other piece of UI contained in a view, that requires logic and state / UI updates will have it's own model associated with it.   This way the main view only paints when the main view state changes.
++ Providers will NOT be passed in through app level global provider, unless it's required by more than 1 view in the app architecture (Users information).
++ Providers and services will be injected using get_it.
++ Models will ONLY request data from Services and reduce state from that data. Nothing else.
++ Dedicated Services(Just normal objects, to not confuse beginners) will perform all the actual work. Api class will request and serialize data. 
   The model will just call the function to do that. Authentication service will use the Api to get the user details and track it. 
   The model just calls the function and passes values to it.
 
-+ Code Design Per Vm Widget Added To Drawer Menu
+////// Code Design Per Vm Widget Added To Drawer Menu //////
 
   Responsive Block (RB) 
     |--> DeviceTypeWidget (SL) "What type of device do we have here?"
     |--> OrientationWidget (SL) "Are we in Portrait or Landscape?"
-        (For every orientation change, the LayoutBuilder rebuilds the context)
+        (For every orientation change, the LayoutBuilder rebuilds the context tree)
 
   main
   |-->MainApplication
