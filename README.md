@@ -50,12 +50,12 @@
   The Flutter system rarely uses the MicroTask Queue in comparison to the Event Queue. 
 
 ////// The Event Queue handles these operations: //////
-  I/O
-  Gesture
-  Drawing
-  Timers
-  Streams
-  Futures
++ I/O
++ Gesture
++ Drawing
++ Timers
++ Streams
++ Futures
 
 ////// When you instantiate a new Future (Like a C# Task): //////
   Not run in parallel.  The event queue grabs and runs it in the same main isolate.
