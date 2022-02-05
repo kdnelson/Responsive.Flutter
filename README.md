@@ -99,7 +99,9 @@
 + Kills the Isolate at the end of the execution of the callback.
 
 ****** ToDo ******
+
 ***** Hints *****
+
 ***** Issues *****
 
 ****** Commands ******
@@ -134,12 +136,15 @@ flutter devices                         //What are you connected to
 
 ////// Code Design Per Vm Widget Added To Drawer Menu //////
 
-  Responsive Block (RB) 
++ SL - State Less
++ SF - State Full
+
++ Responsive Block (RB) 
     |--> DeviceTypeWidget (SL) "What type of device do we have here?"
     |--> OrientationWidget (SL) "Are we in Portrait or Landscape?"
         (For every orientation change, the LayoutBuilder rebuilds the context tree)
 
-  main
++ main
   |-->MainApplication
      |-->HomeResponsiveWidget (SL)  It replicates the same for all pages attached to menu drawer)
          |-->RB (Entering the Responsive Block, under Widgets/Responsive) 
