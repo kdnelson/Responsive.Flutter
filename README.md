@@ -74,10 +74,10 @@
     print('After the Future');
     }
 
-    Before the Future
-    After the Future
-    Running the Future
-    Future is complete
++ Before the Future
++ After the Future
++ Running the Future
++ Future is complete
 
 + An instance of that Future is created and recorded in an internal array, managed by Dart;
     The code that needs to be executed by this Future is directly pushed into the Event Queue;
@@ -156,9 +156,9 @@ flutter devices                         //What are you connected to
 							    |--> SomeWidgetPortraitWidget extends BaseViewModelProviderWidget<SomeViewModel>
 								  (allows for more child widgets bound to the HomeViewModel, just extend 							      				                   BaseViewModelProviderWidget<HomeViewModel> as it's parent did.)	
 						
-   So, for every new Vm Widget added to the drawer menu, add these folders to get started...
++ So, for every new Vm Widget added to the drawer menu, add these folders to get started...
 
-   (This handles the UI portrait and lanscape changes and calls the appriate page for that context rebuild)
++ (This handles the UI portrait and lanscape changes and calls the appriate page for that context rebuild)
    Widgets
       |-->responsive
       	  |-->newpage
@@ -168,16 +168,15 @@ flutter devices                         //What are you connected to
           	|-->tablet
 	            |--> drawer
     
-   AND
++ AND
 
-   (This handles each page for either portrait or lanscape, not knowing anything about the RB who calls them.)
++ (This handles each page for either portrait or lanscape, not knowing anything about the RB who calls them.)
    Widgets
       |-->newpage
           |-->mobile
           |-->tablet
 
 + Multiple Widgets Listening To A Single ViewModel Across Several Routed Pages
-
   The Settings page demonstrates its own viewmodel with a counter.  It's state is held until the page is popped back to the Home page.
   Notice how incrimenting the counter, popping back to the Home page, and returning back to the Settings page displays a zero counter.
   Yet, all actions made on the Shopping Cart number counter state is held regardless of navigation.  Then ShoppingCart service adds to the ReactiveServiceMixin library
@@ -185,7 +184,6 @@ flutter devices                         //What are you connected to
   RxValue, RxList, or RxSet type.  Then any change to the service's properties will reactively update the widget bound to the service though the viewmodel.  
 
 + Partial Widgets Listening To A Vm
-
   The SettingsCounterPartialWidget, SettingsCounterWidget, and SettingsCounterParityWidget are called and initialized at app load.  Both SettingsCounterPartialWidget and    
   SettingsCounterWidget will not rebuild for every counter change.  However, SettingsCounterParityWidget will listen and rebuild for every change.
 
