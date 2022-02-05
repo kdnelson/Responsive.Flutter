@@ -125,7 +125,7 @@ flutter devices                         //What are you connected to
 + Adopted Stacked Flutter Responsive ScopedModel Architecture:
   https://www.filledstacks.com/post/building-a-responsive-ui-architecture-in-flutter/
 + Each view will have it's own model that extends the ChangeNotifier.
-+ Notify listeners for a view will ONLY BE CALLED when the View's state changes.
++ Notify listeners for a view will ONLY BE CALLED when the view's state changes.
 + Each view only has 2 states. Idle and Busy. Any other piece of UI contained in a view, that requires logic and state / UI updates will have it's own model associated with it.   This way the main view only paints when the main view state changes.
 + Providers will NOT be passed in through app level global provider, unless it's required by more than 1 view in the app architecture (Users information).
 + Providers and services will be injected using get_it.
@@ -149,7 +149,7 @@ flutter devices                         //What are you connected to
      |-->HomeResponsiveWidget (SL)  It replicates the same for all pages attached to menu drawer)
          |-->RB (Entering the Responsive Block, under Widgets/Responsive) 
 	      |--> builder returns ViewModelBuilder<HomeViewModel>.reactive()
-	           |--> Call the appropriate widget of 4 choices ie. MobileMenuHomePortraitWidget
+	           |--> Call the appropriate widget of 4 choices. for example: MobileMenuHomePortraitWidget
 		        |--> HomeDrawerWidget    AND    |--> MobileHomePortraitWidget extends BaseViewModelProviderWidget<HomeViewModel> 
 			     |-->RB			    (allows for more child widgets bound to the HomeViewModel, just extend 
 			         |--> Call the appropriate     BaseViewModelProviderWidget<HomeViewModel> as it's parent did.)              			
